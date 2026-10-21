@@ -853,6 +853,11 @@ h2 {
     flex-wrap: wrap;
   }
 
+  .step-body {
+    flex: 1 1 calc(100% - 58px);
+    min-width: 0;
+  }
+
   .step-stat {
     margin-left: 58px;
     align-self: flex-start;
@@ -867,6 +872,30 @@ h2 {
   padding: 14px 16px;
   border-radius: 16px;
   background: var(--brand-soft);
+}
+
+.sources {
+  margin: 0 0 28px;
+}
+
+.sources ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sources a {
+  color: var(--brand);
+  font-size: 0.92rem;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.sources a::after {
+  content: " ↗";
+  font-size: 0.8em;
 }
 
 .takeaway p {

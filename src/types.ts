@@ -35,7 +35,7 @@ export type PlantGuide = {
   /** Urban-gardener friendly tags, e.g. "low light", "balcony", "pet safe". */
   tags: string[];
   /** Leaf shape drives which illustrated plant the animation draws. */
-  leafShape: "round" | "long" | "split" | "succulent" | "trailing" | "herb";
+  leafShape: "round" | "long" | "split" | "succulent" | "trailing" | "herb" | "cactus" | "flowering" | "oval";
   palette: {
     background: string;
     accent: string;
@@ -46,4 +46,6 @@ export type PlantGuide = {
   steps: GuideStep[];
   /** Closing takeaway, max ~70 chars. */
   outro: string;
+  /** Authoritative pages the care facts were checked against (shown under the guide). */
+  sources?: { title: string; url: string }[];
 };

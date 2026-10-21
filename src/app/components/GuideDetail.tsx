@@ -161,6 +161,23 @@ export const GuideDetail = ({ guide }: { guide: PlantGuide }) => {
             <p>{guide.outro}</p>
           </div>
 
+          {guide.sources && guide.sources.length > 0 && (
+            <section className="sources" aria-labelledby="sources-title">
+              <h2 id="sources-title" className="section-title">
+                Sources
+              </h2>
+              <ul>
+                {guide.sources.map((s) => (
+                  <li key={s.url}>
+                    <a href={s.url} target="_blank" rel="noopener noreferrer">
+                      {s.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
           {!isNativeApp && <ExportPanel id={guide.id} />}
         </div>
       </div>
