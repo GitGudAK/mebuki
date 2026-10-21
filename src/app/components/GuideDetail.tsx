@@ -36,9 +36,9 @@ export const GuideDetail = ({ guide }: { guide: PlantGuide }) => {
   const durationInFrames = getGuideDurationInFrames(guide);
 
   useEffect(() => {
-    document.title = `${guide.name} care · Niwa`;
+    document.title = `${guide.name} care · Mebuki`;
     return () => {
-      document.title = "Niwa · Animated Plant Care";
+      document.title = "Mebuki · Animated Plant Care";
     };
   }, [guide.name]);
 

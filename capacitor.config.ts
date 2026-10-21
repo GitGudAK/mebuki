@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: "com.gitgudak.niwa",
-  appName: "Niwa",
+  appId: "com.gitgudak.mebuki",
+  appName: "Mebuki",
   webDir: "dist",
   backgroundColor: "#0e2519",
   ios: {
