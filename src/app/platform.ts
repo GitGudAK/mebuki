@@ -2,8 +2,11 @@ import { Capacitor } from "@capacitor/core";
 import { SplashScreen } from "@capacitor/splash-screen";
 import { StatusBar, Style } from "@capacitor/status-bar";
 
-/** True inside the iOS app shell, where the CLI export panel makes no sense. */
-export const isNativeApp = Capacitor.isNativePlatform();
+/**
+ * True inside the iOS app shell, where the CLI export panel makes no sense.
+ * `?app-preview` renders the app layout in a browser, for App Store screenshots.
+ */
+export const isNativeApp = Capacitor.isNativePlatform() || new URLSearchParams(location.search).has("app-preview");
 
 if (isNativeApp) {
   document.documentElement.classList.add("native");
