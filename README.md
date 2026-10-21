@@ -1,6 +1,6 @@
 # Niwa: Animated Plant Care Guide
 
-*Niwa* (庭) is Japanese for "garden". It teaches urban gardeners (apartment, balcony and windowsill growers) how to keep
+*Niwa* is Japanese for "garden". It teaches urban gardeners (apartment, balcony and windowsill growers) how to keep
 their plants alive with short, vertical, animated care guides. It runs as a web app and
 as a free iPhone app, and every guide also renders to a 1080×1920 MP4 for Reels, Shorts
 or TikTok.
