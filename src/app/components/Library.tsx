@@ -67,6 +67,9 @@ export const Library = () => {
           </svg>
           <input
             type="search"
+            autoCorrect="off"
+            autoCapitalize="none"
+            spellCheck={false}
             placeholder="Search by name, Latin name or tag…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}

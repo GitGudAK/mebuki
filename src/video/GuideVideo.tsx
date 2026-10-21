@@ -664,7 +664,8 @@ const StepProgress: React.FC<{ guide: PlantGuide }> = ({ guide }) => {
 
 /* ----------------------------------------------------------- composition */
 
-export const GuideVideo: React.FC<{ guide: PlantGuide }> = ({ guide }) => {
+/** `inApp` drops the built-in progress bar, which the app replaces with its chapter strip. */
+export const GuideVideo: React.FC<{ guide: PlantGuide; inApp?: boolean }> = ({ guide, inApp = false }) => {
   return (
     <AbsoluteFill style={{ background: guide.palette.background, fontFamily: FONT_STACK }}>
       <Backdrop palette={guide.palette} />
@@ -681,7 +682,7 @@ export const GuideVideo: React.FC<{ guide: PlantGuide }> = ({ guide }) => {
           <OutroScene guide={guide} />
         </Series.Sequence>
       </Series>
-      <StepProgress guide={guide} />
+      {!inApp && <StepProgress guide={guide} />}
     </AbsoluteFill>
   );
 };

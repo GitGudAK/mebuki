@@ -48,7 +48,11 @@
       "maxLength": 60
     },
     "difficulty": {
-      "enum": ["easy", "moderate", "tricky"]
+      "enum": [
+        "easy",
+        "moderate",
+        "tricky"
+      ]
     },
     "tags": {
       "type": "array",
@@ -64,24 +68,49 @@
     },
     "leafShape": {
       "description": "Which illustrated plant the animation draws.",
-      "enum": ["round", "long", "split", "succulent", "trailing", "herb", "cactus", "flowering", "oval"]
+      "enum": [
+        "round",
+        "long",
+        "split",
+        "succulent",
+        "trailing",
+        "herb",
+        "cactus",
+        "flowering",
+        "oval"
+      ]
     },
     "palette": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["background", "accent", "leaf", "pot"],
+      "required": [
+        "background",
+        "accent",
+        "leaf",
+        "pot"
+      ],
       "properties": {
-        "background": { "$ref": "#/$defs/hexColor" },
-        "accent": { "$ref": "#/$defs/hexColor" },
-        "leaf": { "$ref": "#/$defs/hexColor" },
-        "pot": { "$ref": "#/$defs/hexColor" }
+        "background": {
+          "$ref": "#/$defs/hexColor"
+        },
+        "accent": {
+          "$ref": "#/$defs/hexColor"
+        },
+        "leaf": {
+          "$ref": "#/$defs/hexColor"
+        },
+        "pot": {
+          "$ref": "#/$defs/hexColor"
+        }
       }
     },
     "steps": {
       "type": "array",
       "minItems": 4,
       "maxItems": 6,
-      "items": { "$ref": "#/$defs/step" }
+      "items": {
+        "$ref": "#/$defs/step"
+      }
     },
     "outro": {
       "type": "string",
@@ -94,7 +123,17 @@
       "description": "Authoritative pages the care facts were checked against. Required, at least 2. Shown under the guide in the app.",
       "minItems": 2,
       "uniqueItems": true,
-      "items": { "$ref": "#/$defs/source" }
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "faqs": {
+      "type": "array",
+      "description": "Optional questions from growers, added through contributions. Every answer needs at least one source.",
+      "maxItems": 12,
+      "items": {
+        "$ref": "#/$defs/faq"
+      }
     }
   },
   "$defs": {
@@ -106,14 +145,29 @@
     "step": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["kind", "title", "tip"],
+      "required": [
+        "kind",
+        "title",
+        "tip"
+      ],
       "properties": {
         "kind": {
-          "enum": ["water", "light", "soil", "humidity", "fertilize", "prune", "repot", "pests", "temperature", "propagate"]
+          "enum": [
+            "water",
+            "light",
+            "soil",
+            "humidity",
+            "fertilize",
+            "prune",
+            "repot",
+            "pests",
+            "temperature",
+            "propagate"
+          ]
         },
         "title": {
           "type": "string",
-          "description": "Short headline, e.g. \"Water every 7–10 days\".",
+          "description": "Short headline, e.g. \"Water every 7\u201310 days\".",
           "minLength": 1,
           "maxLength": 28
         },
@@ -125,16 +179,29 @@
         },
         "stat": {
           "type": "string",
-          "description": "Optional big number shown in the animation, e.g. \"7–10 days\", \"6+ hrs\", \"60%\".",
+          "description": "Optional big number shown in the animation, e.g. \"7\u201310 days\", \"6+ hrs\", \"60%\".",
           "minLength": 1,
           "maxLength": 16
+        },
+        "sourceRefs": {
+          "type": "array",
+          "description": "Optional: which entries in this guide's sources back this step (0-based indexes). The app shows them under the chapter; without it, all guide sources are shown.",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minItems": 1,
+          "uniqueItems": true
         }
       }
     },
     "source": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title", "url"],
+      "required": [
+        "title",
+        "url"
+      ],
       "properties": {
         "title": {
           "type": "string",
@@ -147,6 +214,40 @@
           "format": "uri",
           "pattern": "^https://",
           "maxLength": 400
+        }
+      }
+    },
+    "faq": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "question",
+        "answer",
+        "sources"
+      ],
+      "properties": {
+        "question": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 90
+        },
+        "answer": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 280
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        },
+        "contributor": {
+          "type": "string",
+          "description": "Optional GitHub username of who added it, without @.",
+          "pattern": "^[A-Za-z0-9-]{1,39}$"
         }
       }
     }
