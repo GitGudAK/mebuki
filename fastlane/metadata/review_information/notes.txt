@@ -1,3 +1,0 @@
-Mebuki needs no account or login, so no demo account is required.
-
-Mebuki is an offline plant-care app: 17 care guides are bundled in the app and their animations are drawn on-device; nothing is loaded from a website. Open any plant from the library and tap play, or tap a step in the care routine to jump to it. Each guide lists its sources at the bottom; tapping one opens the source page in Safari.
