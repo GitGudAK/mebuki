@@ -162,10 +162,6 @@ h2 {
   border-radius: 12px;
   background: var(--brand);
   color: var(--brand-ink);
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
-  font-size: 23px;
-  font-weight: 600;
-  line-height: 1;
 }
 
 .brand-name {
