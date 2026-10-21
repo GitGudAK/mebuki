@@ -1,0 +1,76 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "balcony-cherry-tomato",
+  "name": "Cherry Tomato",
+  "scientificName": "Solanum lycopersicum var. cerasiforme",
+  "hook": "Yes, you can grow tomatoes on a tiny balcony.",
+  "difficulty": "moderate",
+  "tags": [
+    "edible",
+    "balcony",
+    "full sun",
+    "leaves toxic to pets"
+  ],
+  "leafShape": "herb",
+  "palette": {
+    "background": "#3A2E2A",
+    "accent": "#FF5A4E",
+    "leaf": "#4E9A3E",
+    "pot": "#C2683E"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Full sun is a must",
+      "tip": "Pick your sunniest balcony spot; fewer than 6 hours of sun means few flowers or fruit.",
+      "stat": "6–8 hrs"
+    },
+    {
+      "kind": "repot",
+      "title": "Go big on the pot",
+      "tip": "Use a container of at least 20 L with drainage holes; small pots dry out too fast.",
+      "stat": "20+ L"
+    },
+    {
+      "kind": "water",
+      "title": "Water deeply, daily",
+      "tip": "Water at the base each morning in summer; uneven watering causes split fruit.",
+      "stat": "Daily"
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed once fruit swells",
+      "tip": "Once the first fruits swell, give a high-potassium tomato feed every 10–14 days.",
+      "stat": "10–14 days"
+    },
+    {
+      "kind": "prune",
+      "title": "Stake and pinch side shoots",
+      "tip": "Tall (cordon) types: tie to a stake, pinch side shoots in leaf joints. Bush types: leave them."
+    },
+    {
+      "kind": "pests",
+      "title": "Check for aphids",
+      "tip": "Blast aphids off with a strong water spray, or use insecticidal soap on leaf undersides."
+    }
+  ],
+  "outro": "Sun, a big pot and steady water = handfuls of sweet tomatoes.",
+  "sources": [
+    {
+      "title": "RHS: How to grow tomatoes",
+      "url": "https://www.rhs.org.uk/vegetables/tomatoes/grow-your-own"
+    },
+    {
+      "title": "Clemson HGIC: Tomatoes in Containers",
+      "url": "https://hgic.clemson.edu/tomatoes-in-containers/"
+    },
+    {
+      "title": "UMN Extension: Aphids in home yards and gardens",
+      "url": "https://extension.umn.edu/garden-and-home/yard-and-garden/yard-and-garden-insects/aphids"
+    },
+    {
+      "title": "ASPCA: Tomato Plant",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/tomato-plant"
+    }
+  ]
+}

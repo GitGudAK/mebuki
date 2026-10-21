@@ -1,0 +1,69 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "peace-lily",
+  "name": "Peace Lily",
+  "scientificName": "Spathiphyllum spp.",
+  "hook": "Dramatic droop? Your peace lily is just asking for a drink.",
+  "difficulty": "easy",
+  "tags": [
+    "low light",
+    "flowering",
+    "toxic to pets"
+  ],
+  "leafShape": "long",
+  "palette": {
+    "background": "#22363F",
+    "accent": "#F7F3E3",
+    "leaf": "#2F6E46",
+    "pot": "#B76E4C"
+  },
+  "steps": [
+    {
+      "kind": "water",
+      "title": "Water when the top dries",
+      "tip": "Water once the top few cm of soil are dry. It droops when thirsty but recovers fast.",
+      "stat": "Top few cm"
+    },
+    {
+      "kind": "light",
+      "title": "Bright, indirect light",
+      "tip": "Bright, indirect light near a window. In deep shade it rarely flowers. No direct sun."
+    },
+    {
+      "kind": "humidity",
+      "title": "Likes moderate humidity",
+      "tip": "Dry air browns leaf edges; stand the pot on a tray of damp gravel or mist it.",
+      "stat": "Moderate"
+    },
+    {
+      "kind": "prune",
+      "title": "Snip spent flowers",
+      "tip": "Cut faded white blooms and yellow leaves at the base to send energy to new growth."
+    },
+    {
+      "kind": "fertilize",
+      "title": "Light feeding",
+      "tip": "Feed with a diluted balanced fertilizer every 6–8 weeks in spring and summer.",
+      "stat": "6–8 wks"
+    }
+  ],
+  "outro": "Soil dry? Then it's time. That's the whole peace lily trick.",
+  "sources": [
+    {
+      "title": "RHS: How to grow peace lilies",
+      "url": "https://www.rhs.org.uk/plants/peace-lilies/how-to-grow-peace-lilies"
+    },
+    {
+      "title": "Clemson HGIC: Peace Lily",
+      "url": "https://hgic.clemson.edu/factsheet/peace-lily/"
+    },
+    {
+      "title": "NC State Plant Toolbox: Spathiphyllum",
+      "url": "https://plants.ces.ncsu.edu/plants/spathiphyllum"
+    },
+    {
+      "title": "ASPCA: Peace Lily",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/peace-lily"
+    }
+  ]
+}

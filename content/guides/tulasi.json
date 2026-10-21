@@ -1,0 +1,75 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "tulasi",
+  "name": "Tulasi",
+  "scientificName": "Ocimum tenuiflorum (holy basil)",
+  "hook": "Flower spikes taking over your tulasi? Pinch them.",
+  "difficulty": "moderate",
+  "tags": [
+    "full sun",
+    "herb",
+    "windowsill",
+    "balcony"
+  ],
+  "leafShape": "herb",
+  "palette": {
+    "background": "#2E2A38",
+    "accent": "#D9A8F0",
+    "leaf": "#58804A",
+    "pot": "#C8734A"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "6+ hours of full sun",
+      "tip": "Give it your sunniest south or west spot, sheltered from wind. Tulasi needs warmth and sun to thrive.",
+      "stat": "6+ hrs"
+    },
+    {
+      "kind": "water",
+      "title": "Evenly moist, not soggy",
+      "tip": "Water the soil in the morning, not the leaves. Waterlogged roots rot, and drought makes it flower early."
+    },
+    {
+      "kind": "temperature",
+      "title": "Warm nights only",
+      "tip": "It can summer outdoors once nights stay above 10°C; bring it inside in autumn before it turns cold.",
+      "stat": "10°C+"
+    },
+    {
+      "kind": "prune",
+      "title": "Pinch off flower spikes",
+      "tip": "Snip flower heads as they appear and harvest shoot tips so it stays bushy and keeps making leaves."
+    },
+    {
+      "kind": "soil",
+      "title": "A roomy, draining pot",
+      "tip": "Use a pot at least 20 cm wide and deep, filled with peat-free multipurpose compost that drains well.",
+      "stat": "20 cm+"
+    },
+    {
+      "kind": "fertilize",
+      "title": "Gentle, balanced feed",
+      "tip": "Potted plants run low on nutrients. Use a balanced liquid feed, not tomato feed, which pushes flowers."
+    }
+  ],
+  "outro": "Sun, warmth and regular pinching keep tulasi leafy all season.",
+  "sources": [
+    {
+      "title": "NC State Plant Toolbox: Ocimum tenuiflorum",
+      "url": "https://plants.ces.ncsu.edu/plants/ocimum-tenuiflorum/"
+    },
+    {
+      "title": "RHS: Ocimum tenuiflorum",
+      "url": "https://www.rhs.org.uk/plants/86595/ocimum-tenuiflorum/details"
+    },
+    {
+      "title": "RHS: How to grow basil",
+      "url": "https://www.rhs.org.uk/herbs/basil/grow-your-own"
+    },
+    {
+      "title": "ASPCA: Basil (O. basilicum, non-toxic)",
+      "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/basil"
+    }
+  ]
+}

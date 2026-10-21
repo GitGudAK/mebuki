@@ -1,0 +1,32 @@
+name: Guide correction
+description: Report a care fact that's wrong or out of date. Please link a source for the fix.
+title: "Correction: "
+labels: ["guide: correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the guides accurate! We change care facts only when a
+        trusted source backs the change, so please link one.
+  - type: input
+    id: guide-id
+    attributes:
+      label: Guide id
+      description: The file name in content/guides without .json, or the end of the app URL (#/plant/<id>), e.g. "golden-pothos".
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong
+      description: Quote the text that's wrong and say what it should be.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source for the correction
+      description: A link to a horticultural society, botanic garden, university extension service or ASPCA page that supports the fix.
+      placeholder: https://...
+    validations:
+      required: true

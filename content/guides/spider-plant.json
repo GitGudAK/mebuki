@@ -1,0 +1,69 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "spider-plant",
+  "name": "Spider Plant",
+  "scientificName": "Chlorophytum comosum",
+  "hook": "A pet-safe plant that makes free baby plants for you.",
+  "difficulty": "easy",
+  "tags": [
+    "pet safe",
+    "beginner",
+    "hanging"
+  ],
+  "leafShape": "long",
+  "palette": {
+    "background": "#2B4236",
+    "accent": "#FFE08A",
+    "leaf": "#7DBE5A",
+    "pot": "#D98E62"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright, indirect light",
+      "tip": "Bright, indirect light suits it best; hot midday sun can scorch the leaves."
+    },
+    {
+      "kind": "water",
+      "title": "Keep evenly moist",
+      "tip": "Water when the top 2–3 cm is dry; it hates sitting in water or drying out completely.",
+      "stat": "Top 2–3 cm"
+    },
+    {
+      "kind": "water",
+      "title": "Brown tips? Try rainwater",
+      "tip": "Fluoride and salts in tap water burn tips, so use filtered or rainwater if you can."
+    },
+    {
+      "kind": "propagate",
+      "title": "Pot up the babies",
+      "tip": "Set baby spiderettes in small pots of soil while still attached; snip once they root.",
+      "stat": "Once rooted"
+    },
+    {
+      "kind": "repot",
+      "title": "Repot when roots show",
+      "tip": "Repot before thick roots crack the pot; go up just a few cm in size.",
+      "stat": "Every 2–3 yrs"
+    }
+  ],
+  "outro": "Pet safe, forgiving, and it multiplies. The perfect starter plant.",
+  "sources": [
+    {
+      "title": "Clemson HGIC: Spider Plant",
+      "url": "https://hgic.clemson.edu/factsheet/spider-plant/"
+    },
+    {
+      "title": "NC State Plant Toolbox: Chlorophytum comosum",
+      "url": "https://plants.ces.ncsu.edu/plants/chlorophytum-comosum/"
+    },
+    {
+      "title": "RHS: Chlorophytum comosum",
+      "url": "https://www.rhs.org.uk/plants/3761/chlorophytum-comosum/details"
+    },
+    {
+      "title": "ASPCA: Spider Plant",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/spider-plant"
+    }
+  ]
+}

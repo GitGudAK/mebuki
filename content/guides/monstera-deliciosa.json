@@ -1,0 +1,69 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "monstera-deliciosa",
+  "name": "Monstera",
+  "scientificName": "Monstera deliciosa",
+  "hook": "No splits in your Monstera? Give it brighter light and time.",
+  "difficulty": "easy",
+  "tags": [
+    "bright indirect",
+    "statement plant",
+    "beginner",
+    "toxic to pets"
+  ],
+  "leafShape": "split",
+  "palette": {
+    "background": "#173B2F",
+    "accent": "#F2C14E",
+    "leaf": "#2E7D4F",
+    "pot": "#C8734A"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright, indirect light",
+      "tip": "Near a bright east or west window; harsh summer sun scorches leaves, low light means no splits."
+    },
+    {
+      "kind": "water",
+      "title": "Water when top 5 cm is dry",
+      "tip": "Soak until it drains, then let the top 2–5 cm dry; water a little less often in winter.",
+      "stat": "Top 2–5 cm"
+    },
+    {
+      "kind": "soil",
+      "title": "Chunky, airy mix",
+      "tip": "Mix potting soil with orchid bark or perlite so roots get air and never sit soggy."
+    },
+    {
+      "kind": "prune",
+      "title": "Give it a moss pole",
+      "tip": "Tie stems to a moss pole; climbing triggers bigger, more split leaves."
+    },
+    {
+      "kind": "propagate",
+      "title": "Cut below a node",
+      "tip": "Snip a stem with a node and aerial root, root it in water, then pot it once roots look sturdy.",
+      "stat": "2–4 wks"
+    }
+  ],
+  "outro": "Bright light + patient watering = those iconic split leaves.",
+  "sources": [
+    {
+      "title": "RHS: How to grow Swiss cheese plants",
+      "url": "https://www.rhs.org.uk/plants/swiss-cheese-plants/how-to-grow-swiss-cheese-plants"
+    },
+    {
+      "title": "Penn State Extension: Monstera as a Houseplant",
+      "url": "https://extension.psu.edu/monstera-as-a-houseplant"
+    },
+    {
+      "title": "UMN Extension: Propagating Monstera deliciosa",
+      "url": "https://extension.umn.edu/houseplants/propagating-monstera-deliciosa"
+    },
+    {
+      "title": "ASPCA: Cutleaf Philodendron (Monstera deliciosa)",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/cutleaf-philodendron"
+    }
+  ]
+}
