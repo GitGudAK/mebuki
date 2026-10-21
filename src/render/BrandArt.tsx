@@ -1,24 +1,14 @@
-// App icon and launch screen artwork, drawn with the same plant illustration as the guides.
+// App icon and launch screen artwork: the Mebuki mark (a sprouting "m") on deep green.
 
-import { Timeline } from "../motion";
-import type { PlantGuide } from "../types";
-import { PlantIllustration } from "../video/PlantIllustration";
+import { BrandMark } from "../app/components/BrandMark";
 
 export const BRAND = {
-  background: "#173a29",
-  backgroundDeep: "#0e2519",
-  glow: "#e8b04b",
+  background: "#2f6b45",
+  backgroundDeep: "#173a29",
+  ink: "#f6f3ea",
+  leafA: "#9fd8a8",
+  leafB: "#cfe8d3",
 };
-
-const palette: PlantGuide["palette"] = {
-  background: BRAND.background,
-  accent: BRAND.glow,
-  leaf: "#4f9a63",
-  pot: "#d07a4f",
-};
-
-/** A grown plant needs a frame past every grow-in spring. */
-const STILL = { fps: 30, width: 1024, height: 1024, durationInFrames: 1 };
 
 export type BrandAsset = "icon" | "splash";
 
@@ -26,36 +16,22 @@ export const BRAND_SIZES: Record<BrandAsset, number> = { icon: 1024, splash: 273
 
 export const BrandArt = ({ asset }: { asset: BrandAsset }) => {
   const size = BRAND_SIZES[asset];
-  // The icon fills its tile; the splash keeps the plant small and centred.
-  const plantWidth = asset === "icon" ? size * 0.5 : size * 0.16;
-  const plantHeight = (plantWidth * 560) / 400;
+  // The icon fills its tile; the splash keeps the mark small and centred.
+  const markSize = asset === "icon" ? size * 0.78 : size * 0.2;
 
   return (
     <div
       style={{
         position: "relative",
+        display: "grid",
+        placeItems: "center",
         width: size,
         height: size,
         overflow: "hidden",
-        background: `radial-gradient(circle at 72% 22%, ${BRAND.glow}55, transparent 46%),
-          radial-gradient(circle at 50% 60%, ${BRAND.background}, ${BRAND.backgroundDeep} 78%)`,
+        background: `radial-gradient(circle at 50% 40%, ${BRAND.background}, ${BRAND.backgroundDeep} 82%)`,
       }}
     >
-      <div
-        style={{
-          position: "absolute",
-          left: "50%",
-          top: "50%",
-          width: plantWidth,
-          height: plantHeight,
-          transform: `translate(-50%, ${asset === "icon" ? "-46%" : "-50%"})`,
-          filter: `drop-shadow(0 ${size * 0.02}px ${size * 0.03}px rgba(0, 0, 0, 0.3))`,
-        }}
-      >
-        <Timeline frame={150} config={STILL}>
-          <PlantIllustration leafShape="split" palette={palette} width={plantWidth} idPrefix="brand" />
-        </Timeline>
-      </div>
+      <BrandMark size={markSize} ink={BRAND.ink} leafA={BRAND.leafA} leafB={BRAND.leafB} />
     </div>
   );
 };
