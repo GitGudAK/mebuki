@@ -131,5 +131,23 @@ Every pull request that touches `content/` or `src/` runs `npm run validate:guid
 ## Code changes
 
 Code contributions are welcome too. The app is built with React + SVG and its own small
-open-source animation engine in `src/motion/`. See the [README](README.md) for the project
-layout and commands, and run `npm run build` before opening a pull request.
+open-source animation engine in `src/motion/`. Run `npm run build` before opening a pull
+request.
+
+| Path | What lives there |
+| --- | --- |
+| `content/guides/` | One JSON file per plant guide |
+| `content/schema/` | The guide schema that every file is checked against |
+| `src/motion/` | The animation engine: frame clock, springs, easing, player |
+| `src/video/` | The guide scenes, plant drawings and step animations |
+| `src/app/` | The library and guide screens |
+| `scripts/` | Guide validator and the MP4 renderer |
+| `ios/` | The iPhone app (Capacitor) |
+
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Run the app at http://localhost:5173 |
+| `npm run validate:guides` | Check every guide against the schema and source rules |
+| `npm run build` | Type-check and build the app |
+| `npm run render -- <id>` | Render a guide to `out/<id>.mp4` (needs ffmpeg and `npx playwright install chromium`) |
+| `npm run render:thumbnails` | Render a cover image per guide |
