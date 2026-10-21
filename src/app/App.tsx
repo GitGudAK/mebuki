@@ -3,6 +3,7 @@ import { Library } from "./components/Library";
 import { GuideDetail } from "./components/GuideDetail";
 import { hrefFor, useRoute } from "./router";
 import { isNativeApp } from "./platform";
+import { BrandMark } from "./components/BrandMark";
 
 export const App = () => {
   const route = useRoute();
@@ -13,10 +14,7 @@ export const App = () => {
       <header className="site-header">
         <a className="brand" href={hrefFor({ name: "library" })} aria-label="Mebuki home">
           <span className="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14" />
-              <path d="M5 19c3-4 6-7 10-10" />
-            </svg>
+            <BrandMark size={30} />
           </span>
           <span className="brand-name">Mebuki</span>
         </a>
