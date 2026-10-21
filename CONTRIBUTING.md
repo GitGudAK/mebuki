@@ -107,6 +107,35 @@ Tips for good guides:
 - Pick palette colors with enough contrast between `background`, `accent` and `leaf`.
   The validator can't judge colors, so check the guide in the app.
 
+## Link sources to chapters (optional)
+
+Each step shows a small Sources drawer in the app. Add `sourceRefs` to a step to list
+which of the guide's `sources` back it, by position starting at 0:
+
+```json
+{ "kind": "water", "title": "Soak, then let dry", "tip": "…", "sourceRefs": [0, 1] }
+```
+
+Without `sourceRefs`, the drawer shows every source for the guide.
+
+## Add a question from growers (optional)
+
+Common questions can be added to a guide as `faqs`. Each answer needs at least one source
+from an authoritative publisher, the same rule as the guide itself:
+
+```json
+"faqs": [
+  {
+    "question": "Why are the tips turning brown?",
+    "answer": "Usually too much direct sun after a move outdoors. Shift it gradually.",
+    "sources": [{ "title": "Penn State Extension: Aloe, a Hardy Houseplant", "url": "https://extension.psu.edu/aloe-a-hardy-houseplant" }],
+    "contributor": "your-github-username"
+  }
+]
+```
+
+The app only shows the "Questions from growers" section when a guide has at least one.
+
 ## Fix an existing guide
 
 Edit the guide's file in `content/guides/`, add or update the source that supports the

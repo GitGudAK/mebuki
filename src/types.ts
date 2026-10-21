@@ -22,6 +22,19 @@ export type GuideStep = {
   tip: string;
   /** Optional big stat shown in the animation, e.g. "7–10 days", "6+ hrs", "60%". */
   stat?: string;
+  /** Optional indexes into the guide's sources that back this step. */
+  sourceRefs?: number[];
+};
+
+export type GuideSource = { title: string; url: string };
+
+/** A grower question added through a contribution; every answer is sourced. */
+export type GuideFaq = {
+  question: string;
+  answer: string;
+  sources: GuideSource[];
+  /** GitHub username of the contributor, without @. */
+  contributor?: string;
 };
 
 export type PlantGuide = {
@@ -50,5 +63,7 @@ export type PlantGuide = {
    * Authoritative pages the care facts were checked against (shown under the guide).
    * Required: at least 2, see content/schema/plant-guide.schema.json and CONTRIBUTING.md.
    */
-  sources: { title: string; url: string }[];
+  sources: GuideSource[];
+  /** Optional questions from growers, shown as an FAQ under the guide. */
+  faqs?: GuideFaq[];
 };

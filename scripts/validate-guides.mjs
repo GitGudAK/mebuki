@@ -104,6 +104,19 @@ export const checkRules = (guide, fileName) => {
     else seen.set(key, i);
   });
 
+  const sourceCount = Array.isArray(guide.sources) ? guide.sources.length : 0;
+  (Array.isArray(guide.steps) ? guide.steps : []).forEach((step, i) => {
+    for (const ref of step?.sourceRefs ?? []) {
+      if (ref >= sourceCount) errors.push(`steps[${i}].sourceRefs points to sources[${ref}], which does not exist`);
+    }
+  });
+  (Array.isArray(guide.faqs) ? guide.faqs : []).forEach((faq, i) => {
+    const hosts = (faq?.sources ?? []).map((s) => hostOf(s?.url));
+    if (hosts.length && !hosts.some((h) => h && isAuthoritative(h))) {
+      errors.push(`faqs[${i}] needs at least one source from an authoritative publisher`);
+    }
+  });
+
   const kinds = new Set((Array.isArray(guide.steps) ? guide.steps : []).map((s) => s?.kind));
   for (const kind of REQUIRED_STEP_KINDS) {
     if (!kinds.has(kind)) errors.push(`needs a "${kind}" step`);

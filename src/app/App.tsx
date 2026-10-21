@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { getGuide } from "../data/guides";
 import { Library } from "./components/Library";
 import { GuideDetail } from "./components/GuideDetail";
@@ -8,6 +9,11 @@ import { BrandMark } from "./components/BrandMark";
 export const App = () => {
   const route = useRoute();
   const guide = route.name === "plant" ? getGuide(route.id) : undefined;
+
+  // Lets the guide's stage run full bleed under the status bar.
+  useEffect(() => {
+    document.documentElement.classList.toggle("route-detail", route.name === "plant");
+  }, [route.name]);
 
   return (
     <div className={`app${route.name === "plant" ? " is-detail" : ""}`}>
