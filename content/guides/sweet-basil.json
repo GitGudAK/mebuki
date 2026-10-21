@@ -1,0 +1,77 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "sweet-basil",
+  "name": "Basil",
+  "scientificName": "Ocimum basilicum",
+  "hook": "Stop buying basil. Grow a bushy plant on your windowsill.",
+  "difficulty": "moderate",
+  "tags": [
+    "edible",
+    "herb",
+    "windowsill",
+    "balcony",
+    "pet safe"
+  ],
+  "leafShape": "herb",
+  "palette": {
+    "background": "#1E3D2A",
+    "accent": "#FF8C61",
+    "leaf": "#4CAF50",
+    "pot": "#C66B3D"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Full sun or grow light",
+      "tip": "Give it your brightest window or a sunny balcony; leggy stems mean it needs more light.",
+      "stat": "6–8 hrs"
+    },
+    {
+      "kind": "water",
+      "title": "Keep soil just moist",
+      "tip": "Keep soil evenly moist; water the soil, not the leaves, ideally in the morning.",
+      "stat": "Check daily"
+    },
+    {
+      "kind": "prune",
+      "title": "Pinch above leaf pairs",
+      "tip": "Snip stems just above a leaf pair; new shoots sprout there and the plant gets bushier."
+    },
+    {
+      "kind": "prune",
+      "title": "Remove flower buds",
+      "tip": "Pinch off flower spikes as soon as they appear to keep leaves sweet and coming."
+    },
+    {
+      "kind": "temperature",
+      "title": "Warm and cozy",
+      "tip": "Basil blackens in the cold; keep it indoors once nights fall below 10°C.",
+      "stat": "Above 10°C"
+    },
+    {
+      "kind": "propagate",
+      "title": "Root cuttings in water",
+      "tip": "Root non-flowering 10 cm shoots in water, lower leaves off; pot up in a few weeks.",
+      "stat": "Few weeks"
+    }
+  ],
+  "outro": "Pinch often, pick often. The more you harvest, the more you get.",
+  "sources": [
+    {
+      "title": "RHS: How to grow basil",
+      "url": "https://www.rhs.org.uk/herbs/basil/grow-your-own"
+    },
+    {
+      "title": "Clemson HGIC: Basil",
+      "url": "https://hgic.clemson.edu/factsheet/basil/"
+    },
+    {
+      "title": "UMN Extension: Growing basil",
+      "url": "https://extension.umn.edu/vegetables/growing-basil"
+    },
+    {
+      "title": "ASPCA: Basil",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/basil"
+    }
+  ]
+}

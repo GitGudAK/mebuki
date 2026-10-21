@@ -1,0 +1,75 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "rubber-plant",
+  "name": "Rubber Plant",
+  "scientificName": "Ficus elastica",
+  "hook": "Leaves suddenly dropping? Check for cold drafts.",
+  "difficulty": "easy",
+  "tags": [
+    "bright indirect",
+    "beginner",
+    "statement plant",
+    "toxic to pets"
+  ],
+  "leafShape": "oval",
+  "palette": {
+    "background": "#1C2B2A",
+    "accent": "#E06C6F",
+    "leaf": "#1F5A3A",
+    "pot": "#D9D2C3"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright, indirect light",
+      "tip": "Morning sun from an east window is ideal; avoid harsh afternoon sun. It tolerates lower light too."
+    },
+    {
+      "kind": "water",
+      "title": "Let the top dry slightly",
+      "tip": "Water thoroughly, then let the topsoil dry a little. Yellowing leaves mean the soil stays too wet."
+    },
+    {
+      "kind": "temperature",
+      "title": "Warm, with no drafts",
+      "tip": "Best at 24–27°C by day and 16–18°C at night. Cold drafts and sudden drops make leaves fall.",
+      "stat": "16–27°C"
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed spring and summer",
+      "tip": "Liquid houseplant feed every 2–4 weeks while it grows, less in low light, and none in winter.",
+      "stat": "2–4 wks"
+    },
+    {
+      "kind": "pests",
+      "title": "Wipe the big leaves",
+      "tip": "Dust blocks light. Wipe leaves with water and check for mealybugs, scale and spider mites as you go."
+    },
+    {
+      "kind": "repot",
+      "title": "Repot every 2–3 years",
+      "tip": "Repot in late winter or early spring, and top-dress with fresh compost in the years between.",
+      "stat": "2–3 yrs"
+    }
+  ],
+  "outro": "Bright light, careful watering and no drafts keep those leaves on.",
+  "sources": [
+    {
+      "title": "Clemson HGIC: Rubber Plant",
+      "url": "https://hgic.clemson.edu/factsheet/rubber-plant/"
+    },
+    {
+      "title": "RHS: Ficus elastica",
+      "url": "https://www.rhs.org.uk/plants/95720/ficus-elastica/details"
+    },
+    {
+      "title": "NC State Plant Toolbox: Ficus elastica",
+      "url": "https://plants.ces.ncsu.edu/plants/ficus-elastica/"
+    },
+    {
+      "title": "ASPCA: Weeping Fig (Ficus sp., incl. rubber plant)",
+      "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/weeping-fig"
+    }
+  ]
+}

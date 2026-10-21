@@ -46,6 +46,9 @@ export type PlantGuide = {
   steps: GuideStep[];
   /** Closing takeaway, max ~70 chars. */
   outro: string;
-  /** Authoritative pages the care facts were checked against (shown under the guide). */
-  sources?: { title: string; url: string }[];
+  /**
+   * Authoritative pages the care facts were checked against (shown under the guide).
+   * Required: at least 2, see content/schema/plant-guide.schema.json and CONTRIBUTING.md.
+   */
+  sources: { title: string; url: string }[];
 };

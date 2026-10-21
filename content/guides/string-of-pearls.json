@@ -1,0 +1,70 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "string-of-pearls",
+  "name": "String of Pearls",
+  "scientificName": "Curio rowleyanus",
+  "hook": "Shriveled pearls? You might be watering it all wrong.",
+  "difficulty": "moderate",
+  "tags": [
+    "hanging",
+    "windowsill",
+    "succulent",
+    "toxic to pets"
+  ],
+  "leafShape": "trailing",
+  "palette": {
+    "background": "#283845",
+    "accent": "#FFD6A5",
+    "leaf": "#8CBF6E",
+    "pot": "#E0D3C2"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright, indirect light",
+      "tip": "Hang it near an east window; a little gentle morning sun keeps the pearls plump."
+    },
+    {
+      "kind": "water",
+      "title": "Water when pearls pucker",
+      "tip": "Water when the soil is dry and pearls look slightly wrinkled; mushy pearls mean too much.",
+      "stat": "When dry"
+    },
+    {
+      "kind": "soil",
+      "title": "Shallow pot, gritty mix",
+      "tip": "Use a shallow terracotta pot with cactus mix plus extra perlite so roots never stay wet."
+    },
+    {
+      "kind": "propagate",
+      "title": "Root stem cuttings",
+      "tip": "Press 10 cm cuttings into moist gritty mix, lightly covering the lower nodes; roots form there.",
+      "stat": "About 4 wks"
+    },
+    {
+      "kind": "temperature",
+      "title": "Cooler winter rest",
+      "tip": "Keep it cooler and drier in winter; water only if the pearls start to shrivel.",
+      "stat": "10–16°C"
+    }
+  ],
+  "outro": "Bright light, a gritty mix, and water only when the pearls ask.",
+  "sources": [
+    {
+      "title": "RHS: How to grow string of beads",
+      "url": "https://www.rhs.org.uk/plants/string-of-beads/how-to-grow-string-of-beads"
+    },
+    {
+      "title": "Wisconsin Extension: String of Pearls",
+      "url": "https://hort.extension.wisc.edu/articles/string-of-pearls-senecio-rowleyanus/"
+    },
+    {
+      "title": "NC State Plant Toolbox: Curio rowleyanus",
+      "url": "https://plants.ces.ncsu.edu/plants/curio-rowleyanus/"
+    },
+    {
+      "title": "ASPCA: Are Succulents Safe to Have Around Pets?",
+      "url": "https://www.aspca.org/news/are-succulents-safe-have-around-pets"
+    }
+  ]
+}

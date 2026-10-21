@@ -1,0 +1,75 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "hibiscus",
+  "name": "Hibiscus",
+  "scientificName": "Hibiscus rosa-sinensis",
+  "hook": "Buds dropping? Your hibiscus hates being moved.",
+  "difficulty": "moderate",
+  "tags": [
+    "full sun",
+    "flowering",
+    "balcony"
+  ],
+  "leafShape": "flowering",
+  "palette": {
+    "background": "#2B3A2C",
+    "accent": "#E8384F",
+    "leaf": "#2F7A45",
+    "pot": "#B8643E"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "4–5+ hours of direct sun",
+      "tip": "A south or west window or a sunny balcony; more sun means more flowers. Shade it from scorching afternoons.",
+      "stat": "4–5+ hrs"
+    },
+    {
+      "kind": "water",
+      "title": "Evenly moist, never soggy",
+      "tip": "Water until it drains, empty the saucer, and never let it wilt. In winter let the top dry out first."
+    },
+    {
+      "kind": "temperature",
+      "title": "Keep it warm and still",
+      "tip": "Buds need 18–24°C. Keep it away from drafts and radiators, and bring it in before nights drop below 12°C.",
+      "stat": "18–24°C"
+    },
+    {
+      "kind": "fertilize",
+      "title": "Half-strength feed",
+      "tip": "Balanced feed at half strength every 2–4 weeks in spring and summer; little or none in winter.",
+      "stat": "2–4 wks"
+    },
+    {
+      "kind": "prune",
+      "title": "Cut back in late winter",
+      "tip": "Trim by up to half in Feb–Mar. Flowers form on new growth, so pruning later delays blooms.",
+      "stat": "Up to ½"
+    },
+    {
+      "kind": "pests",
+      "title": "Rinse off aphids and mites",
+      "tip": "Check leaf undersides for aphids, spider mites and whitefly; rinse often, insecticidal soap if needed."
+    }
+  ],
+  "outro": "Steady sun, steady water, and let it stay put: blooms all summer.",
+  "sources": [
+    {
+      "title": "University of Minnesota Extension: Hibiscus",
+      "url": "https://extension.umn.edu/houseplants/hibiscus"
+    },
+    {
+      "title": "RHS: How to grow hibiscus",
+      "url": "https://www.rhs.org.uk/plants/hibiscus/growing-guide"
+    },
+    {
+      "title": "NC State Plant Toolbox: Hibiscus rosa-sinensis",
+      "url": "https://plants.ces.ncsu.edu/plants/hibiscus-rosa-sinensis/"
+    },
+    {
+      "title": "ASPCA: Hibiscus (H. syriacus, non-toxic)",
+      "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/hibiscus"
+    }
+  ]
+}

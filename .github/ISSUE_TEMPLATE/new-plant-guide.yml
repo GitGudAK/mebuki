@@ -1,0 +1,54 @@
+name: New plant guide
+description: Suggest a plant for Mebuki. Every guide needs trusted sources, so please include them.
+title: "New guide: "
+labels: ["guide: new"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a plant! Mebuki only publishes care facts we can back up, so
+        sources are required. See [CONTRIBUTING.md](https://github.com/GitGudAK/mebuki/blob/main/CONTRIBUTING.md) for the
+        kinds of sources we accept.
+  - type: input
+    id: plant-name
+    attributes:
+      label: Plant name
+      description: The common name people use, e.g. "Rubber Plant".
+    validations:
+      required: true
+  - type: input
+    id: scientific-name
+    attributes:
+      label: Scientific name
+      description: e.g. "Ficus elastica".
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: |
+        At least 2 links to care pages from trusted publishers, one per line. At least one
+        should be from a horticultural society, botanic garden or university extension
+        service (for example RHS, Kew, Missouri Botanical Garden, extension.psu.edu,
+        hgic.clemson.edu). If the plant is safe or toxic for pets, include the ASPCA page.
+      placeholder: |
+        https://www.rhs.org.uk/plants/...
+        https://extension.example.edu/...
+        https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/...
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Anything else, like why this plant suits small spaces or care tips you want covered.
+    validations:
+      required: false
+  - type: checkboxes
+    id: pr
+    attributes:
+      label: Want to write it?
+      options:
+        - label: I'd like to open a pull request with the guide myself.
+          required: false

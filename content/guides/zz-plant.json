@@ -1,0 +1,66 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "zz-plant",
+  "name": "ZZ Plant",
+  "scientificName": "Zamioculcas zamiifolia",
+  "hook": "Glossy, nearly unkillable, and fine in your darkest corner.",
+  "difficulty": "easy",
+  "tags": [
+    "low light",
+    "beginner",
+    "drought tolerant",
+    "toxic to pets"
+  ],
+  "leafShape": "round",
+  "palette": {
+    "background": "#1D2B33",
+    "accent": "#8FD694",
+    "leaf": "#2F6B3B",
+    "pot": "#D8CFC0"
+  },
+  "steps": [
+    {
+      "kind": "water",
+      "title": "Water every 2–3 weeks",
+      "tip": "Its potato-like rhizomes store water, so wait until the soil is completely dry.",
+      "stat": "2–3 wks"
+    },
+    {
+      "kind": "light",
+      "title": "Low light is fine",
+      "tip": "It handles offices and dim rooms; just keep it out of direct afternoon sun.",
+      "stat": "Low to bright"
+    },
+    {
+      "kind": "soil",
+      "title": "Fast-draining soil",
+      "tip": "Use potting mix with a handful of perlite so the rhizomes never stay wet."
+    },
+    {
+      "kind": "pests",
+      "title": "Yellow leaves? Too wet",
+      "tip": "Overwatering rots the rhizomes. Let soil dry fully and check for mushy roots."
+    },
+    {
+      "kind": "repot",
+      "title": "Repot when crowded",
+      "tip": "Size up only when rhizomes crowd the pot; go just one pot size bigger.",
+      "stat": "When crowded"
+    }
+  ],
+  "outro": "Less water, less fuss. The ZZ thrives on being ignored.",
+  "sources": [
+    {
+      "title": "Clemson HGIC: ZZ Plant",
+      "url": "https://hgic.clemson.edu/factsheet/zz-plant-zamioculcas-zamiifolia-indoor-care-growing-tips-plant-guide/"
+    },
+    {
+      "title": "NC State Plant Toolbox: Zamioculcas zamiifolia",
+      "url": "https://plants.ces.ncsu.edu/plants/zamioculcas-zamiifolia/common-name/zz-plant/"
+    },
+    {
+      "title": "UF/IFAS: ZZ Plant (EP252)",
+      "url": "https://ask.ifas.ufl.edu/publication/EP252"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "mint",
+  "name": "Mint",
+  "scientificName": "Mentha spicata",
+  "hook": "Mint will take over everything. Give it its own pot.",
+  "difficulty": "easy",
+  "tags": [
+    "edible",
+    "herb",
+    "balcony",
+    "beginner",
+    "toxic to pets"
+  ],
+  "leafShape": "herb",
+  "palette": {
+    "background": "#16423C",
+    "accent": "#C4F1BE",
+    "leaf": "#5CB85C",
+    "pot": "#B9603F"
+  },
+  "steps": [
+    {
+      "kind": "repot",
+      "title": "Always grow in a pot",
+      "tip": "Its runners spread fast and crowd out neighbors, so give mint a container of its own.",
+      "stat": "30+ cm pot"
+    },
+    {
+      "kind": "light",
+      "title": "Sun to part shade",
+      "tip": "A balcony with morning sun is ideal; it tolerates partial shade better than most herbs.",
+      "stat": "3+ hrs"
+    },
+    {
+      "kind": "water",
+      "title": "Keep it moist",
+      "tip": "Mint likes damp soil; water when the surface feels dry, daily in summer heat.",
+      "stat": "Check daily"
+    },
+    {
+      "kind": "prune",
+      "title": "Harvest from the top",
+      "tip": "Snip top sprigs often and cut back flowering stems to keep leaves tender and full."
+    },
+    {
+      "kind": "pests",
+      "title": "Watch for rust and mites",
+      "tip": "Orange spots mean mint rust; remove affected shoots fast and bin them. Hose off spider mites."
+    }
+  ],
+  "outro": "Contain it, cut it often, and you'll never run out of mint.",
+  "sources": [
+    {
+      "title": "RHS: How to grow mint",
+      "url": "https://www.rhs.org.uk/herbs/mint/grow-your-own"
+    },
+    {
+      "title": "NC State Plant Toolbox: Mentha spicata",
+      "url": "https://plants.ces.ncsu.edu/plants/mentha-spicata/"
+    },
+    {
+      "title": "RHS: Mint rust",
+      "url": "https://www.rhs.org.uk/disease/mint-rust"
+    },
+    {
+      "title": "ASPCA: Mint",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/mint"
+    }
+  ]
+}

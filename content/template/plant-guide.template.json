@@ -1,0 +1,51 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "your-plant-id",
+  "name": "Common Name",
+  "scientificName": "Genus species",
+  "hook": "One catchy line about this plant, 60 characters max.",
+  "difficulty": "easy",
+  "tags": ["bright indirect", "beginner", "toxic to pets"],
+  "leafShape": "round",
+  "palette": {
+    "background": "#1E3A2E",
+    "accent": "#E8B04B",
+    "leaf": "#2F6B45",
+    "pot": "#B86B45"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright, indirect light",
+      "tip": "Where to put it and what too much or too little light looks like, 110 characters max.",
+      "stat": "6+ hrs"
+    },
+    {
+      "kind": "water",
+      "title": "Water when top 3 cm is dry",
+      "tip": "How to tell it needs water and how to water it.",
+      "stat": "7–10 days"
+    },
+    {
+      "kind": "soil",
+      "title": "Free-draining mix",
+      "tip": "What to plant it in."
+    },
+    {
+      "kind": "pests",
+      "title": "Watch for pests",
+      "tip": "Which pests or problems to look for and what to do."
+    }
+  ],
+  "outro": "A short takeaway to end on, 70 characters max.",
+  "sources": [
+    {
+      "title": "RHS: Page title",
+      "url": "https://www.rhs.org.uk/plants/your-plant"
+    },
+    {
+      "title": "ASPCA: Plant name",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/your-plant"
+    }
+  ]
+}

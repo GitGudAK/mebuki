@@ -1,0 +1,78 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "cactus",
+  "name": "Cactus",
+  "scientificName": "Mammillaria (pincushion cactus)",
+  "hook": "Soft, mushy base? Your cactus is being overwatered.",
+  "difficulty": "easy",
+  "tags": [
+    "full sun",
+    "succulent",
+    "drought tolerant",
+    "beginner",
+    "windowsill"
+  ],
+  "leafShape": "cactus",
+  "palette": {
+    "background": "#3B3324",
+    "accent": "#F28AA8",
+    "leaf": "#5E8C4A",
+    "pot": "#C8734A"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Your sunniest window",
+      "tip": "A south or west window with several hours of direct sun, all year. Under grow lights, run them 14–16 h.",
+      "stat": "All year"
+    },
+    {
+      "kind": "water",
+      "title": "Soak, then let it dry",
+      "tip": "In spring and summer water only once the soil is completely dry; in winter, just enough to stop shrivelling.",
+      "stat": "Bone dry"
+    },
+    {
+      "kind": "soil",
+      "title": "Gritty, fast-draining mix",
+      "tip": "Cactus compost, or half potting soil and half coarse sand or grit, in a pot with drainage holes.",
+      "stat": "1:1"
+    },
+    {
+      "kind": "temperature",
+      "title": "A cool winter rest",
+      "tip": "Grow it at 18–29°C, then give it a cool 7–13°C winter rest away from radiators to set flowers.",
+      "stat": "7–13°C"
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed sparingly",
+      "tip": "A low-nitrogen cactus feed at most monthly in the growing season, and none at all in winter.",
+      "stat": "≤ monthly"
+    },
+    {
+      "kind": "repot",
+      "title": "Repot with care",
+      "tip": "In spring, move up one pot size only. Wrap it in newspaper to handle, and wait a few days to water."
+    }
+  ],
+  "outro": "Lots of sun, little water, a cool winter: then come the flowers.",
+  "sources": [
+    {
+      "title": "Clemson HGIC: Indoor Cacti",
+      "url": "https://hgic.clemson.edu/factsheet/indoor-cacti/"
+    },
+    {
+      "title": "University of Minnesota Extension: Cacti and succulents",
+      "url": "https://extension.umn.edu/houseplants/cacti-and-succulents"
+    },
+    {
+      "title": "RHS: How to grow houseplant cacti and succulents",
+      "url": "https://www.rhs.org.uk/plants/types/cacti-succulents/houseplants/growing-guide"
+    },
+    {
+      "title": "ASPCA: Thimble Cactus (Mammillaria fragilis, non-toxic)",
+      "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/thimble-cactus"
+    }
+  ]
+}

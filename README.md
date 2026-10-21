@@ -1,4 +1,11 @@
-# Mebuki: Animated Plant Care Guide
+# Mebuki
+
+**Open Source Plant Care.** Free care guides for real-life plants, written in the open
+and backed by trusted sources.
+
+Everyone is welcome here, from first-time plant owners to horticulturists. Know a plant
+well? Add a guide or fix one: it's a single JSON file, and
+[CONTRIBUTING.md](CONTRIBUTING.md) walks you through it.
 
 *Mebuki* is Japanese for "sprouting", a plant coming into leaf. It teaches urban gardeners (apartment, balcony and windowsill growers) how to keep
 their plants alive with short, vertical, animated care guides. It runs as a web app and
@@ -34,6 +41,7 @@ npm run dev                       # web app at http://localhost:5173
 | `npm run dev` | Start the Vite dev server for the web app. |
 | `npm run build` | Type-check and build the web app into `dist/`. |
 | `npm run typecheck` | Run `tsc --noEmit` only. |
+| `npm run validate:guides` | Check every guide in `content/guides/` against the schema and the source rules. |
 | `npm run render` | Render every guide to `out/<id>.mp4`. |
 | `npm run render -- <id> [<id>…]` | Render just these guides, e.g. `npm run render -- golden-pothos`. |
 | `npm run render:thumbnails` | Render a cover image per guide to `out/<id>-thumbnail.png`. |
@@ -62,11 +70,15 @@ layout respects the notch and home indicator, and fonts are bundled so it works 
 ## Project structure
 
 ```
+content/
+  guides/<id>.json          One file per plant guide (the content)
+  schema/                   JSON Schema every guide is validated against
+  template/                 Starter file for a new guide
 index.html                  Web/iOS app entry; mounts src/app/main.tsx
 render.html                 Headless render target used by scripts/render.mjs
 src/
   types.ts                  Shared PlantGuide / GuideStep / StepKind types
-  data/guides.ts            All plant guides (the content) + getGuide(id)
+  data/guides.ts            Loads content/guides/*.json in library order + getGuide(id)
   motion/                   Open-source animation engine
     timeline.tsx            Frame clock, useCurrentFrame, Sequence, Series, AbsoluteFill
     math.ts                 interpolate, Easing, spring, seeded random
@@ -87,6 +99,7 @@ src/
     components/             Library, GuideCard, GuideDetail, ExportPanel, ...
     styles.css              All app styles (plain CSS, light and dark)
 scripts/render.mjs          MP4 / thumbnail renderer (Vite + Playwright + ffmpeg)
+scripts/validate-guides.mjs Guide validator (schema + source rules, optional link check)
 ios/                        Capacitor iOS project
 capacitor.config.ts         Capacitor config
 ```
@@ -106,34 +119,39 @@ against fractional frames, so the live player renders smoothly between them.
 
 ## Adding a new plant guide
 
-1. Open `src/data/guides.ts` and add a `PlantGuide` object to the `guides` array:
+Each guide is one JSON file in `content/guides/`, checked against
+[`content/schema/plant-guide.schema.json`](content/schema/plant-guide.schema.json).
 
-   ```ts
-   {
-     id: "rubber-plant",                 // kebab-case; also the URL and MP4 name
-     name: "Rubber Plant",
-     scientificName: "Ficus elastica",
-     hook: "Glossy leaves, zero drama, if you don't move it.",  // ≤ ~60 chars
-     difficulty: "easy",                 // "easy" | "moderate" | "tricky"
-     tags: ["bright indirect", "beginner", "toxic to pets"],
-     leafShape: "round",                 // round | long | split | succulent | trailing | herb | cactus | flowering | oval
-     palette: { background: "#1E3A2E", accent: "#E8B04B", leaf: "#2F6B45", pot: "#B86B45" },
-     steps: [                            // 4–6 steps
-       { kind: "light", title: "Bright, indirect light", tip: "…", stat: "6+ hrs" },
-       { kind: "water", title: "Water when top 3 cm is dry", tip: "…", stat: "7–10 days" },
-       // kind: water | light | soil | humidity | fertilize | prune | repot | pests | temperature | propagate
-     ],
-     outro: "Find it a bright spot, then leave it be.",   // ≤ ~70 chars
-     sources: [                          // pages the facts were checked against; shown under the guide
-       { title: "RHS: Ficus elastica", url: "https://www.rhs.org.uk/plants/95720/ficus-elastica/details" },
-     ],
-   }
+1. Copy the template and name the file after the guide's id:
+
+   ```bash
+   cp content/template/plant-guide.template.json content/guides/rubber-plant.json
    ```
 
-   Keep step titles to about 28 characters and tips to about 110 so they fit the video.
+2. Fill it in. The id is kebab-case and must match the file name. Limits: hook 60
+   characters, outro 70, step title 28, tip 110, stat 16, and 4 to 6 steps that include
+   `water` and `light`. Editors that understand `$schema` will flag mistakes as you type.
 
-2. That's it. The library card, the guide page (`#/plant/rubber-plant`) and the video
-   are all generated from the data. Check it with `npm run dev`, then render it with
-   `npm run render -- rubber-plant`.
+3. Add at least 2 `sources`, including at least one from an authoritative publisher
+   (RHS, Kew, a university extension service, ASPCA). Pet tags need an ASPCA or extension
+   source.
 
-Tags are free-form; any new tag shows up as a filter chip automatically.
+4. Check it:
+
+   ```bash
+   npm run validate:guides
+   npm run dev                      # find it in the library
+   npm run render -- rubber-plant   # optional: render the MP4
+   ```
+
+The library card, the guide page (`#/plant/rubber-plant`) and the video are all generated
+from the file. New guides appear at the end of the library; the order lives in
+`LIBRARY_ORDER` in `src/data/guides.ts`. Tags are free-form, and any new tag shows up as a
+filter chip automatically.
+
+## Contributing plant guides
+
+Guides are open for contributions, and every guide must cite its sources. Read
+[CONTRIBUTING.md](CONTRIBUTING.md) for the source policy, field reference and pull request
+checklist, or [open an issue](https://github.com/GitGudAK/mebuki/issues/new/choose) to
+suggest a plant or report a wrong fact.

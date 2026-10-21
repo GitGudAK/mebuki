@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/GitGudAK/mebuki/blob/main/content/schema/plant-guide.schema.json",
+  "title": "Mebuki plant guide",
+  "description": "One plant care guide for the Mebuki app. Save it as content/guides/<id>.json. Every guide must cite at least 2 sources; see CONTRIBUTING.md for the reference rules the validator also checks.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "scientificName",
+    "hook",
+    "difficulty",
+    "tags",
+    "leafShape",
+    "palette",
+    "steps",
+    "outro",
+    "sources"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path to this schema so editors can validate the file."
+    },
+    "id": {
+      "type": "string",
+      "description": "kebab-case id. Must match the file name. Also used in the URL (#/plant/<id>) and the video name (out/<id>.mp4).",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "maxLength": 48
+    },
+    "name": {
+      "type": "string",
+      "description": "Common name shown in the library, e.g. \"Golden Pothos\".",
+      "minLength": 1,
+      "maxLength": 32
+    },
+    "scientificName": {
+      "type": "string",
+      "description": "Botanical name, e.g. \"Epipremnum aureum\".",
+      "minLength": 1,
+      "maxLength": 60
+    },
+    "hook": {
+      "type": "string",
+      "description": "Opening line of the guide video.",
+      "minLength": 1,
+      "maxLength": 60
+    },
+    "difficulty": {
+      "enum": ["easy", "moderate", "tricky"]
+    },
+    "tags": {
+      "type": "array",
+      "description": "Lowercase, free-form tags that become library filters, e.g. \"low light\", \"balcony\", \"pet safe\", \"toxic to pets\".",
+      "minItems": 1,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9 ]*[a-z0-9]$",
+        "maxLength": 24
+      }
+    },
+    "leafShape": {
+      "description": "Which illustrated plant the animation draws.",
+      "enum": ["round", "long", "split", "succulent", "trailing", "herb", "cactus", "flowering", "oval"]
+    },
+    "palette": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["background", "accent", "leaf", "pot"],
+      "properties": {
+        "background": { "$ref": "#/$defs/hexColor" },
+        "accent": { "$ref": "#/$defs/hexColor" },
+        "leaf": { "$ref": "#/$defs/hexColor" },
+        "pot": { "$ref": "#/$defs/hexColor" }
+      }
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 6,
+      "items": { "$ref": "#/$defs/step" }
+    },
+    "outro": {
+      "type": "string",
+      "description": "Closing takeaway at the end of the video.",
+      "minLength": 1,
+      "maxLength": 70
+    },
+    "sources": {
+      "type": "array",
+      "description": "Authoritative pages the care facts were checked against. Required, at least 2. Shown under the guide in the app.",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/source" }
+    }
+  },
+  "$defs": {
+    "hexColor": {
+      "type": "string",
+      "description": "6-digit hex color, e.g. \"#2E7D4F\".",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "title", "tip"],
+      "properties": {
+        "kind": {
+          "enum": ["water", "light", "soil", "humidity", "fertilize", "prune", "repot", "pests", "temperature", "propagate"]
+        },
+        "title": {
+          "type": "string",
+          "description": "Short headline, e.g. \"Water every 7–10 days\".",
+          "minLength": 1,
+          "maxLength": 28
+        },
+        "tip": {
+          "type": "string",
+          "description": "One actionable sentence.",
+          "minLength": 1,
+          "maxLength": 110
+        },
+        "stat": {
+          "type": "string",
+          "description": "Optional big number shown in the animation, e.g. \"7–10 days\", \"6+ hrs\", \"60%\".",
+          "minLength": 1,
+          "maxLength": 16
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "url"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Publisher and page title, e.g. \"RHS: How to grow Swiss cheese plants\".",
+          "minLength": 3,
+          "maxLength": 140
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://",
+          "maxLength": 400
+        }
+      }
+    }
+  }
+}

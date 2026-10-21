@@ -1,0 +1,70 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "fiddle-leaf-fig",
+  "name": "Fiddle Leaf Fig",
+  "scientificName": "Ficus lyrata",
+  "hook": "Dropping leaves? Check water, light and drafts first.",
+  "difficulty": "moderate",
+  "tags": [
+    "bright light",
+    "statement plant",
+    "toxic to pets"
+  ],
+  "leafShape": "round",
+  "palette": {
+    "background": "#24402F",
+    "accent": "#F4A259",
+    "leaf": "#3F7D3A",
+    "pot": "#C46B45"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright light, near a window",
+      "tip": "Place near a bright window with filtered light; shield it from hot afternoon sun."
+    },
+    {
+      "kind": "water",
+      "title": "Water when top 5 cm is dry",
+      "tip": "Water deeply then let it drain; soggy soil can cause dark spots and leaf drop.",
+      "stat": "Top 5 cm"
+    },
+    {
+      "kind": "temperature",
+      "title": "No drafts, no moving",
+      "tip": "Keep it away from heaters, AC vents and doors, and give it a quarter turn as you care for it.",
+      "stat": "Above 13°C"
+    },
+    {
+      "kind": "humidity",
+      "title": "Wipe the big leaves",
+      "tip": "Dust blocks light, so wipe leaves with a damp cloth now and then; it likes medium to high humidity.",
+      "stat": "Medium+"
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed in growing season",
+      "tip": "Use a high-nitrogen liquid feed from spring to late summer, then ease off in winter.",
+      "stat": "Spring–summer"
+    }
+  ],
+  "outro": "Find its spot, then leave it alone. Consistency is everything.",
+  "sources": [
+    {
+      "title": "RHS: How to grow ornamental figs",
+      "url": "https://www.rhs.org.uk/plants/ornamental-figs/growing-guide"
+    },
+    {
+      "title": "NC State Plant Toolbox: Ficus lyrata",
+      "url": "https://plants.ces.ncsu.edu/plants/ficus-lyrata/"
+    },
+    {
+      "title": "Penn State Extension: Fiddle Leaf Fig",
+      "url": "https://extension.psu.edu/programs/master-gardener/counties/adams/news/fiddle-leaf-fig-ficus-lyrata"
+    },
+    {
+      "title": "ASPCA: Is That Houseplant Safe for Your Pets?",
+      "url": "https://www.aspca.org/news/houseplant-safe-your-pets"
+    }
+  ]
+}

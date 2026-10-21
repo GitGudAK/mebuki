@@ -1,0 +1,70 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "snake-plant",
+  "name": "Snake Plant",
+  "scientificName": "Dracaena trifasciata",
+  "hook": "Killed every plant you've owned? Start with this one.",
+  "difficulty": "easy",
+  "tags": [
+    "low light",
+    "beginner",
+    "drought tolerant",
+    "toxic to pets"
+  ],
+  "leafShape": "long",
+  "palette": {
+    "background": "#1F3B3A",
+    "accent": "#E9C46A",
+    "leaf": "#3E7B4F",
+    "pot": "#B5654A"
+  },
+  "steps": [
+    {
+      "kind": "water",
+      "title": "Let soil dry fully",
+      "tip": "Water only when the soil is dry; a whole plant leaning over can signal root rot.",
+      "stat": "2–4 wks"
+    },
+    {
+      "kind": "light",
+      "title": "Any light works",
+      "tip": "Grows fastest in bright indirect light but tolerates dim hallways and north windows."
+    },
+    {
+      "kind": "soil",
+      "title": "Use cactus mix",
+      "tip": "A gritty, fast-draining cactus or succulent mix in a pot with a drainage hole is a must."
+    },
+    {
+      "kind": "temperature",
+      "title": "Keep it warm",
+      "tip": "Keep it away from cold drafts and radiators, and always above 10°C.",
+      "stat": "15–24°C"
+    },
+    {
+      "kind": "repot",
+      "title": "Repot when pot bulges",
+      "tip": "It likes being snug, so only go slightly bigger when roots fill or warp the pot.",
+      "stat": "Every 3–5 yrs"
+    }
+  ],
+  "outro": "Neglect is the secret. Forget it for weeks and it thrives.",
+  "sources": [
+    {
+      "title": "RHS: How to grow sansevierias",
+      "url": "https://www.rhs.org.uk/plants/sansevieria/growing-guide"
+    },
+    {
+      "title": "RHS: Sansevieria plant guide",
+      "url": "https://www.rhs.org.uk/plants/sansevieria"
+    },
+    {
+      "title": "Penn State Extension: Snake Plant",
+      "url": "https://extension.psu.edu/snake-plant-a-forgiving-low-maintenance-houseplant"
+    },
+    {
+      "title": "ASPCA: Mother-in-law's Tongue",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/mother-laws-tongue"
+    }
+  ]
+}

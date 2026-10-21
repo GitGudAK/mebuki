@@ -1,0 +1,70 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "golden-pothos",
+  "name": "Golden Pothos",
+  "scientificName": "Epipremnum aureum",
+  "hook": "The plant that survives everything (except overwatering).",
+  "difficulty": "easy",
+  "tags": [
+    "low light",
+    "beginner",
+    "hanging",
+    "toxic to pets"
+  ],
+  "leafShape": "trailing",
+  "palette": {
+    "background": "#2F4A3A",
+    "accent": "#F5D547",
+    "leaf": "#6BAF3D",
+    "pot": "#D9825B"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Low to bright indirect",
+      "tip": "It tolerates dim corners, but brighter light keeps the golden variegation bold."
+    },
+    {
+      "kind": "water",
+      "title": "Water when top 5 cm is dry",
+      "tip": "Let the top 4–5 cm of soil dry out; droopy leaves are its signal that it's thirsty.",
+      "stat": "Top 5 cm"
+    },
+    {
+      "kind": "prune",
+      "title": "Pinch for fullness",
+      "tip": "Trim leggy vines just above a leaf to push out new growth and keep it bushy."
+    },
+    {
+      "kind": "propagate",
+      "title": "Root cuttings in water",
+      "tip": "Cut stems with at least one node, stand them in water in bright light, and pot up once roots form.",
+      "stat": "3–4 wks"
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed in spring & summer",
+      "tip": "Use a general houseplant fertilizer once a month from spring to early autumn.",
+      "stat": "Monthly"
+    }
+  ],
+  "outro": "Trim, root, repeat: one pothos can fill your whole apartment.",
+  "sources": [
+    {
+      "title": "RHS: How to grow epipremnum",
+      "url": "https://www.rhs.org.uk/plants/epipremnum/growing-guide"
+    },
+    {
+      "title": "Clemson HGIC: How to Grow Pothos Indoors",
+      "url": "https://hgic.clemson.edu/factsheet/how-to-grow-pothos-indoors-epipremnum-spp-care-cultivars-and-common-problems/"
+    },
+    {
+      "title": "Wisconsin Extension: Pothos",
+      "url": "https://hort.extension.wisc.edu/articles/pothos-epipremmum-aureum/"
+    },
+    {
+      "title": "ASPCA: Golden Pothos",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/golden-pothos"
+    }
+  ]
+}

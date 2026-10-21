@@ -1,0 +1,40 @@
+name: Validate guides
+
+on:
+  pull_request:
+    paths:
+      - "content/**"
+      - "src/**"
+      - "scripts/validate-guides.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/validate-guides.yml"
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+      - "src/**"
+      - "scripts/validate-guides.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/validate-guides.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate plant guides
+        run: npm run validate:guides
+      - name: Type-check
+        run: npx tsc --noEmit
