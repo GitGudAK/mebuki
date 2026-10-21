@@ -1,4 +1,4 @@
-import type { Difficulty, PlantGuide, StepKind } from "../types";
+import type { Difficulty, StepKind } from "../types";
 
 export const STEP_META: Record<StepKind, { icon: string; label: string }> = {
   water: { icon: "💧", label: "Water" },
@@ -21,14 +21,5 @@ export const DIFFICULTY_LABEL: Record<Difficulty, string> = {
 
 export const DIFFICULTIES: Difficulty[] = ["easy", "moderate", "tricky"];
 
-export const LEAF_EMOJI: Record<PlantGuide["leafShape"], string> = {
-  round: "🍃",
-  long: "🌿",
-  split: "🌴",
-  succulent: "🌵",
-  trailing: "🌱",
-  herb: "🌿",
-};
-
 export const renderCommand = (id: string) =>
-  `npx remotion render src/remotion/index.ts ${id} out/${id}.mp4`;
+  `npm run render -- ${id}`;

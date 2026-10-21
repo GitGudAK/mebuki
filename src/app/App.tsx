@@ -2,13 +2,14 @@ import { getGuide } from "../data/guides";
 import { Library } from "./components/Library";
 import { GuideDetail } from "./components/GuideDetail";
 import { hrefFor, useRoute } from "./router";
+import { isNativeApp } from "./platform";
 
 export const App = () => {
   const route = useRoute();
   const guide = route.name === "plant" ? getGuide(route.id) : undefined;
 
   return (
-    <div className="app">
+    <div className={`app${route.name === "plant" ? " is-detail" : ""}`}>
       <header className="site-header">
         <a className="brand" href={hrefFor({ name: "library" })} aria-label="Sprout home">
           <span className="brand-mark" aria-hidden="true">🌿</span>
@@ -36,9 +37,11 @@ export const App = () => {
         )}
       </main>
 
-      <footer className="site-footer">
-        Made with Remotion · Every guide is a real video you can render to MP4.
-      </footer>
+      {!isNativeApp && (
+        <footer className="site-footer">
+          Every guide is a real video you can render to MP4.
+        </footer>
+      )}
     </div>
   );
 };
