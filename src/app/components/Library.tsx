@@ -3,6 +3,7 @@ import { guides } from "../../data/guides";
 import type { Difficulty } from "../../types";
 import { DIFFICULTIES, DIFFICULTY_LABEL } from "../meta";
 import { GuideCard } from "./GuideCard";
+import { useFavorites } from "../favorites";
 
 const FEATURED_TAGS = ["beginner", "low light", "pet safe", "edible", "balcony", "windowsill", "hanging"];
 
@@ -10,6 +11,8 @@ export const Library = () => {
   const [query, setQuery] = useState("");
   const [activeTags, setActiveTags] = useState<string[]>([]);
   const [difficulty, setDifficulty] = useState<Difficulty | null>(null);
+  const [savedOnly, setSavedOnly] = useState(false);
+  const favorites = useFavorites();
 
   // Tags present in the data, featured ones first, then by frequency.
   const allTags = useMemo(() => {
@@ -26,19 +29,21 @@ export const Library = () => {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return guides.filter((g) => {
+      if (savedOnly && !favorites.includes(g.id)) return false;
       if (difficulty && g.difficulty !== difficulty) return false;
       if (activeTags.some((t) => !g.tags.includes(t))) return false;
       if (!q) return true;
       const haystack = [g.name, g.scientificName, g.hook, ...g.tags].join(" ").toLowerCase();
       return haystack.includes(q);
     });
-  }, [query, activeTags, difficulty]);
+  }, [query, activeTags, difficulty, savedOnly, favorites]);
 
   const toggleTag = (tag: string) =>
     setActiveTags((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]));
 
-  const hasFilters = query !== "" || activeTags.length > 0 || difficulty !== null;
+  const hasFilters = query !== "" || activeTags.length > 0 || difficulty !== null || savedOnly;
   const clearAll = () => {
+    setSavedOnly(false);
     setQuery("");
     setActiveTags([]);
     setDifficulty(null);
@@ -68,7 +73,16 @@ export const Library = () => {
           />
         </label>
 
-        <div className="chip-row" role="group" aria-label="Filter by difficulty">
+        <div className="chip-row" role="group" aria-label="Filter plants">
+          <button
+            type="button"
+            className="chip chip-saved"
+            aria-pressed={savedOnly}
+            onClick={() => setSavedOnly((v) => !v)}
+          >
+            ♥ Saved{favorites.length > 0 ? ` (${favorites.length})` : ""}
+          </button>
+          <span className="chip-divider" aria-hidden="true" />
           {DIFFICULTIES.map((d) => (
             <button
               key={d}
@@ -114,6 +128,15 @@ export const Library = () => {
             </li>
           ))}
         </ul>
+      ) : savedOnly && favorites.length === 0 ? (
+        <div className="empty-state">
+          <p className="empty-emoji" aria-hidden="true">♡</p>
+          <h2>No saved plants yet</h2>
+          <p>Tap the heart on any plant to keep it here.</p>
+          <button type="button" className="button" onClick={clearAll}>
+            Show all plants
+          </button>
+        </div>
       ) : (
         <div className="empty-state">
           <p className="empty-emoji" aria-hidden="true">🔍</p>

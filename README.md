@@ -31,6 +31,8 @@ their cloud. Mebuki takes the opposite path.
 - **Free, with nothing to unlock.** No subscription, no trial, no ads.
 - **Private by default.** No account, no tracking, no data collected. Everything works
   offline on your phone.
+- **Save your plants, no account needed.** Tap the heart to keep a plant close. Your list
+  syncs through your own iCloud, never through us.
 - **Learn by watching.** Each plant's routine plays out step by step, and you can jump
   to any step.
 - **Pet safety you can check.** Toxicity tags come from the ASPCA, with a pet-safe filter.
@@ -54,8 +56,8 @@ Ideas we would love help with, roughly in order:
 
 1. **Watering reminders that stay on your phone.** Free forever, no account, and easy to
    adjust to your home.
-2. **My shelf.** Save the plants you own, log when you watered, and keep notes, all on
-   the device.
+2. **My shelf.** Saved plants are here; next comes a watering log and notes, kept on the
+   device and in your own iCloud.
 3. **More plants, from more places.** Curry leaf, jasmine, neem and the herbs people
    grow on balconies from Mumbai to Mexico City.
 4. **Point and learn.** Optional plant recognition that runs on the phone, used only to
