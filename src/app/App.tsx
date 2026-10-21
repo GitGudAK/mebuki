@@ -11,9 +11,9 @@ export const App = () => {
   return (
     <div className={`app${route.name === "plant" ? " is-detail" : ""}`}>
       <header className="site-header">
-        <a className="brand" href={hrefFor({ name: "library" })} aria-label="Sprout home">
-          <span className="brand-mark" aria-hidden="true">🌿</span>
-          <span className="brand-name">Sprout</span>
+        <a className="brand" href={hrefFor({ name: "library" })} aria-label="Niwa home">
+          <span className="brand-mark" aria-hidden="true">庭</span>
+          <span className="brand-name">Niwa</span>
         </a>
         <p className="brand-pitch">
           Thirty-second animated care guides for apartment, balcony and windowsill gardeners.

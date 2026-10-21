@@ -1,5 +1,5 @@
 // Headless render target for scripts/render.mjs. Mounts one guide (or a piece of brand
-// art) at full size and exposes window.sproutRender so the script can step the frame
+// art) at full size and exposes window.niwaRender so the script can step the frame
 // clock and screenshot it.
 
 import "../video/fonts";
@@ -14,7 +14,7 @@ import { BRAND_SIZES, BrandArt, type BrandAsset } from "./BrandArt";
 
 declare global {
   interface Window {
-    sproutRender?: {
+    niwaRender?: {
       durationInFrames: number;
       width: number;
       height: number;
@@ -70,7 +70,7 @@ const renderFrame = (frame: number) =>
 renderFrame(0);
 
 document.fonts.ready.then(() => {
-  window.sproutRender = {
+  window.niwaRender = {
     durationInFrames: config.durationInFrames,
     width: target.width,
     height: target.height,

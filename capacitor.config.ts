@@ -1,13 +1,12 @@
 import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: "com.gitgudak.sprout",
-  appName: "Sprout",
+  appId: "com.gitgudak.niwa",
+  appName: "Niwa",
   webDir: "dist",
   backgroundColor: "#0e2519",
   ios: {
     contentInset: "never",
-    scheme: "Sprout",
   },
   plugins: {
     // Hidden from src/app/main.tsx as soon as the first screen renders;
