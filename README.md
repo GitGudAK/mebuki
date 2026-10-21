@@ -19,12 +19,25 @@ shipped a basil guide that three people on two continents had made better.
 That is the whole idea. Every guide is one small file anyone can improve, every tip is
 backed by a real source, and every merge grows the app.
 
-## What you get
+## Why Mebuki
 
-- **Fully open source.** The guides, the app and its animation engine all live here.
-- **Sourced advice.** Each guide cites at least two trusted sources (the RHS, university
-  extension services, the ASPCA for pet safety). The checks will not pass without them.
-- **An iPhone app.** The same guides ship as a free, offline iOS app.
+Most plant care apps follow the same playbook: snap a photo, then hit a subscription.
+Their care tips come with no sources, most of them track you, and your plants live in
+their cloud. Mebuki takes the opposite path.
+
+- **Every tip shows its source.** Each guide cites at least two trusted references (the
+  RHS, university extension services, the ASPCA for pet safety). The checks will not
+  pass without them.
+- **Free, with nothing to unlock.** No subscription, no trial, no ads.
+- **Private by default.** No account, no tracking, no data collected. Everything works
+  offline on your phone.
+- **Learn by watching.** Each plant's routine plays out step by step, and you can jump
+  to any step.
+- **Pet safety you can check.** Toxicity tags come from the ASPCA, with a pet-safe filter.
+- **Plants people actually grow.** Kitchen herbs, balcony tomatoes and plants like Tulasi
+  sit next to the usual houseplants.
+- **Fully open source.** The guides, the app and its animation engine all live here, and
+  the same guides ship as a free iPhone app.
 
 ## Add or fix a guide
 
@@ -34,6 +47,19 @@ backed by a real source, and every merge grows the app.
 
 [CONTRIBUTING.md](CONTRIBUTING.md) has the details. Not ready to write one? Open an issue
 to suggest a plant or a correction.
+
+## What's next
+
+Ideas we would love help with, roughly in order:
+
+1. **Watering reminders that stay on your phone.** Free forever, no account, and easy to
+   adjust to your home.
+2. **My shelf.** Save the plants you own, log when you watered, and keep notes, all on
+   the device.
+3. **More plants, from more places.** Curry leaf, jasmine, neem and the herbs people
+   grow on balconies from Mumbai to Mexico City.
+4. **Point and learn.** Optional plant recognition that runs on the phone, used only to
+   open the right guide.
 
 ## Run it
 
