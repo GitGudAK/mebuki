@@ -151,3 +151,10 @@ request.
 | `npm run build` | Type-check and build the app |
 | `npm run render -- <id>` | Render a guide to `out/<id>.mp4` (needs ffmpeg and `npx playwright install chromium`) |
 | `npm run render:thumbnails` | Render a cover image per guide |
+
+## App Store listing
+
+The App Store text lives in `fastlane/metadata/` (one plain text file per field) and the
+screenshots in `fastlane/screenshots/en-US/` (1206 × 2622 PNGs, no transparency). When a
+change to either is merged, the "App Store listing" workflow uploads it to App Store
+Connect. It never uploads a build or submits the app for review.

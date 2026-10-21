@@ -1,0 +1,81 @@
+# Uploads the App Store listing (text in fastlane/metadata, screenshots in
+# fastlane/screenshots) to App Store Connect through the App Store Connect API.
+# It only edits the listing of the version below; it never uploads a build or
+# submits for review.
+#
+# Uses the same repository secrets as the TestFlight workflow:
+#   ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8
+
+name: App Store listing
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_version:
+        description: App Store version whose listing to update
+        required: true
+        default: "1.0"
+  push:
+    branches: [main]
+    paths:
+      - "fastlane/metadata/**"
+      - "fastlane/screenshots/**"
+      - ".github/workflows/app-store-listing.yml"
+
+concurrency:
+  group: app-store-listing
+  cancel-in-progress: false
+
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      APP_VERSION: ${{ github.event.inputs.app_version || '1.0' }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Install fastlane
+        run: gem install fastlane -v 2.241.1 --no-document
+
+      - name: Write App Store Connect API key
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+        run: |
+          if [ -z "$ASC_KEY_P8" ] || [ -z "$ASC_KEY_ID" ] || [ -z "$ASC_ISSUER_ID" ]; then
+            echo "::error::Missing ASC_KEY_ID / ASC_ISSUER_ID / ASC_KEY_P8 repository secrets."
+            exit 1
+          fi
+          mkdir -p "$RUNNER_TEMP/asc"
+          jq -n --arg id "$ASC_KEY_ID" --arg issuer "$ASC_ISSUER_ID" --arg key "$ASC_KEY_P8" \
+            '{key_id: $id, issuer_id: $issuer, key: $key, in_house: false}' > "$RUNNER_TEMP/asc/key.json"
+          echo "ASC_KEY_JSON=$RUNNER_TEMP/asc/key.json" >> "$GITHUB_ENV"
+
+      - name: Upload listing text and screenshots
+        env:
+          FASTLANE_SKIP_UPDATE_CHECK: "1"
+          FASTLANE_HIDE_CHANGELOG: "1"
+        run: |
+          fastlane deliver \
+            --api_key_path "$ASC_KEY_JSON" \
+            --app_identifier com.gitgudak.mebuki \
+            --platform ios \
+            --app_version "$APP_VERSION" \
+            --metadata_path fastlane/metadata \
+            --screenshots_path fastlane/screenshots \
+            --overwrite_screenshots true \
+            --skip_binary_upload true \
+            --skip_app_version_update false \
+            --submit_for_review false \
+            --run_precheck_before_submit false \
+            --force true
+
+      - name: Remove API key
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/asc"
