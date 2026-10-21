@@ -16,7 +16,7 @@ frame by frame with [Playwright](https://playwright.dev) and encodes it with
 - **Guide view**: the animated guide in a phone frame next to a written care routine.
   Tap a step to jump to it; the step that's playing is highlighted.
 - **Tiny and sharp**: the app ships no video files. Guides are vector animations drawn
-  live, so all 12 weigh a few hundred KB and stay crisp on any screen.
+  live, so all 17 weigh well under 1 MB and stay crisp on any screen.
 - **Export**: `npm run render` turns any guide into a social-ready MP4.
 
 ## Getting started
@@ -116,7 +116,7 @@ against fractional frames, so the live player renders smoothly between them.
      hook: "Glossy leaves, zero drama, if you don't move it.",  // ≤ ~60 chars
      difficulty: "easy",                 // "easy" | "moderate" | "tricky"
      tags: ["bright indirect", "beginner", "toxic to pets"],
-     leafShape: "round",                 // round | long | split | succulent | trailing | herb
+     leafShape: "round",                 // round | long | split | succulent | trailing | herb | cactus | flowering | oval
      palette: { background: "#1E3A2E", accent: "#E8B04B", leaf: "#2F6B45", pot: "#B86B45" },
      steps: [                            // 4–6 steps
        { kind: "light", title: "Bright, indirect light", tip: "…", stat: "6+ hrs" },
@@ -124,6 +124,9 @@ against fractional frames, so the live player renders smoothly between them.
        // kind: water | light | soil | humidity | fertilize | prune | repot | pests | temperature | propagate
      ],
      outro: "Find it a bright spot, then leave it be.",   // ≤ ~70 chars
+     sources: [                          // pages the facts were checked against; shown under the guide
+       { title: "RHS: Ficus elastica", url: "https://www.rhs.org.uk/plants/95720/ficus-elastica/details" },
+     ],
    }
    ```
 

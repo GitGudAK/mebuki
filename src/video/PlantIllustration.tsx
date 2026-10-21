@@ -374,6 +374,181 @@ const HerbPlant: React.FC<{ c: Ctx }> = ({ c }) => {
   );
 };
 
+const CactusPlant: React.FC<{ c: Ctx }> = ({ c }) => {
+  const body = c.leaf;
+  const rib = shade(body, -0.22);
+  const spine = mix(body, "#FFF6DA", 0.75);
+  const column = "M-46 0 L-46 -205 A46 46 0 0 1 46 -205 L46 0 Z";
+  const clip = `${c.id}-cactus`;
+  const g = c.grow(0);
+  const arms = [
+    { d: "M-20 -105 H-78 V-178", delay: 14, spines: [[-78, -130], [-78, -158], [-52, -105]] },
+    { d: "M20 -150 H76 V-222", delay: 20, spines: [[76, -175], [76, -203], [50, -150]] },
+  ];
+  const Spine = ({ x, y }: { x: number; y: number }) => (
+    <g transform={`translate(${x} ${y})`} stroke={spine} strokeWidth={2.5} strokeLinecap="round">
+      <line x1={-6} y1={-4} x2={6} y2={4} />
+      <line x1={-6} y1={4} x2={6} y2={-4} />
+      <line x1={0} y1={-7} x2={0} y2={7} />
+    </g>
+  );
+  return (
+    <g transform={`translate(${BASE_X} ${BASE_Y}) rotate(${c.sway(1, 0.6)})`}>
+      {arms.map((arm, i) => {
+        const s = c.grow(arm.delay);
+        return (
+          <g key={i} opacity={Math.min(1, s * 2)}>
+            <path
+              d={arm.d}
+              pathLength={1}
+              strokeDasharray="1 1"
+              strokeDashoffset={1 - Math.min(1, s)}
+              stroke={shade(body, 0.04)}
+              strokeWidth={46}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+            <path
+              d={arm.d}
+              pathLength={1}
+              strokeDasharray="1 1"
+              strokeDashoffset={1 - Math.min(1, s)}
+              stroke={rib}
+              strokeWidth={4}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+              opacity={0.7}
+            />
+            {s > 0.9 && arm.spines.map(([x, y], k) => <Spine key={k} x={x} y={y} />)}
+          </g>
+        );
+      })}
+      <g transform={`scale(${0.4 + 0.6 * Math.min(1, g)} ${g})`}>
+        <defs>
+          <clipPath id={clip}>
+            <path d={column} />
+          </clipPath>
+        </defs>
+        <path d={column} fill={body} />
+        <g clipPath={`url(#${clip})`}>
+          {[-30, -15, 0, 15, 30].map((x) => (
+            <path key={x} d={`M${x} 0 L${x * 0.8} -252`} stroke={rib} strokeWidth={5} opacity={0.65} />
+          ))}
+          <rect x={-46} y={-260} width={22} height={260} fill="#fff" opacity={0.1} />
+        </g>
+        {[-30, 0, 30].flatMap((x) =>
+          [-40, -90, -140, -190].map((y) => <Spine key={`${x}${y}`} x={x * (1 + y / 1260)} y={y + (x === 0 ? 22 : 0)} />),
+        )}
+      </g>
+      {/* A small flower crowns the column once it has grown. */}
+      <g transform={`translate(0 ${-250 * Math.min(1, g)}) scale(${c.grow(32) * 0.9})`}>
+        {[0, 60, 120, 180, 240, 300].map((a) => (
+          <ellipse key={a} cx={0} cy={-14} rx={8} ry={16} fill={c.accent} transform={`rotate(${a})`} />
+        ))}
+        <circle r={8} fill={shade(c.accent, 0.35)} />
+        <circle r={4} fill="#F7D54A" />
+      </g>
+    </g>
+  );
+};
+
+const FloweringPlant: React.FC<{ c: Ctx }> = ({ c }) => {
+  const stems = [
+    { a: -30, len: 215, flower: true },
+    { a: 26, len: 230, flower: true },
+    { a: -4, len: 290, flower: true },
+  ];
+  const leafD = "M0 0 C -24 -10 -30 -46 -10 -64 L0 -78 L10 -64 C 30 -46 24 -10 0 0 Z";
+  const petal = "M0 0 C -30 -14 -38 -54 -16 -64 C -6 -70 6 -70 16 -64 C 38 -54 30 -14 0 0 Z";
+  const bloom = c.accent;
+  return (
+    <g>
+      {stems.map((st, i) => {
+        const g = c.grow(i * 6);
+        const len = st.len * Math.min(1, g);
+        const nodes = [0.3, 0.5, 0.7, 0.86];
+        const f = c.grow(30 + i * 6);
+        return (
+          <g key={i} transform={`translate(${BASE_X} ${BASE_Y}) rotate(${st.a + c.sway(i, 2)})`}>
+            <path d={`M0 0 Q ${st.a * 0.2} ${-len * 0.5} 0 ${-len}`} stroke={shade(c.leaf, -0.45)} strokeWidth={6} fill="none" strokeLinecap="round" />
+            {nodes.map((n, ni) => {
+              const side = ni % 2 === 0 ? -1 : 1;
+              const s = interpolate(g, [n - 0.1, n + 0.2], [0, 1.25 - ni * 0.08], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+              const color = leafTone(c.leaf, ni + i);
+              return (
+                <g key={ni} transform={`translate(0 ${-st.len * n}) rotate(${side * 58 + c.sway(ni + i * 4, 4)}) scale(${s})`}>
+                  <path d={leafD} fill={color} />
+                  <path d="M0 -4 L0 -70" stroke={shade(color, 0.2)} strokeWidth={2.5} />
+                  <path d="M-8 -56 C -16 -40 -18 -24 -12 -12" stroke="#fff" strokeOpacity={0.18} strokeWidth={4} fill="none" strokeLinecap="round" />
+                </g>
+              );
+            })}
+            {st.flower && (
+              <g transform={`translate(0 ${-len - 10}) rotate(${-st.a * 0.6}) scale(${f * 0.92})`}>
+                {[0, 72, 144, 216, 288].map((a) => (
+                  <g key={a} transform={`rotate(${a})`}>
+                    <path d={petal} fill={bloom} />
+                    <path d={petal} fill="none" stroke={shade(bloom, -0.18)} strokeWidth={2} />
+                    <path d="M0 -6 L0 -50" stroke={shade(bloom, -0.25)} strokeWidth={2} opacity={0.5} />
+                  </g>
+                ))}
+                <circle r={16} fill={shade(bloom, -0.45)} />
+                {/* Hibiscus staminal column with pollen tips. */}
+                <path d="M0 0 L22 -40" stroke={mix(bloom, "#FFF2C2", 0.5)} strokeWidth={4} strokeLinecap="round" />
+                {[[18, -36], [24, -40], [20, -44], [26, -46]].map(([x, y], k) => (
+                  <circle key={k} cx={x} cy={y} r={3.2} fill="#F7D54A" />
+                ))}
+              </g>
+            )}
+          </g>
+        );
+      })}
+    </g>
+  );
+};
+
+const OvalPlant: React.FC<{ c: Ctx }> = ({ c }) => {
+  const leafD = "M0 0 C -50 -10 -58 -96 0 -134 C 58 -96 50 -10 0 0 Z";
+  const leaves = [
+    { t: 0.16, side: -1, s: 1.0 },
+    { t: 0.3, side: 1, s: 1.02 },
+    { t: 0.46, side: -1, s: 0.98 },
+    { t: 0.62, side: 1, s: 0.92 },
+    { t: 0.78, side: -1, s: 0.82 },
+    { t: 0.9, side: 1, s: 0.7 },
+  ];
+  const stemLen = 300;
+  const g = c.grow(0);
+  const len = stemLen * Math.min(1, g);
+  const sheath = shade(c.accent, -0.15);
+  return (
+    <g transform={`translate(${BASE_X} ${BASE_Y}) rotate(${c.sway(2, 1.2)})`}>
+      <line x1={0} y1={0} x2={0} y2={-len} stroke={shade(c.leaf, -0.4)} strokeWidth={9} strokeLinecap="round" />
+      {leaves.map((l, i) => {
+        const s = interpolate(g, [l.t - 0.08, l.t + 0.22], [0, l.s], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+        const color = leafTone(c.leaf, i);
+        return (
+          <g key={i} transform={`translate(0 ${-stemLen * l.t}) rotate(${l.side * (64 - i * 3) + c.sway(i + 3, 2.5)}) scale(${s})`}>
+            <line x1={0} y1={0} x2={0} y2={-18} stroke={shade(c.leaf, -0.35)} strokeWidth={5} />
+            <g transform="translate(0 -14)">
+              <path d={leafD} fill={color} />
+              <path d="M0 -2 L0 -126" stroke={mix(color, "#F3E9C8", 0.55)} strokeWidth={3} />
+              <path d="M-20 -102 C -34 -76 -34 -44 -22 -22" stroke="#fff" strokeOpacity={0.22} strokeWidth={6} fill="none" strokeLinecap="round" />
+            </g>
+          </g>
+        );
+      })}
+      {/* The new leaf unfurls from a rosy sheath at the tip. */}
+      <g transform={`translate(0 ${-len}) scale(${c.grow(24)})`}>
+        <path d="M0 6 C -10 -10 -8 -40 0 -58 C 8 -40 10 -10 0 6 Z" fill={sheath} />
+        <path d="M0 0 L0 -50" stroke={shade(sheath, 0.3)} strokeWidth={2} />
+      </g>
+    </g>
+  );
+};
+
 /* -------------------------------------------------------------------- pot */
 
 const Pot: React.FC<{ pot: string }> = ({ pot }) => (
@@ -451,6 +626,9 @@ export const PlantIllustration: React.FC<PlantIllustrationProps> = ({
         {leafShape === "succulent" && <SucculentPlant c={c} />}
         {leafShape === "trailing" && <TrailingTop c={c} />}
         {leafShape === "herb" && <HerbPlant c={c} />}
+        {leafShape === "cactus" && <CactusPlant c={c} />}
+        {leafShape === "flowering" && <FloweringPlant c={c} />}
+        {leafShape === "oval" && <OvalPlant c={c} />}
         <Pot pot={palette.pot} />
         {leafShape === "trailing" && <TrailingVines c={c} />}
       </g>
