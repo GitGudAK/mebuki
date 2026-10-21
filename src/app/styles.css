@@ -991,3 +991,53 @@ h2 {
 .native .app.is-detail .site-main {
   padding-top: 12px;
 }
+
+/* ---------- Saved plants ---------- */
+
+.guide-card-shell {
+  position: relative;
+  height: 100%;
+}
+
+.heart-button {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: color 0.15s, transform 0.15s, background 0.15s;
+}
+
+.heart-button:hover {
+  color: #d64545;
+}
+
+.heart-button.is-saved {
+  color: #d64545;
+  border-color: color-mix(in srgb, #d64545 35%, var(--line));
+}
+
+.heart-button:active {
+  transform: scale(0.9);
+}
+
+.heart-on-card {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.chip-saved[aria-pressed="true"] {
+  border-color: #d64545;
+  background: color-mix(in srgb, #d64545 12%, var(--surface));
+  color: #b03535;
+}

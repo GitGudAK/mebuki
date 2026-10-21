@@ -14,6 +14,7 @@ import type { PlantGuide } from "../../types";
 import { STEP_META } from "../meta";
 import { hrefFor } from "../router";
 import { DifficultyBadge } from "./DifficultyBadge";
+import { HeartButton } from "./HeartButton";
 import { ExportPanel } from "./ExportPanel";
 import { isNativeApp } from "../platform";
 
@@ -90,6 +91,7 @@ export const GuideDetail = ({ guide }: { guide: PlantGuide }) => {
         <div className="detail-meta">
           <DifficultyBadge difficulty={guide.difficulty} />
           <span className="meta-pill">▶ {totalSeconds}s guide</span>
+          <HeartButton id={guide.id} name={guide.name} />
         </div>
       </header>
       <p className="detail-hook">{guide.hook}</p>
