@@ -1,6 +1,6 @@
-# Niwa: Animated Plant Care Guide
+# Mebuki: Animated Plant Care Guide
 
-*Niwa* is Japanese for "garden". It teaches urban gardeners (apartment, balcony and windowsill growers) how to keep
+*Mebuki* is Japanese for "sprouting", a plant coming into leaf. It teaches urban gardeners (apartment, balcony and windowsill growers) how to keep
 their plants alive with short, vertical, animated care guides. It runs as a web app and
 as a free iPhone app, and every guide also renders to a 1080×1920 MP4 for Reels, Shorts
 or TikTok.
@@ -48,7 +48,7 @@ npm run render -- --concurrency=6     # browser tabs per video (default: half yo
 ## iPhone app
 
 The iOS app is a [Capacitor](https://capacitorjs.com) shell around the same web app
-(`ios/App`, bundle id `com.gitgudak.niwa`). It uses Swift Package Manager, so no
+(`ios/App`, bundle id `com.gitgudak.mebuki`). It uses Swift Package Manager, so no
 CocoaPods is needed.
 
 ```bash

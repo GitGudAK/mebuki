@@ -48,7 +48,7 @@ const openRenderPage = async (browser, baseUrl, query, viewport = { width: WIDTH
   page.on("pageerror", (err) => (pageError ??= err));
   await page.goto(`${baseUrl}/render.html?${query}`);
   await Promise.race([
-    page.waitForFunction(() => window.niwaRender !== undefined, null, { timeout: 60_000 }),
+    page.waitForFunction(() => window.mebukiRender !== undefined, null, { timeout: 60_000 }),
     new Promise((_, reject) => page.on("pageerror", reject)),
   ]);
   if (pageError) throw pageError;
@@ -59,19 +59,19 @@ const guideQuery = (id) => `id=${encodeURIComponent(id)}${thumbnail ? "&thumbnai
 
 const captureFrame = async (page, frame, file) => {
   const { width, height } = await page.evaluate(async (f) => {
-    await window.niwaRender.setFrame(f);
-    return { width: window.niwaRender.width, height: window.niwaRender.height };
+    await window.mebukiRender.setFrame(f);
+    return { width: window.mebukiRender.width, height: window.mebukiRender.height };
   }, frame);
   await page.screenshot({ path: file, type: "png", clip: { x: 0, y: 0, width, height } });
 };
 
 const renderVideo = async (browser, baseUrl, id) => {
   const first = await openRenderPage(browser, baseUrl, guideQuery(id));
-  const total = await first.evaluate(() => window.niwaRender.durationInFrames);
+  const total = await first.evaluate(() => window.mebukiRender.durationInFrames);
   const pages = [first];
   for (let i = 1; i < Math.min(concurrency, total); i++) pages.push(await openRenderPage(browser, baseUrl, guideQuery(id)));
 
-  const tmp = mkdtempSync(path.join(os.tmpdir(), `niwa-${id}-`));
+  const tmp = mkdtempSync(path.join(os.tmpdir(), `mebuki-${id}-`));
   try {
     let next = 0;
     let done = 0;
@@ -131,7 +131,7 @@ const BRAND_ASSETS = [
 ];
 
 const renderBrand = async (browser, baseUrl) => {
-  const tmp = mkdtempSync(path.join(os.tmpdir(), "niwa-brand-"));
+  const tmp = mkdtempSync(path.join(os.tmpdir(), "mebuki-brand-"));
   try {
     for (const { asset, size, outputs } of BRAND_ASSETS) {
       const page = await openRenderPage(browser, baseUrl, `brand=${asset}`, { width: size, height: size });
