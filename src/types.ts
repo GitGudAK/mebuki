@@ -1,4 +1,4 @@
-// Shared contract between the Remotion compositions, the guide data and the web app.
+// Shared contract between the video compositions, the guide data and the web app.
 
 export type StepKind =
   | "water"
@@ -25,7 +25,7 @@ export type GuideStep = {
 };
 
 export type PlantGuide = {
-  /** kebab-case, also used as the Remotion composition id. */
+  /** kebab-case, also used as the video id (out/<id>.mp4). */
   id: string;
   name: string;
   scientificName: string;

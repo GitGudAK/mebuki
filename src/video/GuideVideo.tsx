@@ -9,9 +9,9 @@ import {
   spring,
   useCurrentFrame,
   useVideoConfig,
-} from "remotion";
+} from "../motion";
 import type { Difficulty, GuideStep, PlantGuide } from "../types";
-import { INTRO_FRAMES, OUTRO_FRAMES, STEP_FRAMES } from "./timing";
+import { INTRO_FRAMES, OUTRO_FRAMES, POSTER_FRAME, STEP_FRAMES } from "./timing";
 import { PlantIllustration } from "./PlantIllustration";
 import { STEP_LABELS, StepMotif } from "./StepIcons";
 import { inkFor, mix, readableOn, shade, withAlpha } from "./colors";
@@ -689,8 +689,8 @@ export const GuideVideo: React.FC<{ guide: PlantGuide }> = ({ guide }) => {
 /** Cover image: the intro scene frozen once everything has animated in. */
 export const GuideThumbnail: React.FC<{ guide: PlantGuide }> = ({ guide }) => (
   <AbsoluteFill style={{ background: guide.palette.background, fontFamily: FONT_STACK }}>
-    {/* A negative `from` shifts the local clock so children see frame 70. */}
-    <Sequence from={-70} layout="none">
+    {/* A negative `from` shifts the local clock so children see POSTER_FRAME. */}
+    <Sequence from={-POSTER_FRAME} layout="none">
       <Backdrop palette={guide.palette} />
       <IntroScene guide={guide} />
     </Sequence>

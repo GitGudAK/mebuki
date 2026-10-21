@@ -6,7 +6,7 @@ import {
   spring,
   useCurrentFrame,
   useVideoConfig,
-} from "remotion";
+} from "../motion";
 import type { PlantGuide, StepKind } from "../types";
 import { mix, shade } from "./colors";
 

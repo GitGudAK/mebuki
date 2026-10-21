@@ -1,5 +1,5 @@
 import React from "react";
-import { spring, useCurrentFrame, useVideoConfig, interpolate } from "remotion";
+import { spring, useCurrentFrame, useVideoConfig, interpolate } from "../motion";
 import type { PlantGuide } from "../types";
 import { mix, shade } from "./colors";
 

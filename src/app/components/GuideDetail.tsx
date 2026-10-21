@@ -1,19 +1,21 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
-import { Player, type PlayerRef } from "@remotion/player";
-import { GuideVideo } from "../../remotion/GuideVideo";
+import { Player, type PlayerRef } from "../../motion";
+import { GuideVideo } from "../../video/GuideVideo";
 import {
   FPS,
   INTRO_FRAMES,
+  POSTER_FRAME,
   STEP_FRAMES,
   VIDEO_HEIGHT,
   VIDEO_WIDTH,
   getGuideDurationInFrames,
-} from "../../remotion/timing";
+} from "../../video/timing";
 import type { PlantGuide } from "../../types";
 import { STEP_META } from "../meta";
 import { hrefFor } from "../router";
 import { DifficultyBadge } from "./DifficultyBadge";
 import { ExportPanel } from "./ExportPanel";
+import { isNativeApp } from "../platform";
 
 /** -1 = intro, steps.length = outro, otherwise the step index. */
 const segmentForFrame = (frame: number, stepCount: number) => {
@@ -115,8 +117,7 @@ export const GuideDetail = ({ guide }: { guide: PlantGuide }) => {
                 controls
                 loop
                 clickToPlay
-                doubleClickToFullscreen
-                allowFullscreen
+                posterFrame={POSTER_FRAME}
                 style={{ width: "100%", height: "100%" }}
               />
             </div>
@@ -160,7 +161,7 @@ export const GuideDetail = ({ guide }: { guide: PlantGuide }) => {
             <p>{guide.outro}</p>
           </div>
 
-          <ExportPanel id={guide.id} />
+          {!isNativeApp && <ExportPanel id={guide.id} />}
         </div>
       </div>
     </article>

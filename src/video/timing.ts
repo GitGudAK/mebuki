@@ -10,3 +10,6 @@ export const OUTRO_FRAMES = 105;
 
 export const getGuideDurationInFrames = (guide: PlantGuide) =>
   INTRO_FRAMES + guide.steps.length * STEP_FRAMES + OUTRO_FRAMES;
+
+/** Intro frame where everything has animated in; used for thumbnails and the player poster. */
+export const POSTER_FRAME = 70;
