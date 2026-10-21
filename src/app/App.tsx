@@ -14,7 +14,7 @@ export const App = () => {
       <header className="site-header">
         <a className="brand" href={hrefFor({ name: "library" })} aria-label="Mebuki home">
           <span className="brand-mark" aria-hidden="true">
-            <BrandMark size={30} />
+            <BrandMark size={40} />
           </span>
           <span className="brand-name">Mebuki</span>
         </a>
