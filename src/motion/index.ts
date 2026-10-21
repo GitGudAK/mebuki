@@ -1,4 +1,4 @@
-// Sprout's open-source animation engine (MIT, part of this repo).
+// Niwa's open-source animation engine (MIT, part of this repo).
 // Compositions are React components that read the current frame; the Player
 // plays them live and scripts/render.mjs captures them to MP4 with Playwright + ffmpeg.
 
