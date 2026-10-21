@@ -4,7 +4,7 @@ const config: CapacitorConfig = {
   appId: "com.gitgudak.mebuki",
   appName: "Mebuki",
   webDir: "dist",
-  backgroundColor: "#0e2519",
+  backgroundColor: "#4a3222",
   ios: {
     contentInset: "never",
   },
@@ -13,7 +13,7 @@ const config: CapacitorConfig = {
     // the duration is only a fallback in case that never happens.
     SplashScreen: {
       launchShowDuration: 3000,
-      backgroundColor: "#0e2519",
+      backgroundColor: "#4a3222",
       showSpinner: false,
     },
   },

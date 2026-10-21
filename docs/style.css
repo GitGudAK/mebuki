@@ -25,10 +25,7 @@ body {
 }
 main { max-width: 680px; margin: 0 auto; padding: 48px 20px 64px; }
 header { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
-.mark {
-  display: grid; place-items: center; width: 40px; height: 40px;
-  border-radius: 12px; background: #2f6b45; color: #fff;
-}
+.mark { display: block; width: 40px; height: 40px; line-height: 0; }
 .brand { font-size: 1.5rem; font-weight: 700; color: var(--brand); text-decoration: none; }
 h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 8px; }
 h2 { font-size: 1.15rem; margin: 32px 0 8px; }
