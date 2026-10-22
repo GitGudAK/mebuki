@@ -16,6 +16,7 @@ import { STEP_META } from "../meta";
 import { hrefFor } from "../router";
 import { DifficultyBadge } from "./DifficultyBadge";
 import { HeartButton } from "./HeartButton";
+import { ShareButton } from "./ShareButton";
 import { ExportPanel } from "./ExportPanel";
 import { isNativeApp } from "../platform";
 
@@ -135,7 +136,10 @@ export const GuideDetail = ({ guide }: { guide: PlantGuide }) => {
               <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
-          <HeartButton id={guide.id} name={guide.name} className="g-round" />
+          <span className="g-stage-actions">
+            <ShareButton guide={guide} className="g-round" />
+            <HeartButton id={guide.id} name={guide.name} className="g-round" />
+          </span>
         </div>
 
         <nav className="g-strip" aria-label="Chapters">

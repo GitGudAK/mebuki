@@ -11,11 +11,13 @@
     "render": "node scripts/render.mjs",
     "render:thumbnails": "node scripts/render.mjs --thumbnail",
     "render:brand": "node scripts/render.mjs --brand",
-    "validate:guides": "node scripts/validate-guides.mjs"
+    "validate:guides": "node scripts/validate-guides.mjs",
+    "build:site": "node scripts/build-site.mjs"
   },
   "dependencies": {
     "@capacitor/core": "^8.5.3",
     "@capacitor/ios": "^8.5.3",
+    "@capacitor/share": "^8.0.3",
     "@capacitor/splash-screen": "^8.0.2",
     "@capacitor/status-bar": "^8.0.4",
     "@fontsource/fraunces": "^5.3.0",
