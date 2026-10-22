@@ -1,0 +1,53 @@
+# Prepares the App Store version for App Review and, in submit mode, submits it.
+# check mode only reads App Store Connect and reports what is missing.
+#
+# Secrets: ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8 (shared with the TestFlight workflow),
+# and for submit the App Review contact: REVIEW_FIRST_NAME, REVIEW_LAST_NAME,
+# REVIEW_PHONE, REVIEW_EMAIL. The contact lives only in secrets, never in the repo.
+
+name: App Review
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: check reports only; submit sends the version for review
+        type: choice
+        options: [check, submit]
+        default: check
+      build_number:
+        description: Build to submit
+        required: true
+        default: "10"
+      app_version:
+        description: App Store version
+        required: true
+        default: "1.0"
+
+concurrency:
+  group: app-review
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: ${{ inputs.mode == 'submit' && 'Prepare and submit for review' || 'Check readiness' }}
+        env:
+          MODE: ${{ inputs.mode }}
+          BUILD_NUMBER: ${{ inputs.build_number }}
+          APP_VERSION: ${{ inputs.app_version }}
+          BUNDLE_ID: com.gitgudak.mebuki
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          REVIEW_FIRST_NAME: ${{ secrets.REVIEW_FIRST_NAME }}
+          REVIEW_LAST_NAME: ${{ secrets.REVIEW_LAST_NAME }}
+          REVIEW_PHONE: ${{ secrets.REVIEW_PHONE }}
+          REVIEW_EMAIL: ${{ secrets.REVIEW_EMAIL }}
+        run: node scripts/submit-for-review.mjs
