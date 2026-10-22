@@ -27,25 +27,25 @@
     {
       "kind": "water",
       "title": "Let it dry between drinks",
-      "tip": "Let the mix dry between waterings and use room-temperature water. Water less from October to February.",
+      "tip": "Let the soil dry between waterings, and use room-temperature water. Water less from October to February.",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "temperature",
       "title": "Keep it at 16–24°C",
-      "tip": "Aim for 16–24°C in spring and summer, away from radiators and drafts. It takes winter nights to 10°C.",
+      "tip": "Aim for 16–24°C in spring and summer, away from radiators and drafts. It handles winter nights down to 10°C.",
       "stat": "16–24°C",
       "sourceRefs": [0]
     },
     {
       "kind": "soil",
       "title": "Chunky mix, snug pot",
-      "tip": "Mix equal parts orchid bark, peat-free compost and coarse perlite. It likes being a bit root-bound.",
+      "tip": "Mix equal parts orchid bark, peat-free potting soil and coarse perlite. It likes its roots a bit crowded.",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "prune",
-      "title": "Keep the old flower spurs",
+      "title": "Keep the old flower stalks",
       "tip": "New blooms grow from old flower stalks, so never cut them off. Don't move the plant once buds form.",
       "sourceRefs": [0, 1, 2]
     },
@@ -56,7 +56,7 @@
       "sourceRefs": [0, 1]
     }
   ],
-  "outro": "Bright light, a dry-out between drinks, and leave those spurs alone.",
+  "outro": "Bright light, dry soil between drinks, and leave old flower stalks on.",
   "sources": [
     {
       "title": "RHS: How to grow hoya",

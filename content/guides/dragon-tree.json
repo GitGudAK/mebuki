@@ -22,13 +22,13 @@
     {
       "kind": "light",
       "title": "Bright, indirect light",
-      "tip": "An east or west window, or a south one behind a sheer. Summer sun scorches it; it copes with lower light.",
+      "tip": "An east or west window, or a south one with a sheer curtain. Summer sun scorches it. It handles lower light.",
       "sourceRefs": [0, 1]
     },
     {
       "kind": "water",
       "title": "Water when top 5 cm is dry",
-      "tip": "Then water well. Use rainwater or filtered water: fluoride in tap water browns the leaf tips.",
+      "tip": "Then water well. Use rainwater or filtered water, since fluoride in tap water browns the leaf tips.",
       "stat": "5 cm",
       "sourceRefs": [0, 1, 2]
     },
@@ -42,24 +42,24 @@
     {
       "kind": "fertilize",
       "title": "Feed April to October",
-      "tip": "Use a general liquid houseplant feed in the growing season. Too much burns and yellows the leaf tips.",
-      "stat": "Apr–Oct",
+      "tip": "Use a general liquid houseplant fertilizer in the growing season. Too much burns and yellows the leaf tips.",
+      "stat": "April–October",
       "sourceRefs": [0, 1]
     },
     {
       "kind": "prune",
       "title": "Cut back to branch it",
-      "tip": "Cut a leggy stem at the height you want; new shoots sprout just below the cut.",
+      "tip": "Cut a long, bare stem at the height you want. New shoots sprout just below the cut.",
       "sourceRefs": [0, 1]
     },
     {
       "kind": "pests",
       "title": "Check for mites and scale",
-      "tip": "Check regularly for spider mites, mealybugs and scale insects, the sap-suckers it attracts.",
+      "tip": "Check often for spider mites, mealybugs and scale insects, the sap-sucking pests it attracts.",
       "sourceRefs": [0, 1, 2]
     }
   ],
-  "outro": "Bright light, filtered water and a dry top: tidy tips for years.",
+  "outro": "Bright light, filtered water and dry topsoil: neat tips for years.",
   "sources": [
     {
       "title": "RHS: How to grow dracaena",

@@ -171,4 +171,4 @@ const GlazedPot: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "hoya", Component: Hoya };
+export const drawing: PlantDrawing = { id: "hoya", Component: Hoya, anchors: { soil: [199, 376], snip: [300, 188], snipR: 26 } };

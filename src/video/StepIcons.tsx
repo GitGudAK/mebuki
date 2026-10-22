@@ -7,12 +7,13 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "../motion";
-import type { PlantGuide, StepKind } from "../types";
+import type { GuideStep, PlantGuide, StepKind } from "../types";
 import { shade } from "./colors";
 import { PLANT_VIEWBOX, PlantIllustration } from "./PlantIllustration";
+import { PLANT_DRAWINGS } from "./plants";
 
 type Palette = PlantGuide["palette"];
-type MotifProps = { palette: Palette; guide: PlantGuide };
+type MotifProps = { palette: Palette; guide: PlantGuide; step?: GuideStep };
 
 /* ---------------------------------------------------------------- helpers */
 
@@ -85,6 +86,19 @@ const GuidePlant: React.FC<{ guide: PlantGuide; x: number; base: number; h: numb
       idPrefix={`${id}-${guide.id}`}
     />
   );
+};
+
+/** Maps a point in the plant drawing's viewBox to the scene, for a GuidePlant drawn at (x, base, h). */
+const placePlant = (x: number, base: number, h: number) => {
+  const k = h / PLANT_VIEWBOX.height;
+  const ox = x - (PLANT_VIEWBOX.width * k) / 2;
+  const oy = base - 514 * k;
+  return { k, at: ([ax, ay]: [number, number]): [number, number] => [ox + ax * k, oy + ay * k] };
+};
+
+const anchorsFor = (guide: PlantGuide) => {
+  const a = PLANT_DRAWINGS[guide.id]?.anchors;
+  return { soil: a?.soil ?? ([200, 350] as [number, number]), snip: a?.snip ?? ([280, 190] as [number, number]), snipR: a?.snipR ?? 36 };
 };
 
 /* ---------------------------------------------------------------- WATER */
@@ -366,57 +380,135 @@ const HumidityMotif: React.FC<MotifProps> = ({ palette, guide }) => {
 
 /* ---------------------------------------------------------------- FERTILIZE */
 
-const FertilizeMotif: React.FC<MotifProps> = ({ palette, guide }) => {
+type Feed = { kind: "liquid" | "granules"; label: string; strength?: string };
+
+/** Reads the step's own advice to pick the product, its label and its strength. */
+const feedFor = (step?: GuideStep): Feed => {
+  const t = `${step?.title ?? ""} ${step?.tip ?? ""}`.toLowerCase();
+  const kind = /slow-release|granule|pellet/.test(t) && !/liquid/.test(t) ? "granules" : "liquid";
+  const label =
+    /tomato (fertilizer|feed)/.test(t) && !/not tomato/.test(t)
+      ? "TOMATO"
+      : /citrus/.test(t)
+        ? "CITRUS"
+        : /orchid/.test(t)
+          ? "ORCHID"
+          : /cactus/.test(t)
+            ? "CACTUS"
+            : /bromeliad|air plant/.test(t)
+              ? "AIR PLANT"
+              : /african violet/.test(t)
+                ? "VIOLET"
+                : /high-potassium/.test(t)
+                  ? "HIGH K"
+                  : /low-nitrogen/.test(t)
+                    ? "LOW N"
+                    : /high-nitrogen/.test(t)
+                      ? "HIGH N"
+                      : /balanced/.test(t)
+                        ? "BALANCED"
+                        : "PLANT FOOD";
+  const strength = /quarter|1\/4/.test(t) ? "¼" : /half/.test(t) ? "½" : undefined;
+  return { kind, label, strength };
+};
+
+const FertilizeMotif: React.FC<MotifProps> = ({ palette, guide, step }) => {
   const f = useCurrentFrame();
   const sp = useSpring();
-  const bagIn = sp(0);
-  const tilt = ci(f, [6, 22], [0, 40], Easing.out(Easing.back(1.6))) + (f > 22 && f < 100 ? Math.sin(f / 3) * 2 : 0);
-  const potIn = sp(4);
-  const growPulse = sp(70, { damping: 7, stiffness: 80 });
-  const pelletColors = [palette.accent, "#7FB8E6", "#F7F3E8"];
-  const pellets: React.ReactNode[] = [];
-  for (let k = 0; k < 24; k++) {
-    const spawn = 22 + k * 3;
+  const feed = feedFor(step);
+  const plantIn = sp(4);
+  const productIn = sp(0);
+  // Held upright long enough to read the label, then tipped to pour, then set back.
+  const POUR = feed.kind === "liquid" ? 72 : 40;
+  const tilt =
+    ci(f, [24, 38], [0, POUR], Easing.out(Easing.back(1.4))) * ci(f, [104, 116], [1, 0]) + (f > 38 && f < 100 ? Math.sin(f / 3) * 2 : 0);
+  const growPulse = sp(80, { damping: 7, stiffness: 80 });
+  const PX = 262;
+  const place = placePlant(PX, 398, 300);
+  const [sx, sy] = place.at(anchorsFor(guide).soil);
+  const feedColor = feed.label === "TOMATO" || feed.label === "HIGH K" ? "#C0392B" : feed.label === "CITRUS" ? "#E6A817" : feed.label === "ORCHID" ? "#C064B4" : "#4C9F6B";
+  // The spout (or the bag's open top), turned with the product.
+  const spout: [number, number] = feed.kind === "liquid" ? [178, 127] : [150, 80];
+  const rad = (tilt * Math.PI) / 180;
+  const rx = spout[0] - 110;
+  const ry = spout[1] - 125;
+  const mouth = {
+    x: (1 - productIn) * -220 + 110 + rx * Math.cos(rad) - ry * Math.sin(rad),
+    y: 125 + rx * Math.sin(rad) + ry * Math.cos(rad),
+  };
+  const falling: React.ReactNode[] = [];
+  const landed: React.ReactNode[] = [];
+  for (let k = 0; k < 18; k++) {
+    const spawn = 40 + k * 3.4;
     const age = f - spawn;
     if (age < 0) continue;
-    const startX = 178 + random(`fx${k}`) * 10;
-    const endX = 205 + random(`fe${k}`) * 90;
-    const endY = 306 + random(`fy${k}`) * 8;
-    const x = ci(age, [0, 20], [startX, endX]);
-    const y = ci(age, [0, 20], [118, endY], Easing.bounce);
-    pellets.push(
-      <g key={k}>
-        <circle cx={x} cy={y} r={6} fill={pelletColors[k % 3]} stroke={shade(pelletColors[k % 3], -0.3)} strokeWidth={1.5} />
-        <circle cx={x - 2} cy={y - 2} r={1.8} fill="#fff" opacity={0.7} />
-      </g>,
-    );
+    const dx = (random(`fdx${k}`) - 0.5) * 34 * place.k * 2;
+    const dur = 18;
+    const t = Math.min(1, age / dur);
+    const x = mouth.x + (sx + dx - mouth.x) * t;
+    const y = mouth.y + (sy - mouth.y) * t * t;
+    if (feed.kind === "liquid") {
+      if (t < 1) falling.push(<Drop key={k} x={x} y={y} s={0.8} color={feedColor} />);
+      else if (age < dur + 14) {
+        const r = (age - dur) / 14;
+        landed.push(<ellipse key={k} cx={sx + dx} cy={sy} rx={4 + r * 18} ry={1.5 + r * 4} fill="none" stroke={feedColor} strokeWidth={3} opacity={1 - r} />);
+      }
+    } else {
+      const c = [palette.accent, "#7FB8E6", "#F7F3E8"][k % 3];
+      (t < 1 ? falling : landed).push(
+        <g key={k}>
+          <circle cx={x} cy={Math.min(y, sy)} r={5} fill={c} stroke={shade(c, -0.3)} strokeWidth={1.5} />
+          <circle cx={x - 1.5} cy={Math.min(y, sy) - 1.5} r={1.5} fill="#fff" opacity={0.7} />
+        </g>,
+      );
+    }
   }
   const sparkles = [
-    [180, 150, 0],
-    [330, 170, 1],
-    [300, 100, 2],
-    [205, 95, 3],
+    [sx - 70, sy - 120, 0],
+    [sx + 60, sy - 150, 1],
+    [sx + 20, sy - 210, 2],
   ].map(([x, y, i]) => {
-    const s = ci(f, [85 + i * 6, 95 + i * 6], [0, 1]) * (0.7 + Math.sin(f / 4 + i) * 0.3);
-    return <Sparkle key={i} x={x} y={y} r={16 * s} color="#FFC93C" rotate={f * 2} />;
+    const r = ci(f, [84 + i * 6, 94 + i * 6], [0, 1]) * (0.7 + Math.sin(f / 4 + i) * 0.3);
+    return <Sparkle key={i} x={x} y={y} r={15 * r} color="#FFC93C" rotate={f * 2} />;
   });
+  const labelSize = feed.label.length > 8 ? 11 : feed.label.length > 6 ? 14 : 17;
   return (
     <g>
-      <g transform={`translate(0 ${(1 - potIn) * 120})`} opacity={potIn}>
-        <g transform={`translate(250 398) scale(${1 + growPulse * 0.05}) translate(-250 -398)`}>
-          <GuidePlant guide={guide} x={250} base={398} h={290} id="feed" />
-        </g>
-        {pellets}
+      <g transform={`translate(0 ${(1 - plantIn) * 120}) translate(${PX} 398) scale(${1 + growPulse * 0.05}) translate(${-PX} -398)`} opacity={plantIn}>
+        <GuidePlant guide={guide} x={PX} base={398} h={300} id="feed" />
       </g>
+      {landed}
+      {falling}
       {sparkles}
-      <g transform={`translate(${(1 - bagIn) * -220} 0) rotate(${tilt} 110 125)`}>
-        <path d="M58 78 L162 78 L174 184 Q 112 200 46 184 Z" fill="#DDBB82" />
-        <path d="M58 78 L162 78 L158 98 L62 98 Z" fill="#C49A5C" />
-        <path d="M58 78 L70 62 L84 78 L98 62 L112 78 L126 62 L140 78 L154 62 L162 78" fill="#DDBB82" stroke="#C49A5C" strokeWidth={3} strokeLinejoin="round" />
-        <rect x={74} y={112} width={76} height={56} rx={10} fill="#fff" opacity={0.92} />
-        <text x={112} y={148} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={24} fill={shade(palette.accent, -0.2)}>
-          NPK
-        </text>
+      <g transform={`translate(${(1 - productIn) * -220} 0) rotate(${tilt} 110 125)`}>
+        {feed.kind === "liquid" ? (
+          <g>
+            {/* feed bottle; its neck points right so tilting pours */}
+            <rect x={66} y={84} width={84} height={116} rx={18} fill={shade(feedColor, 0.15)} />
+            <rect x={150} y={118} width={22} height={18} rx={4} fill={shade(feedColor, -0.1)} />
+            <rect x={170} y={114} width={10} height={26} rx={3} fill="#F2F2F2" />
+            <rect x={74} y={110} width={68} height={60} rx={8} fill="#fff" opacity={0.94} />
+            <text x={108} y={feed.strength ? 136 : 146} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={labelSize} fill={shade(feedColor, -0.3)}>
+              {feed.label}
+            </text>
+            {feed.strength && (
+              <text x={108} y={162} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={20} fill={shade(feedColor, -0.3)}>
+                {feed.strength}
+              </text>
+            )}
+            <rect x={74} y={92} width={10} height={100} rx={5} fill="#fff" opacity={0.3} />
+          </g>
+        ) : (
+          <g>
+            <path d="M58 78 L162 78 L174 184 Q 112 200 46 184 Z" fill="#DDBB82" />
+            <path d="M58 78 L162 78 L158 98 L62 98 Z" fill="#C49A5C" />
+            <path d="M58 78 L70 62 L84 78 L98 62 L112 78 L126 62 L140 78 L154 62 L162 78" fill="#DDBB82" stroke="#C49A5C" strokeWidth={3} strokeLinejoin="round" />
+            <rect x={70} y={112} width={84} height={56} rx={10} fill="#fff" opacity={0.92} />
+            <text x={112} y={146} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={labelSize} fill={shade(palette.accent, -0.3)}>
+              {feed.label}
+            </text>
+          </g>
+        )}
       </g>
     </g>
   );
@@ -431,87 +523,154 @@ const Blade: React.FC = () => (
   </g>
 );
 
-const PruneMotif: React.FC<MotifProps> = ({ palette, guide }) => {
+type PruneAction = "yellow" | "spent" | "flower" | "tip" | "shoot" | "harvest" | "branch" | "stalk" | "tie" | "keep";
+
+/** Reads the step's own advice to decide what the shears do. */
+const pruneFor = (step?: GuideStep): PruneAction => {
+  const t = `${step?.title ?? ""} ${step?.tip ?? ""}`.toLowerCase();
+  if (/never cut|keep the old/.test(t)) return "keep";
+  if (/side shoot/.test(t)) return "shoot";
+  if (/moss pole/.test(t)) return "tie";
+  if (/spent|faded/.test(t)) return "spent";
+  if (/flower spike|flower bud|flower head/.test(t)) return "flower";
+  if (/outer stem|outer stalk|stems with swollen/.test(t)) return "stalk";
+  if (/harvest|pick fresh|top sprig/.test(t)) return "harvest";
+  if (/cut back|cut a leggy|trim by|cut long stems/.test(t)) return "branch";
+  if (/pinch|snip stems|trim/.test(t)) return "tip";
+  return "yellow";
+};
+
+/** Browns a cut piece: dead leaves and spent flowers. */
+const WILT = "0.55 0.45 0.1 0 0.06  0.45 0.5 0.08 0 0.02  0.2 0.22 0.1 0 0  0 0 0 1 0";
+
+const PruneMotif: React.FC<MotifProps> = ({ palette, guide, step }) => {
   const f = useCurrentFrame();
   const sp = useSpring();
+  const action = pruneFor(step);
   const plantIn = sp(0);
   const SNIP = 58;
+  const PX = 168;
+  const place = placePlant(PX, 400, 310);
+  const a = anchorsFor(guide);
+  const cut = (() => {
+    const [x, y] = place.at(a.snip);
+    return { x, y, r: a.snipR * place.k };
+  })();
+  const cuts = action !== "tie" && action !== "keep";
   const approach = ci(f, [10, 40], [0, 1], Easing.out(Easing.cubic));
   const open =
-    f < SNIP - 6
+    !cuts
       ? 22 + Math.sin(f / 4) * 4
-      : f < SNIP
-        ? ci(f, [SNIP - 6, SNIP], [22, 0], Easing.in(Easing.quad))
-        : ci(f, [SNIP + 8, SNIP + 20], [0, 18]);
+      : f < SNIP - 6
+        ? 22 + Math.sin(f / 4) * 4
+        : f < SNIP
+          ? ci(f, [SNIP - 6, SNIP], [22, 0], Easing.in(Easing.quad))
+          : ci(f, [SNIP + 8, SNIP + 20], [0, 18]);
   const leave = ci(f, [SNIP + 16, SNIP + 40], [0, 1], Easing.in(Easing.cubic));
-  const fallT = Math.max(0, f - SNIP);
-  const fallY = fallT * fallT * 0.09;
-  const fallX = Math.sin(fallT / 5) * 18;
-  const fallRot = fallT * 4;
-  const fallOpacity = ci(fallT, [30, 50], [1, 0]);
-  const cut = { x: 246, y: 186 };
-  const burst = ci(f, [SNIP, SNIP + 12], [0, 1]);
-  const leaf = palette.leaf;
-  const sway = Math.sin(f / 16) * 2;
+  const hold = action === "keep" ? ci(f, [44, 56], [0, 1]) : 0;
+  const fallT = cuts ? Math.max(0, f - SNIP) : 0;
+  const toBowl = action === "harvest";
+  const bowl = { x: 336, y: 372 };
+  const pieceDX = toBowl ? ci(fallT, [0, 26], [0, bowl.x - cut.x], Easing.inOut(Easing.quad)) : Math.sin(fallT / 5) * 18;
+  const pieceDY = toBowl ? ci(fallT, [0, 26], [0, bowl.y - 14 - cut.y], Easing.in(Easing.quad)) - Math.sin(ci(fallT, [0, 26], [0, Math.PI])) * 50 : fallT * fallT * 0.09;
+  const pieceRot = toBowl ? ci(fallT, [0, 26], [0, 30]) : fallT * 4;
+  const pieceOpacity = toBowl ? 1 : ci(fallT, [30, 50], [1, 0]);
+  const burst = cuts ? ci(f, [SNIP, SNIP + 12], [0, 1]) : 0;
+  const wilted = action === "yellow" || action === "spent";
+  const sway = Math.sin(f / 16) * 1.5;
+  const id = `prune-${guide.id}`;
+  const tie = ci(f, [40, 70], [0, 1], Easing.inOut(Easing.quad));
   return (
     <g>
-      <g transform={`translate(0 ${(1 - plantIn) * 100}) rotate(${sway} 180 400)`} opacity={plantIn}>
-        <GuidePlant guide={guide} x={180} base={400} h={300} id="prune" />
-        {/* the petiole of the leaf that gets cut */}
-        <path d={`M206 226 Q 226 200 ${f < SNIP ? cut.x : cut.x - 14} ${f < SNIP ? cut.y : cut.y + 6}`} stroke={shade(leaf, -0.25)} strokeWidth={6} fill="none" strokeLinecap="round" />
-        {/* yellowing leaf that gets cut */}
-        <g transform={`translate(${cut.x + (f >= SNIP ? fallX : 0)} ${cut.y + (f >= SNIP ? fallY : 0)}) rotate(${70 + (f >= SNIP ? fallRot : 0)})`} opacity={fallOpacity}>
-          <path d="M0 0 L0 -10" stroke="#B49A3A" strokeWidth={5} />
-          <g transform="translate(0 -8) scale(1.7)">
-            <path d={LEAF_D} fill="#E3C653" />
-            <path d="M0 -3 L0 -40" stroke="#B49A3A" strokeWidth={2} />
-            <circle cx={-5} cy={-28} r={4} fill="#A9782F" opacity={0.6} />
-            <circle cx={5} cy={-16} r={3} fill="#A9782F" opacity={0.6} />
-          </g>
+      <defs>
+        <clipPath id={`${id}-piece`}>
+          <circle cx={cut.x} cy={cut.y} r={cut.r} />
+        </clipPath>
+        <mask id={`${id}-rest`} maskUnits="userSpaceOnUse" x={-200} y={-200} width={800} height={800}>
+          <rect x={-200} y={-200} width={800} height={800} fill="#fff" />
+          {cuts && <circle cx={cut.x} cy={cut.y} r={cut.r} fill="#000" />}
+        </mask>
+        <filter id={`${id}-wilt`}>
+          <feColorMatrix type="matrix" values={WILT} />
+        </filter>
+      </defs>
+      <g transform={`translate(0 ${(1 - plantIn) * 100}) rotate(${sway} ${PX} 400)`} opacity={plantIn}>
+        <g mask={`url(#${id}-rest)`}>
+          <GuidePlant guide={guide} x={PX} base={400} h={310} id="prune" />
         </g>
+        {/* the piece that comes away: a real part of this plant */}
+        {cuts && (
+          <g opacity={pieceOpacity} transform={`translate(${pieceDX} ${pieceDY}) rotate(${pieceRot} ${cut.x} ${cut.y})`}>
+            <g clipPath={`url(#${id}-piece)`} filter={wilted ? `url(#${id}-wilt)` : undefined}>
+              <GuidePlant guide={guide} x={PX} base={400} h={310} id="prune-piece" />
+            </g>
+          </g>
+        )}
       </g>
-      {/* snip burst */}
+      {toBowl && (
+        <g opacity={ci(f, [SNIP - 10, SNIP], [0, 1])}>
+          <path d={`M${bowl.x - 44} ${bowl.y - 12} Q ${bowl.x} ${bowl.y + 40} ${bowl.x + 44} ${bowl.y - 12} Z`} fill={shade(palette.accent, -0.1)} />
+          <ellipse cx={bowl.x} cy={bowl.y - 12} rx={44} ry={8} fill={shade(palette.accent, -0.3)} />
+        </g>
+      )}
+      {action === "tie" && (
+        <g opacity={ci(f, [36, 42], [0, 1])}>
+          <ellipse cx={cut.x} cy={cut.y} rx={cut.r * 0.9} ry={cut.r * 0.4} fill="none" stroke="#C9A06B" strokeWidth={5} pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - tie} transform={`rotate(-20 ${cut.x} ${cut.y})`} />
+          <path d={`M${cut.x + cut.r * 0.8} ${cut.y - 4} q 14 -14 22 -2 M${cut.x + cut.r * 0.8} ${cut.y - 4} q 16 8 20 20`} stroke="#C9A06B" strokeWidth={4} fill="none" strokeLinecap="round" opacity={ci(f, [70, 76], [0, 1])} />
+        </g>
+      )}
       {burst > 0 && burst < 1 &&
-        [0, 60, 120, 180, 240, 300].map((a) => (
+        [0, 60, 120, 180, 240, 300].map((deg) => (
           <line
-            key={a}
-            x1={cut.x + Math.cos((a * Math.PI) / 180) * (14 + burst * 10)}
-            y1={cut.y + Math.sin((a * Math.PI) / 180) * (14 + burst * 10)}
-            x2={cut.x + Math.cos((a * Math.PI) / 180) * (24 + burst * 22)}
-            y2={cut.y + Math.sin((a * Math.PI) / 180) * (24 + burst * 22)}
+            key={deg}
+            x1={cut.x + Math.cos((deg * Math.PI) / 180) * (14 + burst * 10)}
+            y1={cut.y + Math.sin((deg * Math.PI) / 180) * (14 + burst * 10)}
+            x2={cut.x + Math.cos((deg * Math.PI) / 180) * (24 + burst * 22)}
+            y2={cut.y + Math.sin((deg * Math.PI) / 180) * (24 + burst * 22)}
             stroke={palette.accent}
             strokeWidth={5}
             strokeLinecap="round"
             opacity={1 - burst}
           />
         ))}
-      {f >= SNIP && f < SNIP + 22 && (
+      {(cuts ? f >= SNIP && f < SNIP + 22 : action === "keep" ? f >= 50 && f < 110 : f >= 72 && f < 110) && (
         <text
-          x={cut.x - 70}
-          y={cut.y - 44}
+          x={cut.x - 30}
+          y={cut.y - cut.r - 18}
           fontFamily={FONT}
           fontWeight={900}
-          fontSize={34}
-          fill={palette.accent}
-          transform={`rotate(-12 ${cut.x - 70} ${cut.y - 44})`}
-          opacity={ci(f, [SNIP + 14, SNIP + 22], [1, 0])}
+          fontSize={32}
+          fill={action === "keep" ? "#E5484D" : palette.accent}
+          transform={`rotate(-10 ${cut.x - 30} ${cut.y - cut.r - 18})`}
+          opacity={cuts ? ci(f, [SNIP + 14, SNIP + 22], [1, 0]) : ci(f, [100, 110], [1, 0])}
         >
-          snip!
+          {action === "keep" ? "keep!" : action === "tie" ? "tied" : action === "harvest" ? "pick!" : "snip!"}
         </text>
       )}
-      {/* scissors */}
-      <g transform={`translate(${cut.x + 74 + (1 - approach) * 200 + leave * 120} ${cut.y + leave * -40})`} opacity={Math.min(approach * 2, 1 - leave)}>
-        <g transform={`rotate(${-open})`}>
-          <Blade />
-          <circle cx={46} cy={-28} r={17} fill="none" stroke={palette.accent} strokeWidth={10} />
+      {action === "keep" && (
+        <g transform={`translate(${cut.x} ${cut.y})`} opacity={hold * ci(f, [96, 108], [1, 0])}>
+          <circle r={cut.r + 10} fill="none" stroke="#E5484D" strokeWidth={8} />
+          <line x1={-(cut.r + 4) * 0.7} y1={-(cut.r + 4) * 0.7} x2={(cut.r + 4) * 0.7} y2={(cut.r + 4) * 0.7} stroke="#E5484D" strokeWidth={8} strokeLinecap="round" />
         </g>
-        <g transform={`rotate(${open}) scale(1 -1)`}>
-          <Blade />
-          <circle cx={46} cy={-28} r={17} fill="none" stroke={shade(palette.accent, -0.15)} strokeWidth={10} />
+      )}
+      {/* shears */}
+      {action !== "tie" && (
+        <g
+          transform={`translate(${cut.x + 74 + (1 - approach) * 200 + (cuts ? leave * 120 : hold * 90)} ${cut.y + (cuts ? leave * -40 : 0)})`}
+          opacity={Math.min(approach * 2, cuts ? 1 - leave : 1 - ci(f, [80, 100], [0, 1]))}
+        >
+          <g transform={`rotate(${-open})`}>
+            <Blade />
+            <circle cx={46} cy={-28} r={17} fill="none" stroke={palette.accent} strokeWidth={10} />
+          </g>
+          <g transform={`rotate(${open}) scale(1 -1)`}>
+            <Blade />
+            <circle cx={46} cy={-28} r={17} fill="none" stroke={shade(palette.accent, -0.15)} strokeWidth={10} />
+          </g>
+          <circle r={6} fill="#4A5359" />
+          <circle r={2.5} fill="#D5DEE3" />
         </g>
-        <circle r={6} fill="#4A5359" />
-        <circle r={2.5} fill="#D5DEE3" />
-      </g>
+      )}
     </g>
   );
 };
@@ -830,17 +989,19 @@ export type StepMotifProps = {
   palette: Palette;
   /** The guide whose own plant drawing appears in the scene. */
   guide: PlantGuide;
+  /** The step itself; its advice picks what the feed and pruning scenes show. */
+  step?: GuideStep;
   /** Rendered size in px (square). */
   size?: number;
   style?: React.CSSProperties;
 };
 
 /** Animated SVG motif for a care step. Animation is driven by the parent Sequence's frame. */
-export const StepMotif: React.FC<StepMotifProps> = ({ kind, palette, guide, size = 560, style }) => {
+export const StepMotif: React.FC<StepMotifProps> = ({ kind, palette, guide, step, size = 560, style }) => {
   const Motif = MOTIFS[kind] ?? WaterMotif;
   return (
     <svg viewBox="0 0 400 400" width={size} height={size} style={{ overflow: "visible", ...style }}>
-      <Motif palette={palette} guide={guide} />
+      <Motif palette={palette} guide={guide} step={step} />
     </svg>
   );
 };

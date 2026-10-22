@@ -27,7 +27,7 @@
     {
       "kind": "water",
       "title": "Water when 5–8 cm is dry",
-      "tip": "Water once the top 5–8 cm is dry and empty the saucer. Soggy compost rots roots; water less in winter.",
+      "tip": "Water once the top 5–8 cm is dry, and empty the saucer. Soggy soil rots roots. Water less in winter.",
       "stat": "5–8 cm",
       "sourceRefs": [1, 0]
     },
@@ -41,7 +41,7 @@
     {
       "kind": "fertilize",
       "title": "Feed monthly in summer",
-      "tip": "General houseplant feed once a month, from spring to late summer only.",
+      "tip": "Use general houseplant fertilizer once a month, from spring to late summer only.",
       "stat": "Monthly",
       "sourceRefs": [0, 1]
     },
@@ -54,7 +54,7 @@
     {
       "kind": "propagate",
       "title": "Divide in spring",
-      "tip": "Cut through the rhizomes of a big clump, keeping several leaves on each piece.",
+      "tip": "Cut a big clump apart through its thick roots, keeping several leaves on each piece.",
       "sourceRefs": [0, 1]
     }
   ],

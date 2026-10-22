@@ -128,4 +128,4 @@ const SelfWateringPot: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "african-violet", Component: AfricanViolet };
+export const drawing: PlantDrawing = { id: "african-violet", Component: AfricanViolet, anchors: { soil: [200, 386], snip: [303, 390], snipR: 30 } };

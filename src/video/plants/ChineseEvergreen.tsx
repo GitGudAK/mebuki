@@ -152,4 +152,4 @@ const FacetedPot: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "chinese-evergreen", Component: ChineseEvergreen };
+export const drawing: PlantDrawing = { id: "chinese-evergreen", Component: ChineseEvergreen, anchors: { soil: [196, 350], snip: [333, 331], snipR: 45 } };

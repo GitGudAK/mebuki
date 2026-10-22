@@ -138,4 +138,4 @@ const HerbPot: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "sweet-basil", Component: SweetBasil };
+export const drawing: PlantDrawing = { id: "sweet-basil", Component: SweetBasil, anchors: { soil: [200, 340], snip: [203, 80], snipR: 40 } };

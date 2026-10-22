@@ -102,4 +102,4 @@ export const AirPlant: React.FC<{ c: Ctx }> = ({ c }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "air-plant", Component: AirPlant, shadow: false };
+export const drawing: PlantDrawing = { id: "air-plant", Component: AirPlant, shadow: false, anchors: { soil: [196, 435], snip: [298, 413], snipR: 28 } };

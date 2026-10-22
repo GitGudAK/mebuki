@@ -133,4 +133,4 @@ const RattanBasket: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "parlor-palm", Component: ParlorPalm };
+export const drawing: PlantDrawing = { id: "parlor-palm", Component: ParlorPalm, anchors: { soil: [200, 396], snip: [345, 318], snipR: 34 } };

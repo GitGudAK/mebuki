@@ -22,32 +22,32 @@
     {
       "kind": "light",
       "title": "Your sunniest window",
-      "tip": "A south or west window is ideal; shield it from harsh midday sun."
+      "tip": "A south or west window is ideal, but shield it from harsh midday sun."
     },
     {
       "kind": "water",
       "title": "Soak, then let dry",
-      "tip": "Water deeply only when soil is fully dry; give it very little in winter.",
+      "tip": "Water deeply only when the soil is fully dry. Give it very little water in winter.",
       "stat": "When fully dry"
     },
     {
       "kind": "soil",
       "title": "Gritty cactus mix",
-      "tip": "Use cactus mix in a terracotta pot with a drainage hole so roots dry out fast."
+      "tip": "Use cactus mix in a terracotta pot with a drainage hole so the roots dry out fast."
     },
     {
       "kind": "temperature",
       "title": "Keep it frost-free",
-      "tip": "Fine on a summer balcony, but bring it in before nights drop below 13°C.",
+      "tip": "It's fine on a balcony in summer, but bring it in before nights drop below 13°C.",
       "stat": "13–27°C"
     },
     {
       "kind": "propagate",
-      "title": "Separate the pups",
-      "tip": "Gently pull offsets with their own roots and pot them up in cactus mix."
+      "title": "Separate the baby plants",
+      "tip": "Gently pull off the baby plants that have their own roots, and pot them in cactus mix."
     }
   ],
-  "outro": "Sun, sharp drainage, and a dry spell between drinks.",
+  "outro": "Lots of sun, fast drainage, and let it dry out between waterings.",
   "sources": [
     {
       "title": "RHS: Houseplants for sunlight (Aloe vera)",

@@ -21,41 +21,41 @@
     {
       "kind": "light",
       "title": "Bright, indirect light",
-      "tip": "An east or west window is ideal. Outdoors, keep it in shade so the sun doesn't scorch it.",
+      "tip": "An east or west window is ideal. Outdoors, keep it in the shade so the sun doesn't scorch it.",
       "sourceRefs": [0, 1, 3]
     },
     {
       "kind": "water",
       "title": "Soak once a week",
-      "tip": "Submerge in room-temperature water for 20–60 minutes weekly. Soak less often in winter.",
+      "tip": "Soak it in room-temperature water for 20–60 minutes once a week. Soak it less often in winter.",
       "stat": "20–60 min",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "humidity",
       "title": "Dry it upside down",
-      "tip": "Shake out the water and dry it upside down for 4+ hours with good airflow, or the base can rot.",
+      "tip": "Shake off the water and dry it upside down for at least 4 hours with good airflow, or the base can rot.",
       "stat": "4+ hrs",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "temperature",
       "title": "Warm days, mild nights",
-      "tip": "Keep days at 18–32°C and nights above 13°C, away from heaters and air-con vents.",
+      "tip": "Keep days at 18–32°C and nights above 13°C, away from heaters and AC vents.",
       "stat": "18–32°C",
       "sourceRefs": [0]
     },
     {
       "kind": "fertilize",
-      "title": "Feed monthly, very weak",
-      "tip": "Once a month, add bromeliad or air plant feed to the soak water at a quarter strength.",
+      "title": "Feed monthly, very diluted",
+      "tip": "Once a month, add bromeliad or air plant fertilizer to the soak water at quarter strength.",
       "stat": "Monthly",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "propagate",
-      "title": "Split off the pups",
-      "tip": "It blooms once, then makes pups. Separate them at a third of the mother's size, or keep the clump.",
+      "title": "Split off the baby plants",
+      "tip": "It blooms once, then grows baby plants. Split them off at a third of the parent's size, or keep the clump.",
       "stat": "⅓ size",
       "sourceRefs": [0, 3]
     }

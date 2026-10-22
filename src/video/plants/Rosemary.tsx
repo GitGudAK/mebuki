@@ -121,4 +121,4 @@ const LongTom: React.FC<{ color: string }> = ({ color }) => (
   </g>
 );
 
-export const drawing: PlantDrawing = { id: "rosemary", Component: Rosemary };
+export const drawing: PlantDrawing = { id: "rosemary", Component: Rosemary, anchors: { soil: [200, 293], snip: [295, 128], snipR: 30 } };

@@ -33,24 +33,24 @@
     {
       "kind": "temperature",
       "title": "Warm nights only",
-      "tip": "It can summer outdoors once nights stay above 10°C; bring it inside in autumn before it turns cold.",
+      "tip": "It can spend summer outside once nights stay above 10°C. Bring it in before autumn turns cold.",
       "stat": "10°C+"
     },
     {
       "kind": "prune",
       "title": "Pinch off flower spikes",
-      "tip": "Snip flower heads as they appear and harvest shoot tips so it stays bushy and keeps making leaves."
+      "tip": "Snip flower heads as they appear, and pick shoot tips so it stays bushy and keeps making leaves."
     },
     {
       "kind": "soil",
       "title": "A roomy, draining pot",
-      "tip": "Use a pot at least 20 cm wide and deep, filled with peat-free multipurpose compost that drains well.",
+      "tip": "Use a pot at least 20 cm wide and deep, filled with peat-free all-purpose potting mix that drains well.",
       "stat": "20 cm+"
     },
     {
       "kind": "fertilize",
-      "title": "Gentle, balanced feed",
-      "tip": "Potted plants run low on nutrients. Use a balanced liquid feed, not tomato feed, which pushes flowers."
+      "title": "Gentle, balanced fertilizer",
+      "tip": "Potted plants run low on nutrients. Use balanced liquid fertilizer, not tomato fertilizer: it pushes flowers."
     }
   ],
   "outro": "Sun, warmth and regular pinching keep tulasi leafy all season.",

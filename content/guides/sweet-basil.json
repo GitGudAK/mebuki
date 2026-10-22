@@ -23,35 +23,35 @@
     {
       "kind": "light",
       "title": "Full sun or grow light",
-      "tip": "Give it your brightest window or a sunny balcony; leggy stems mean it needs more light.",
+      "tip": "Give it your brightest window or a sunny balcony. Long, floppy stems mean it needs more light.",
       "stat": "6–8 hrs"
     },
     {
       "kind": "water",
-      "title": "Keep soil just moist",
-      "tip": "Keep soil evenly moist; water the soil, not the leaves, ideally in the morning.",
+      "title": "Keep the soil just moist",
+      "tip": "Keep the soil evenly moist. Water the soil, not the leaves, ideally in the morning.",
       "stat": "Check daily"
     },
     {
       "kind": "prune",
       "title": "Pinch above leaf pairs",
-      "tip": "Snip stems just above a leaf pair; new shoots sprout there and the plant gets bushier."
+      "tip": "Snip stems just above a pair of leaves. New shoots sprout there and the plant gets bushier."
     },
     {
       "kind": "prune",
       "title": "Remove flower buds",
-      "tip": "Pinch off flower spikes as soon as they appear to keep leaves sweet and coming."
+      "tip": "Pinch off flower spikes as soon as they appear to keep the leaves sweet and coming."
     },
     {
       "kind": "temperature",
-      "title": "Warm and cozy",
-      "tip": "Basil blackens in the cold; keep it indoors once nights fall below 10°C.",
+      "title": "Keep it warm",
+      "tip": "Basil turns black in the cold. Keep it indoors once nights fall below 10°C.",
       "stat": "Above 10°C"
     },
     {
       "kind": "propagate",
       "title": "Root cuttings in water",
-      "tip": "Root non-flowering 10 cm shoots in water, lower leaves off; pot up in a few weeks.",
+      "tip": "Root 10 cm shoots without flowers in water, with the lower leaves removed. Pot them up in a few weeks.",
       "stat": "Few weeks"
     }
   ],

@@ -27,12 +27,12 @@
     {
       "kind": "light",
       "title": "Bright, indirect light",
-      "tip": "Bright, indirect light near a window. In deep shade it rarely flowers. No direct sun."
+      "tip": "Give it bright, indirect light near a window, but no direct sun. In deep shade it rarely flowers."
     },
     {
       "kind": "humidity",
       "title": "Likes moderate humidity",
-      "tip": "Dry air browns leaf edges; stand the pot on a tray of damp gravel or mist it.",
+      "tip": "Dry air browns the leaf edges. Stand the pot on a tray of damp gravel, or mist it.",
       "stat": "Moderate"
     },
     {
@@ -42,8 +42,8 @@
     },
     {
       "kind": "fertilize",
-      "title": "Light feeding",
-      "tip": "Feed with a diluted balanced fertilizer every 6–8 weeks in spring and summer.",
+      "title": "Feed lightly",
+      "tip": "Use a diluted balanced fertilizer every 6–8 weeks in spring and summer.",
       "stat": "6–8 wks"
     }
   ],

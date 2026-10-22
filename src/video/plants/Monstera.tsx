@@ -136,4 +136,4 @@ const MidCenturyPlanter: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "monstera-deliciosa", Component: Monstera };
+export const drawing: PlantDrawing = { id: "monstera-deliciosa", Component: Monstera, anchors: { soil: [168, 403], snip: [206, 232], snipR: 26 } };

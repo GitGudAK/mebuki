@@ -25,25 +25,25 @@
     },
     {
       "kind": "water",
-      "title": "Keep evenly moist",
-      "tip": "Water when the top 2–3 cm is dry; it hates sitting in water or drying out completely.",
+      "title": "Keep it evenly moist",
+      "tip": "Water when the top 2–3 cm is dry. It hates sitting in water or drying out completely.",
       "stat": "Top 2–3 cm"
     },
     {
       "kind": "water",
       "title": "Brown tips? Try rainwater",
-      "tip": "Fluoride and salts in tap water burn tips, so use filtered or rainwater if you can."
+      "tip": "Fluoride and salts in tap water burn the tips, so use filtered water or rainwater if you can."
     },
     {
       "kind": "propagate",
       "title": "Pot up the babies",
-      "tip": "Set baby spiderettes in small pots of soil while still attached; snip once they root.",
+      "tip": "Set the baby plants in small pots of soil while they're still attached. Snip them off once they root.",
       "stat": "Once rooted"
     },
     {
       "kind": "repot",
       "title": "Repot when roots show",
-      "tip": "Repot before thick roots crack the pot; go up just a few cm in size.",
+      "tip": "Repot before thick roots crack the pot, going up just a few cm in size.",
       "stat": "Every 2–3 yrs"
     }
   ],

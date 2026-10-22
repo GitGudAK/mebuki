@@ -4,7 +4,7 @@
   "name": "Lucky Bamboo",
   "scientificName": "Dracaena sanderiana",
   "origin": "West Central Africa",
-  "hook": "Brown leaves on your lucky bamboo? Move it out of sun.",
+  "hook": "Brown leaves on your lucky bamboo? Move it out of the sun.",
   "difficulty": "easy",
   "tags": [
     "bright indirect",
@@ -35,7 +35,7 @@
     },
     {
       "kind": "soil",
-      "title": "Or pot it in moist mix",
+      "title": "Or grow it in moist soil",
       "tip": "In soil, water when the top 2.5 cm is dry, let it drain, and never leave water in the saucer.",
       "stat": "2.5 cm dry",
       "sourceRefs": [0, 1]
@@ -43,7 +43,7 @@
     {
       "kind": "fertilize",
       "title": "Feed at quarter strength",
-      "tip": "In water, add liquid houseplant feed at 1/4 strength every other month. In soil, feed monthly while growing.",
+      "tip": "In water, add ¼-strength liquid houseplant fertilizer every other month. In soil, feed monthly while it grows.",
       "stat": "¼ strength",
       "sourceRefs": [0, 1]
     },

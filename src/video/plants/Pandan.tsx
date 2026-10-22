@@ -133,4 +133,4 @@ const GlazedPot: React.FC<{ color: string }> = ({ color }) => (
   </g>
 );
 
-export const drawing: PlantDrawing = { id: "pandan", Component: Pandan };
+export const drawing: PlantDrawing = { id: "pandan", Component: Pandan, anchors: { soil: [200, 372], snip: [320, 250], snipR: 40 } };

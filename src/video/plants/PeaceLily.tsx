@@ -128,4 +128,4 @@ const CeramicPlanter: React.FC<{ color: string }> = ({ color }) => (
   </g>
 );
 
-export const drawing: PlantDrawing = { id: "peace-lily", Component: PeaceLily };
+export const drawing: PlantDrawing = { id: "peace-lily", Component: PeaceLily, anchors: { soil: [228, 338], snip: [250, 77], snipR: 50 } };

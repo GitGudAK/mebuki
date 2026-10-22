@@ -148,4 +148,4 @@ const FootedBowl: React.FC<{ color: string }> = ({ color }) => (
   </g>
 );
 
-export const drawing: PlantDrawing = { id: "christmas-cactus", Component: ChristmasCactus };
+export const drawing: PlantDrawing = { id: "christmas-cactus", Component: ChristmasCactus, anchors: { soil: [195, 382], snip: [318, 290], snipR: 42 } };

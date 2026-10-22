@@ -78,4 +78,4 @@ const SlimPlanter: React.FC<{ color: string }> = ({ color }) => (
   </g>
 );
 
-export const drawing: PlantDrawing = { id: "dragon-tree", Component: DragonTree };
+export const drawing: PlantDrawing = { id: "dragon-tree", Component: DragonTree, anchors: { soil: [199, 348], snip: [258, 227], snipR: 45 } };

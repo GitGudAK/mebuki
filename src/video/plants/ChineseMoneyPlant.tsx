@@ -169,4 +169,4 @@ const SpeckledPot: React.FC<{ color: string; id: string }> = ({ color, id }) => 
   );
 };
 
-export const drawing: PlantDrawing = { id: "chinese-money-plant", Component: ChineseMoneyPlant };
+export const drawing: PlantDrawing = { id: "chinese-money-plant", Component: ChineseMoneyPlant, anchors: { soil: [199, 337], snip: [317, 260], snipR: 34 } };

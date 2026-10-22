@@ -96,4 +96,4 @@ const GlossyCylinder: React.FC<{ color: string }> = ({ color }) => (
   </g>
 );
 
-export const drawing: PlantDrawing = { id: "rubber-plant", Component: RubberPlant };
+export const drawing: PlantDrawing = { id: "rubber-plant", Component: RubberPlant, anchors: { soil: [200, 398], snip: [252, 189], snipR: 50 } };

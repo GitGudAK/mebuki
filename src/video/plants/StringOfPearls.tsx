@@ -156,4 +156,4 @@ export const StringOfPearls: React.FC<{ c: Ctx }> = ({ c }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "string-of-pearls", Component: StringOfPearls, shadow: false };
+export const drawing: PlantDrawing = { id: "string-of-pearls", Component: StringOfPearls, shadow: false, anchors: { soil: [200, 197], snip: [291, 414], snipR: 26 } };

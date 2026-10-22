@@ -27,20 +27,20 @@
     {
       "kind": "water",
       "title": "Water weekly, then drain",
-      "tip": "Run lukewarm water through the bark, let it drain fully, and never let it sit in water or wet the crown.",
+      "tip": "Run lukewarm water through the bark and let it drain fully. Never let it sit in water or wet the leaf center.",
       "stat": "Weekly",
       "sourceRefs": [0, 1]
     },
     {
       "kind": "soil",
       "title": "Bark mix in a clear pot",
-      "tip": "Use bark-based orchid compost, never regular potting mix. A clear pot lets you see the roots.",
+      "tip": "Use bark-based orchid mix, never regular potting soil. A clear pot lets you see the roots.",
       "sourceRefs": [0]
     },
     {
       "kind": "fertilize",
       "title": "Feed lightly in summer",
-      "tip": "Use orchid fertiliser lightly but regularly from spring to early autumn, and little or none in winter.",
+      "tip": "Use orchid fertilizer lightly but regularly from spring to early autumn, and little or none in winter.",
       "sourceRefs": [0, 1]
     },
     {
@@ -53,12 +53,12 @@
     {
       "kind": "repot",
       "title": "Repot after it flowers",
-      "tip": "Repot every 2 years or so, never in bloom. Leave the aerial roots alone: don't bury or cut them.",
+      "tip": "Repot about every 2 years, never while in bloom. Leave the aerial roots alone: don't bury or cut them.",
       "stat": "2 yrs",
       "sourceRefs": [0, 1]
     }
   ],
-  "outro": "Bright shade, weekly drinks and a cool spell: it will bloom again.",
+  "outro": "Bright indirect light, weekly water and a cool month: more blooms.",
   "sources": [
     {
       "title": "RHS: How to grow Phalaenopsis (moth orchids)",
@@ -76,7 +76,7 @@
   "faqs": [
     {
       "question": "How do I get my moth orchid to flower again?",
-      "answer": "After the flowers fall, cut the stalk just above the second node below the spent blooms, or back to the leaves if it dries out. Keep feeding, and give it a month about 5°C cooler.",
+      "answer": "After the flowers fall, cut the stalk just above the second node (bump) below the old blooms, or back to the leaves if it dries out. Keep feeding, and give it a month about 5°C cooler.",
       "sources": [
         {
           "title": "RHS: How to grow Phalaenopsis (moth orchids)",

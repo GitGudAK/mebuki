@@ -111,4 +111,4 @@ const ClayBowl: React.FC<{ color: string }> = ({ color }) => (
   </g>
 );
 
-export const drawing: PlantDrawing = { id: "jade-plant", Component: JadePlant };
+export const drawing: PlantDrawing = { id: "jade-plant", Component: JadePlant, anchors: { soil: [200, 436], snip: [330, 268], snipR: 34 } };

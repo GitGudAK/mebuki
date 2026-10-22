@@ -98,4 +98,4 @@ const BonsaiPot: React.FC<{ color: string }> = ({ color }) => (
   </g>
 );
 
-export const drawing: PlantDrawing = { id: "juniper-bonsai", Component: JuniperBonsai };
+export const drawing: PlantDrawing = { id: "juniper-bonsai", Component: JuniperBonsai, anchors: { soil: [240, 450], snip: [330, 292], snipR: 28 } };

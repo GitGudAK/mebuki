@@ -22,41 +22,41 @@
     {
       "kind": "light",
       "title": "Outdoors, full sun all day",
-      "tip": "Keep it on a sunny balcony, not a windowsill. Bring it inside only for a few hours to admire it.",
+      "tip": "Keep it on a sunny balcony, not a windowsill. Bring it inside only for a few hours to enjoy it.",
       "stat": "Full sun",
       "sourceRefs": [1, 2, 3]
     },
     {
       "kind": "water",
       "title": "Water when the top is dry",
-      "tip": "Test with a finger first, then water until it drains. In summer sun that can be daily; never keep it soggy.",
+      "tip": "Feel the soil first, then water until it drains. In summer sun that may be daily. Never keep it soggy.",
       "sourceRefs": [0, 2, 3, 4]
     },
     {
       "kind": "temperature",
-      "title": "Let it rest cold in winter",
-      "tip": "It needs a cool winter rest. Below -2°C, shelter it in a cold frame or unheated spot, but don't warm it.",
+      "title": "Give it a cold winter rest",
+      "tip": "It needs a cool winter rest. Below -2°C, move it to an unheated shelter, like a shed, but don't warm it.",
       "stat": "-2°C",
       "sourceRefs": [3]
     },
     {
       "kind": "fertilize",
       "title": "Feed weakly while growing",
-      "tip": "Give a balanced liquid feed at low strength every 2 weeks in the growing season, and stop in autumn.",
+      "tip": "Use a balanced liquid fertilizer at low strength every 2 weeks while it grows, and stop in autumn.",
       "stat": "2 wks",
       "sourceRefs": [0, 3]
     },
     {
       "kind": "repot",
       "title": "Repot every 2–3 years",
-      "tip": "Trim the roots and repot into gritty bonsai compost every 2–3 years, during the growing season.",
+      "tip": "Every 2–3 years, trim the roots and repot into gritty bonsai soil, during the growing season.",
       "stat": "2–3 yrs",
       "sourceRefs": [0, 3]
     },
     {
       "kind": "pests",
       "title": "Hose off spider mites",
-      "tip": "Spider mites love junipers. Spray the foliage hard with water each time you water to keep them away.",
+      "tip": "Spider mites love junipers. Spray the leaves hard with water each time you water to keep them away.",
       "sourceRefs": [1, 2]
     }
   ],

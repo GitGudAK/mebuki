@@ -22,42 +22,42 @@
     {
       "kind": "light",
       "title": "Bright, filtered light",
-      "tip": "An east window, or a sheer curtain on a south or west one. Harsh direct sun damages the fronds.",
+      "tip": "Use an east window, or a south or west one with a sheer curtain. Harsh direct sun damages the leaves.",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "water",
       "title": "Keep it evenly moist",
-      "tip": "Never let it dry out fully, but don't leave it soggy or standing in water. Water less in winter.",
+      "tip": "Never let it dry out completely, but don't leave it soggy or standing in water. Water less in winter.",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "humidity",
       "title": "Boost the humidity",
-      "tip": "Set the pot inside a bigger one lined with moist sphagnum moss, or mist it, especially in winter.",
+      "tip": "Set the pot inside a bigger one lined with damp sphagnum moss, or mist it, especially in winter.",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "fertilize",
-      "title": "Half-strength feed",
-      "tip": "Feed at half strength every 4–6 weeks while it grows, little or none in winter. Too much browns the tips.",
+      "title": "Feed at half strength",
+      "tip": "Feed at half strength every 4–6 weeks while it grows, and little or none in winter. Too much browns the tips.",
       "stat": "4–6 wks",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "pests",
       "title": "Watch for scale",
-      "tip": "Check for scale, mealybugs and spider mites, and cut off any fronds covered in scale.",
+      "tip": "Check for scale, mealybugs and spider mites. Cut off any leaves covered in scale.",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "propagate",
       "title": "Divide it in spring",
-      "tip": "Every few years in spring, cut the root ball into halves or quarters and pot up each piece.",
+      "tip": "Every few years in spring, cut the root ball into halves or quarters and pot each piece.",
       "sourceRefs": [0, 1]
     }
   ],
-  "outro": "Moist soil, humid air and soft light keep those fronds lush.",
+  "outro": "Moist soil, humid air and soft light keep the leaves lush.",
   "sources": [
     {
       "title": "Wisconsin Horticulture Extension: Boston Fern, Nephrolepis exaltata 'Bostoniensis'",

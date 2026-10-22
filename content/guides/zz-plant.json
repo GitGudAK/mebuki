@@ -22,7 +22,7 @@
     {
       "kind": "water",
       "title": "Water every 2–3 weeks",
-      "tip": "Its potato-like rhizomes store water, so wait until the soil is completely dry.",
+      "tip": "Its potato-like rhizomes (underground stems) store water, so wait until the soil is completely dry.",
       "stat": "2–3 wks"
     },
     {
@@ -39,12 +39,12 @@
     {
       "kind": "pests",
       "title": "Yellow leaves? Too wet",
-      "tip": "Overwatering rots the rhizomes. Let soil dry fully and check for mushy roots."
+      "tip": "Overwatering rots the rhizomes. Let the soil dry fully and check for mushy roots."
     },
     {
       "kind": "repot",
       "title": "Repot when crowded",
-      "tip": "Size up only when rhizomes crowd the pot; go just one pot size bigger.",
+      "tip": "Move up only when the rhizomes crowd the pot, and go just one pot size bigger.",
       "stat": "When crowded"
     }
   ],

@@ -22,7 +22,7 @@
     {
       "kind": "light",
       "title": "Bright light, some shade",
-      "tip": "Give it under 4 hours of direct sun, or 6–8 hours of bright indirect light. Semi-shade suits it.",
+      "tip": "Give it less than 4 hours of direct sun, or 6–8 hours of bright, indirect light. Light shade suits it.",
       "stat": "6–8 hrs",
       "sourceRefs": [0, 1]
     },
@@ -42,19 +42,19 @@
     {
       "kind": "temperature",
       "title": "Keep it warm",
-      "tip": "Pandan is a tropical plant, too tender to grow outdoors in a cool climate like Britain's.",
+      "tip": "Pandan is a tropical plant. It is too tender to grow outdoors in cool climates.",
       "sourceRefs": [2, 3]
     },
     {
       "kind": "propagate",
-      "title": "Pot up rooted offshoots",
-      "tip": "Once an offshoot has its own roots, cut or twist it off at the base of the parent and pot it up.",
+      "title": "Pot rooted side shoots",
+      "tip": "Once a side shoot has its own roots, cut or twist it off at the base of the parent and pot it.",
       "sourceRefs": [0, 1]
     },
     {
       "kind": "pests",
       "title": "Watch for mealybugs",
-      "tip": "Mealybugs, aphids and mites hit stressed or root-bound plants. Cut off infested leaves and fix the cause.",
+      "tip": "Mealybugs, aphids and mites attack stressed or pot-bound plants. Cut off infested leaves and fix the cause.",
       "sourceRefs": [0, 1]
     }
   ],

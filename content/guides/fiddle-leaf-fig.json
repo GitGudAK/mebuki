@@ -21,30 +21,30 @@
     {
       "kind": "light",
       "title": "Bright light, near a window",
-      "tip": "Place near a bright window with filtered light; shield it from hot afternoon sun."
+      "tip": "Place it near a bright window with filtered light, and shield it from hot afternoon sun."
     },
     {
       "kind": "water",
       "title": "Water when top 5 cm is dry",
-      "tip": "Water deeply then let it drain; soggy soil can cause dark spots and leaf drop.",
+      "tip": "Water deeply, then let it drain. Soggy soil can cause dark spots and leaf drop.",
       "stat": "Top 5 cm"
     },
     {
       "kind": "temperature",
-      "title": "No drafts, no moving",
-      "tip": "Keep it away from heaters, AC vents and doors, and give it a quarter turn as you care for it.",
+      "title": "A steady spot above 13°C",
+      "tip": "Keep it away from heaters, AC vents and doors, and give it a quarter turn each time you care for it.",
       "stat": "Above 13°C"
     },
     {
       "kind": "humidity",
       "title": "Wipe the big leaves",
-      "tip": "Dust blocks light, so wipe leaves with a damp cloth now and then; it likes medium to high humidity.",
+      "tip": "Dust blocks light, so wipe the leaves with a damp cloth now and then. It likes medium to high humidity.",
       "stat": "Medium+"
     },
     {
       "kind": "fertilize",
-      "title": "Feed in growing season",
-      "tip": "Use a high-nitrogen liquid feed from spring to late summer, then ease off in winter.",
+      "title": "Feed in the growing season",
+      "tip": "Use a high-nitrogen liquid fertilizer from spring to late summer, then feed less in winter.",
       "stat": "Spring–summer"
     }
   ],

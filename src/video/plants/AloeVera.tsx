@@ -133,4 +133,4 @@ const AzaleaPot: React.FC<{ color: string }> = ({ color }) => (
   </g>
 );
 
-export const drawing: PlantDrawing = { id: "aloe-vera", Component: AloeVera };
+export const drawing: PlantDrawing = { id: "aloe-vera", Component: AloeVera, anchors: { soil: [232, 399], snip: [315, 322], snipR: 30 } };
