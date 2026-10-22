@@ -1,0 +1,90 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "prayer-plant",
+  "name": "Prayer Plant",
+  "scientificName": "Maranta leuconeura",
+  "hook": "Faded, crispy leaves? Your prayer plant wants humid air.",
+  "difficulty": "moderate",
+  "tags": [
+    "bright indirect",
+    "high humidity",
+    "pet safe"
+  ],
+  "leafShape": "oval",
+  "palette": {
+    "background": "#2A2340",
+    "accent": "#E85D75",
+    "leaf": "#3E8E5E",
+    "pot": "#C9A27A"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright, indirect light",
+      "tip": "Keep it out of direct sun, which bleaches the leaf colors. It copes with lower light, but colors fade.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "water",
+      "title": "Keep it evenly moist",
+      "tip": "Keep the soil moist in spring and summer, and let it dry a little in winter. Soggy soil rots the roots.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "humidity",
+      "title": "Keep the air humid",
+      "tip": "It can't stand dry air. Stand the pot on a tray of wet pebbles or gravel, or mist the leaves.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "temperature",
+      "title": "Warm, with no cold drafts",
+      "tip": "Keep it warm and away from cold drafts and chilly windows; it does not tolerate low temperatures.",
+      "sourceRefs": [1, 2]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed monthly, go light",
+      "tip": "A monthly feed keeps it growing, but don't overdo it: too much fertilizer burns the leaves.",
+      "stat": "Monthly",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "pests",
+      "title": "Check for mites",
+      "tip": "Look for spider mites and mealybugs, and keep water off the crown so the stems don't rot.",
+      "sourceRefs": [0, 1, 2]
+    }
+  ],
+  "outro": "Humid air, steady moisture, soft light. Then watch it fold at night.",
+  "sources": [
+    {
+      "title": "RHS: Maranta leuconeura",
+      "url": "https://www.rhs.org.uk/plants/119598/maranta-leuconeura/details"
+    },
+    {
+      "title": "NC State Plant Toolbox: Maranta leuconeura",
+      "url": "https://plants.ces.ncsu.edu/plants/maranta-leuconeura/"
+    },
+    {
+      "title": "University of Illinois Extension: Prayer Plant",
+      "url": "https://extension.illinois.edu/houseplants/prayer-plant"
+    },
+    {
+      "title": "ASPCA: Prayer Plant (listed under Calathea insignis, incl. Maranta, non-toxic)",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/prayer-plant"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why do the leaves fold up at night?",
+      "answer": "That's normal. Prayer plant leaves fold up in the dark. It isn't a sign of a problem.",
+      "sources": [
+        {
+          "title": "University of Illinois Extension: Prayer Plant",
+          "url": "https://extension.illinois.edu/houseplants/prayer-plant"
+        }
+      ]
+    }
+  ]
+}

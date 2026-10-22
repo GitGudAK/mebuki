@@ -1,0 +1,95 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "lucky-bamboo",
+  "name": "Lucky Bamboo",
+  "scientificName": "Dracaena sanderiana",
+  "origin": "West Central Africa",
+  "hook": "Brown leaves on your lucky bamboo? Move it out of sun.",
+  "difficulty": "easy",
+  "tags": [
+    "bright indirect",
+    "beginner",
+    "no soil",
+    "toxic to pets"
+  ],
+  "leafShape": "long",
+  "palette": {
+    "background": "#173F3A",
+    "accent": "#F2CF7A",
+    "leaf": "#5FB24E",
+    "pot": "#BFD8D2"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright, no direct sun",
+      "tip": "An east- or north-facing room is ideal. Direct sun turns the leaves brown.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "water",
+      "title": "Fresh water every week",
+      "tip": "Keep the roots and at least 2.5 cm of stem underwater. Use chlorine-free water and change it weekly.",
+      "stat": "Weekly",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "soil",
+      "title": "Or pot it in moist mix",
+      "tip": "In soil, water when the top 2.5 cm is dry, let it drain, and never leave water in the saucer.",
+      "stat": "2.5 cm dry",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed at quarter strength",
+      "tip": "In water, add liquid houseplant feed at 1/4 strength every other month. In soil, feed monthly while growing.",
+      "stat": "¼ strength",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "propagate",
+      "title": "Root a cutting in water",
+      "tip": "Cut a new shoot, strip its lowest leaves and stand it in water. Roots usually form in 2–3 weeks.",
+      "stat": "2–3 wks",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "pests",
+      "title": "Rinse off mites and aphids",
+      "tip": "Check for spider mites, mealybugs and aphids. Rinse the leaves, or use neem oil or insecticidal soap.",
+      "sourceRefs": [0, 1]
+    }
+  ],
+  "outro": "Fresh water each week and soft, indirect light keep it green.",
+  "sources": [
+    {
+      "title": "Clemson HGIC: How to Grow and Care for Lucky Bamboo (Dracaena sanderiana)",
+      "url": "https://hgic.clemson.edu/how-to-grow-and-care-for-lucky-bamboo-dracaena-sanderiana/"
+    },
+    {
+      "title": "NC State Plant Toolbox: Dracaena sanderiana",
+      "url": "https://plants.ces.ncsu.edu/plants/dracaena-sanderiana/"
+    },
+    {
+      "title": "ASPCA: Dracaena (Dracaena spp., incl. ribbon plant)",
+      "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/dracaena"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why are my lucky bamboo leaves turning yellow or brown?",
+      "answer": "Yellow leaves and soft stems usually mean too much water in soil. Brown leaves point to direct sun, and brown tips to dry air.",
+      "sources": [
+        {
+          "title": "NC State Plant Toolbox: Dracaena sanderiana",
+          "url": "https://plants.ces.ncsu.edu/plants/dracaena-sanderiana/"
+        },
+        {
+          "title": "Clemson HGIC: How to Grow and Care for Lucky Bamboo (Dracaena sanderiana)",
+          "url": "https://hgic.clemson.edu/how-to-grow-and-care-for-lucky-bamboo-dracaena-sanderiana/"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "juniper-bonsai",
+  "name": "Juniper Bonsai",
+  "scientificName": "Juniperus procumbens 'Nana'",
+  "origin": "Southern Japan and Korea",
+  "hook": "Juniper bonsai dying indoors? It needs to live outside.",
+  "difficulty": "moderate",
+  "tags": [
+    "full sun",
+    "balcony",
+    "outdoors"
+  ],
+  "leafShape": "herb",
+  "palette": {
+    "background": "#22303F",
+    "accent": "#E8A87C",
+    "leaf": "#4D7D63",
+    "pot": "#6B4F43"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Outdoors, full sun all day",
+      "tip": "Keep it on a sunny balcony, not a windowsill. Bring it inside only for a few hours to admire it.",
+      "stat": "Full sun",
+      "sourceRefs": [1, 2, 3]
+    },
+    {
+      "kind": "water",
+      "title": "Water when the top is dry",
+      "tip": "Test with a finger first, then water until it drains. In summer sun that can be daily; never keep it soggy.",
+      "sourceRefs": [0, 2, 3, 4]
+    },
+    {
+      "kind": "temperature",
+      "title": "Let it rest cold in winter",
+      "tip": "It needs a cool winter rest. Below -2°C, shelter it in a cold frame or unheated spot, but don't warm it.",
+      "stat": "-2°C",
+      "sourceRefs": [3]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed weakly while growing",
+      "tip": "Give a balanced liquid feed at low strength every 2 weeks in the growing season, and stop in autumn.",
+      "stat": "2 wks",
+      "sourceRefs": [0, 3]
+    },
+    {
+      "kind": "repot",
+      "title": "Repot every 2–3 years",
+      "tip": "Trim the roots and repot into gritty bonsai compost every 2–3 years, during the growing season.",
+      "stat": "2–3 yrs",
+      "sourceRefs": [0, 3]
+    },
+    {
+      "kind": "pests",
+      "title": "Hose off spider mites",
+      "tip": "Spider mites love junipers. Spray the foliage hard with water each time you water to keep them away.",
+      "sourceRefs": [1, 2]
+    }
+  ],
+  "outro": "Full sun outdoors and a cool winter: it's a tree, not a houseplant.",
+  "sources": [
+    {
+      "title": "RHS: Bonsai, growing miniature trees",
+      "url": "https://www.rhs.org.uk/plants/types/trees/bonsai"
+    },
+    {
+      "title": "NC State Plant Toolbox: Juniperus procumbens",
+      "url": "https://plants.ces.ncsu.edu/plants/juniperus-procumbens/"
+    },
+    {
+      "title": "NC State Extension Master Gardener: An Audio Introduction to Bonsai With Harold Johnson",
+      "url": "https://extensiongardener.ces.ncsu.edu/2021/07/an-introduction-to-bonsai-with-harold-johnson"
+    },
+    {
+      "title": "Virginia Cooperative Extension: The Art of Bonsai",
+      "url": "https://www.pubs.ext.vt.edu/426/426-601/426-601.html"
+    },
+    {
+      "title": "Ask Extension: Bonsai houseplant (Japanese juniper)",
+      "url": "https://ask.extension.org/kb/faq.php?id=606109"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I keep my juniper bonsai indoors?",
+      "answer": "Not for long. It is an outdoor tree that needs sun all day and a cool winter rest. Bring it in only briefly to show it off, then put it back outside.",
+      "sources": [
+        {
+          "title": "NC State Extension Master Gardener: An Audio Introduction to Bonsai With Harold Johnson",
+          "url": "https://extensiongardener.ces.ncsu.edu/2021/07/an-introduction-to-bonsai-with-harold-johnson"
+        },
+        {
+          "title": "Virginia Cooperative Extension: The Art of Bonsai",
+          "url": "https://www.pubs.ext.vt.edu/426/426-601/426-601.html"
+        },
+        {
+          "title": "Ask Extension: Bonsai houseplant (Japanese juniper)",
+          "url": "https://ask.extension.org/kb/faq.php?id=606109"
+        }
+      ]
+    }
+  ]
+}

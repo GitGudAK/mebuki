@@ -1,0 +1,89 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "rosemary",
+  "name": "Rosemary",
+  "scientificName": "Salvia rosmarinus",
+  "origin": "Mediterranean",
+  "hook": "Rosemary dying indoors? It's usually too much water.",
+  "difficulty": "moderate",
+  "tags": [
+    "edible",
+    "full sun",
+    "balcony",
+    "pet safe"
+  ],
+  "leafShape": "herb",
+  "palette": {
+    "background": "#3B3046",
+    "accent": "#A9B8F0",
+    "leaf": "#6E9A78",
+    "pot": "#C27A4E"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Full sun, 6+ hours",
+      "tip": "Give it your sunniest window or balcony spot. It is a sun-loving Mediterranean shrub.",
+      "stat": "6+ hrs",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "water",
+      "title": "Let it dry between drinks",
+      "tip": "Water when the compost dries out, and never let it sit waterlogged. Overwatering is the top killer.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "soil",
+      "title": "Gritty soil, 30 cm pot",
+      "tip": "Use a pot at least 30 cm wide and deep with drainage holes, and soil-based compost mixed with grit.",
+      "stat": "30 cm",
+      "sourceRefs": [0]
+    },
+    {
+      "kind": "prune",
+      "title": "Trim after it flowers",
+      "tip": "Trim lightly each year after flowering, never into bare old wood. Soft new tips taste best.",
+      "sourceRefs": [0]
+    },
+    {
+      "kind": "temperature",
+      "title": "Shelter pots in winter",
+      "tip": "Pots feel the cold more than garden plants. Wrap them or move them to a porch, out of winter wet.",
+      "sourceRefs": [0]
+    },
+    {
+      "kind": "pests",
+      "title": "Indoors, check for pests",
+      "tip": "Indoors, watch for aphids, mealybugs, whiteflies and spider mites, and give it good air flow.",
+      "sourceRefs": [1]
+    }
+  ],
+  "outro": "Sun, sharp drainage and a light hand with water: sprigs all year.",
+  "sources": [
+    {
+      "title": "RHS: How to grow rosemary",
+      "url": "https://www.rhs.org.uk/herbs/rosemary/grow-your-own"
+    },
+    {
+      "title": "NC State Plant Toolbox: Salvia rosmarinus",
+      "url": "https://plants.ces.ncsu.edu/plants/salvia-rosmarinus/"
+    },
+    {
+      "title": "ASPCA: Rosemary (Rosmarinus officinalis)",
+      "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/rosemary"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I keep rosemary indoors over winter?",
+      "answer": "You can, but it is tricky. Give it the sunniest spot, let the soil dry between waterings, and check often for aphids, mealybugs, whiteflies and spider mites.",
+      "sources": [
+        {
+          "title": "NC State Plant Toolbox: Salvia rosmarinus",
+          "url": "https://plants.ces.ncsu.edu/plants/salvia-rosmarinus/"
+        }
+      ]
+    }
+  ]
+}

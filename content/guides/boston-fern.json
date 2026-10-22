@@ -1,0 +1,79 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "boston-fern",
+  "name": "Boston Fern",
+  "scientificName": "Nephrolepis exaltata 'Bostoniensis'",
+  "hook": "Crispy brown tips? Your Boston fern needs humid air.",
+  "difficulty": "moderate",
+  "tags": [
+    "bright indirect",
+    "high humidity",
+    "hanging basket",
+    "pet safe"
+  ],
+  "leafShape": "fern",
+  "palette": {
+    "background": "#2F3D24",
+    "accent": "#F2E394",
+    "leaf": "#79C267",
+    "pot": "#8C6A5D"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright, filtered light",
+      "tip": "An east window, or a sheer curtain on a south or west one. Harsh direct sun damages the fronds.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "water",
+      "title": "Keep it evenly moist",
+      "tip": "Never let it dry out fully, but don't leave it soggy or standing in water. Water less in winter.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "humidity",
+      "title": "Boost the humidity",
+      "tip": "Set the pot inside a bigger one lined with moist sphagnum moss, or mist it, especially in winter.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Half-strength feed",
+      "tip": "Feed at half strength every 4–6 weeks while it grows, little or none in winter. Too much browns the tips.",
+      "stat": "4–6 wks",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "pests",
+      "title": "Watch for scale",
+      "tip": "Check for scale, mealybugs and spider mites, and cut off any fronds covered in scale.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "propagate",
+      "title": "Divide it in spring",
+      "tip": "Every few years in spring, cut the root ball into halves or quarters and pot up each piece.",
+      "sourceRefs": [0, 1]
+    }
+  ],
+  "outro": "Moist soil, humid air and soft light keep those fronds lush.",
+  "sources": [
+    {
+      "title": "Wisconsin Horticulture Extension: Boston Fern, Nephrolepis exaltata 'Bostoniensis'",
+      "url": "https://hort.extension.wisc.edu/articles/boston-fern-nephrolepis-exaltata-bostoniensis/"
+    },
+    {
+      "title": "Clemson HGIC: Indoor Ferns",
+      "url": "https://hgic.clemson.edu/factsheet/indoor-ferns/"
+    },
+    {
+      "title": "RHS: Nephrolepis exaltata 'Bostoniensis'",
+      "url": "https://www.rhs.org.uk/plants/58296/nephrolepis-exaltata-bostoniensis/details"
+    },
+    {
+      "title": "ASPCA: Boston Fern (non-toxic to dogs and cats)",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/boston-fern"
+    }
+  ]
+}

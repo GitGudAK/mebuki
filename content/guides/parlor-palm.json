@@ -1,0 +1,76 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "parlor-palm",
+  "name": "Parlor Palm",
+  "scientificName": "Chamaedorea elegans",
+  "hook": "Brown frond tips? Your palm wants softer water.",
+  "difficulty": "easy",
+  "tags": [
+    "low light",
+    "beginner",
+    "pet safe"
+  ],
+  "leafShape": "palm",
+  "palette": {
+    "background": "#1B3445",
+    "accent": "#A8E6CF",
+    "leaf": "#3C8D5E",
+    "pot": "#B9A27E"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright shade, or low light",
+      "tip": "Bright, indirect light is best, but it tolerates low light. Direct summer sun scorches the fronds.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "water",
+      "title": "Water when the top is dry",
+      "tip": "Water once the surface dries, then empty the tray. Rainwater is best; hard tap water browns the leaves.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "temperature",
+      "title": "Warm, with no cold drafts",
+      "tip": "Best at 20–27°C from spring to autumn; cooler winters are fine. Keep it away from drafty windows.",
+      "stat": "20–27°C",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed monthly, not winter",
+      "tip": "Give a balanced liquid feed once a month from spring to autumn, and nothing in winter.",
+      "stat": "Monthly",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "repot",
+      "title": "Keep the pot snug",
+      "tip": "It grows slowly. Repot in spring only when roots are crowded, into a pot about 2 cm wider.",
+      "stat": "2 cm",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "pests",
+      "title": "Mist against spider mites",
+      "tip": "Spider mites, scale and mealybugs are the main pests. Misting and wiping the leaves helps keep them off.",
+      "sourceRefs": [0, 1]
+    }
+  ],
+  "outro": "Soft water, bright shade and a snug pot: a palm that lasts for years.",
+  "sources": [
+    {
+      "title": "RHS: How to grow chamaedorea",
+      "url": "https://www.rhs.org.uk/plants/chamaedorea/growing-guide"
+    },
+    {
+      "title": "NC State Plant Toolbox: Chamaedorea elegans",
+      "url": "https://plants.ces.ncsu.edu/plants/chamaedorea-elegans/"
+    },
+    {
+      "title": "ASPCA: Parlor Palm (Chamaedorea elegans)",
+      "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/parlor-palm"
+    }
+  ]
+}

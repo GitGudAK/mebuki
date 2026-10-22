@@ -1,0 +1,81 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "dragon-tree",
+  "name": "Dragon Tree",
+  "scientificName": "Dracaena marginata",
+  "hook": "Brown leaf tips? Your tap water may be the cause.",
+  "difficulty": "easy",
+  "tags": [
+    "bright indirect",
+    "beginner",
+    "statement plant",
+    "toxic to pets"
+  ],
+  "leafShape": "long",
+  "palette": {
+    "background": "#2E2433",
+    "accent": "#E0607E",
+    "leaf": "#6A9A3F",
+    "pot": "#C9B9A6"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright, indirect light",
+      "tip": "An east or west window, or a south one behind a sheer. Summer sun scorches it; it copes with lower light.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "water",
+      "title": "Water when top 5 cm is dry",
+      "tip": "Then water well. Use rainwater or filtered water: fluoride in tap water browns the leaf tips.",
+      "stat": "5 cm",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "temperature",
+      "title": "Warm, away from drafts",
+      "tip": "It grows best at 18–30°C. Keep it away from cold drafts and hot radiators.",
+      "stat": "18–30°C",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed April to October",
+      "tip": "Use a general liquid houseplant feed in the growing season. Too much burns and yellows the leaf tips.",
+      "stat": "Apr–Oct",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "prune",
+      "title": "Cut back to branch it",
+      "tip": "Cut a leggy stem at the height you want; new shoots sprout just below the cut.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "pests",
+      "title": "Check for mites and scale",
+      "tip": "Check regularly for spider mites, mealybugs and scale insects, the sap-suckers it attracts.",
+      "sourceRefs": [0, 1, 2]
+    }
+  ],
+  "outro": "Bright light, filtered water and a dry top: tidy tips for years.",
+  "sources": [
+    {
+      "title": "RHS: How to grow dracaena",
+      "url": "https://www.rhs.org.uk/plants/dracaena/how-to-grow-dracaena"
+    },
+    {
+      "title": "Clemson HGIC: Dracaena",
+      "url": "https://hgic.clemson.edu/factsheet/dracaena/"
+    },
+    {
+      "title": "NC State Plant Toolbox: Dracaena marginata",
+      "url": "https://plants.ces.ncsu.edu/plants/dracaena-marginata/"
+    },
+    {
+      "title": "ASPCA: Dracaena (Dracaena spp., incl. dragon tree)",
+      "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/dracaena"
+    }
+  ]
+}

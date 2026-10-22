@@ -1,0 +1,92 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "curry-leaf",
+  "name": "Curry Leaf",
+  "scientificName": "Murraya koenigii (Bergera koenigii)",
+  "hook": "Curry leaf dropping its leaves in winter? It's too cold.",
+  "difficulty": "moderate",
+  "tags": [
+    "full sun",
+    "herb",
+    "edible",
+    "balcony"
+  ],
+  "leafShape": "herb",
+  "palette": {
+    "background": "#4A2E1F",
+    "accent": "#F6E7B0",
+    "leaf": "#5E9A3E",
+    "pot": "#B5603C"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Sun, with summer shade",
+      "tip": "Give it full sun in a sheltered spot, but shade it from harsh summer sun so the leaves don't scorch.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "water",
+      "title": "Let it dry between drinks",
+      "tip": "Water when the soil has dried out, and use a free-draining pot so the roots never sit wet.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "temperature",
+      "title": "Indoors before frost",
+      "tip": "It can't survive freezing and drops leaves in the cold. Bring the pot inside for winter.",
+      "stat": "No frost",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "soil",
+      "title": "Acid to neutral compost",
+      "tip": "Use a compost that holds some moisture but drains well, acidic to neutral rather than chalky.",
+      "sourceRefs": [1]
+    },
+    {
+      "kind": "prune",
+      "title": "Pick leaves, skip berries",
+      "tip": "Pick fresh leaves any time and trim to keep it compact. Avoid the berries: the seeds are considered toxic.",
+      "sourceRefs": [0, 2]
+    },
+    {
+      "kind": "pests",
+      "title": "Check for mites and scale",
+      "tip": "Look under the leaves for red spider mite, scale insects and mealybugs, especially indoors.",
+      "sourceRefs": [1]
+    }
+  ],
+  "outro": "Sun, a dry spell between drinks and a warm winter: fresh leaves.",
+  "sources": [
+    {
+      "title": "UC Master Gardeners of Santa Clara County: Curry Leaf",
+      "url": "https://ucanr.edu/site/uc-master-gardeners-santa-clara-county/curry-leaf"
+    },
+    {
+      "title": "RHS: Bergera koenigii (curry tree)",
+      "url": "https://rhs.org.uk/plants/354374/bergera-koenigii-curry-tree-curry-leaf/details"
+    },
+    {
+      "title": "UF/IFAS Extension Charlotte County: The reasoning for the seasoning, curry leaf",
+      "url": "https://blogs.ifas.ufl.edu/charlotteco/2026/07/13/the-reasoning-for-the-seasoning-curry-leaf/"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Should I dry curry leaves to store them?",
+      "answer": "Fresh leaves have the best flavour, and drying loses much of it. Freeze surplus leaves instead.",
+      "sources": [
+        {
+          "title": "UC Master Gardeners of Santa Clara County: Curry Leaf",
+          "url": "https://ucanr.edu/site/uc-master-gardeners-santa-clara-county/curry-leaf"
+        },
+        {
+          "title": "UF/IFAS Extension Charlotte County: The reasoning for the seasoning, curry leaf",
+          "url": "https://blogs.ifas.ufl.edu/charlotteco/2026/07/13/the-reasoning-for-the-seasoning-curry-leaf/"
+        }
+      ]
+    }
+  ],
+  "origin": "the Indian subcontinent and SE Asia"
+}

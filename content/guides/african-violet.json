@@ -1,0 +1,91 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "african-violet",
+  "name": "African Violet",
+  "scientificName": "Streptocarpus ionanthus (formerly Saintpaulia)",
+  "hook": "African violet not blooming? It needs more light.",
+  "difficulty": "moderate",
+  "tags": [
+    "bright indirect",
+    "flowering",
+    "windowsill",
+    "pet safe"
+  ],
+  "leafShape": "flowering",
+  "palette": {
+    "background": "#2E2440",
+    "accent": "#B98CF5",
+    "leaf": "#4F7F52",
+    "pot": "#C9A27E"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright, cool light",
+      "tip": "A north or east window, out of strong summer sun. To flower, it needs 14–16 hrs of light and 8 hrs dark.",
+      "stat": "14–16 hrs",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "water",
+      "title": "Water the soil, not leaves",
+      "tip": "Use room-temperature water on the mix or from below. Drops on leaves leave spots. Never let it sit in water.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "temperature",
+      "title": "Steady 16–24°C",
+      "tip": "Aim for 18–24°C by day and about 16°C at night, away from cold drafts and sudden changes.",
+      "stat": "16–24°C",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "humidity",
+      "title": "Humid air, dry leaves",
+      "tip": "Stand the pot on a tray of damp gravel, above the water. Don't mist: it marks leaves and invites mould.",
+      "stat": "40–60%",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed it lightly",
+      "tip": "Dilute African violet or houseplant feed every 3–4 weeks in spring and summer.",
+      "stat": "3–4 wks",
+      "sourceRefs": [1]
+    },
+    {
+      "kind": "repot",
+      "title": "Keep the pot small",
+      "tip": "Repot in spring every 2–3 years, into a pot only slightly bigger than the roots, usually 10 cm across.",
+      "stat": "2–3 yrs",
+      "sourceRefs": [1]
+    }
+  ],
+  "outro": "Bright light, dry leaves and a snug pot keep violets in bloom.",
+  "sources": [
+    {
+      "title": "University of Minnesota Extension: Growing African violets",
+      "url": "https://extension.umn.edu/houseplants/african-violets"
+    },
+    {
+      "title": "RHS: How to grow African violets",
+      "url": "https://www.rhs.org.uk/plants/african-violets/growing-guide"
+    },
+    {
+      "title": "ASPCA: African Violet (Saintpaulia spp., non-toxic)",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/african-violet"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why are there pale spots on the leaves?",
+      "answer": "Water left sitting on the leaves causes spots. Water the mix directly or from below with room-temperature water.",
+      "sources": [
+        {
+          "title": "University of Minnesota Extension: Growing African violets",
+          "url": "https://extension.umn.edu/houseplants/african-violets"
+        }
+      ]
+    }
+  ]
+}

@@ -77,7 +77,9 @@
         "herb",
         "cactus",
         "flowering",
-        "oval"
+        "oval",
+        "fern",
+        "palm"
       ]
     },
     "palette": {
@@ -134,6 +136,12 @@
       "items": {
         "$ref": "#/$defs/faq"
       }
+    },
+    "origin": {
+      "type": "string",
+      "description": "Where the plant is native to, short, e.g. \"India and Sri Lanka\". Shown as \"Native to \u2026\" on the guide.",
+      "minLength": 3,
+      "maxLength": 40
     }
   },
   "$defs": {

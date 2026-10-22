@@ -48,7 +48,7 @@ export type PlantGuide = {
   /** Urban-gardener friendly tags, e.g. "low light", "balcony", "pet safe". */
   tags: string[];
   /** Leaf shape drives which illustrated plant the animation draws. */
-  leafShape: "round" | "long" | "split" | "succulent" | "trailing" | "herb" | "cactus" | "flowering" | "oval";
+  leafShape: "round" | "long" | "split" | "succulent" | "trailing" | "herb" | "cactus" | "flowering" | "oval" | "fern" | "palm";
   palette: {
     background: string;
     accent: string;
@@ -64,6 +64,8 @@ export type PlantGuide = {
    * Required: at least 2, see content/schema/plant-guide.schema.json and CONTRIBUTING.md.
    */
   sources: GuideSource[];
+  /** Where the plant is native to, e.g. "India and Sri Lanka". */
+  origin?: string;
   /** Optional questions from growers, shown as an FAQ under the guide. */
   faqs?: GuideFaq[];
 };

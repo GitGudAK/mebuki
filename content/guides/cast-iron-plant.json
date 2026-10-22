@@ -1,0 +1,80 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "cast-iron-plant",
+  "name": "Cast Iron Plant",
+  "scientificName": "Aspidistra elatior",
+  "hook": "Dim room killing plants? Try a cast iron plant.",
+  "difficulty": "easy",
+  "tags": [
+    "low light",
+    "beginner",
+    "pet safe"
+  ],
+  "leafShape": "long",
+  "palette": {
+    "background": "#1B2E35",
+    "accent": "#E8D9A8",
+    "leaf": "#2C5E3F",
+    "pot": "#8A6A55"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Low light, no direct sun",
+      "tip": "A north window or dim corner suits it. Direct sun scorches the leaves; deep shade just slows growth.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "water",
+      "title": "Water when 5–8 cm is dry",
+      "tip": "Water once the top 5–8 cm is dry and empty the saucer. Soggy compost rots roots; water less in winter.",
+      "stat": "5–8 cm",
+      "sourceRefs": [1, 0]
+    },
+    {
+      "kind": "temperature",
+      "title": "Cool is fine",
+      "tip": "Keep it between 5 and 20°C, away from radiators and other heat sources.",
+      "stat": "5–20°C",
+      "sourceRefs": [0]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed monthly in summer",
+      "tip": "General houseplant feed once a month, from spring to late summer only.",
+      "stat": "Monthly",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "pests",
+      "title": "Dust and check leaves",
+      "tip": "Wipe leaves with a damp cloth and check weekly for spider mites, mealybugs and scale.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "propagate",
+      "title": "Divide in spring",
+      "tip": "Cut through the rhizomes of a big clump, keeping several leaves on each piece.",
+      "sourceRefs": [0, 1]
+    }
+  ],
+  "outro": "Shade, a little water and no fuss: it just keeps going.",
+  "sources": [
+    {
+      "title": "RHS: How to grow aspidistras",
+      "url": "https://www.rhs.org.uk/plants/aspidistra/how-to-grow-aspidistras"
+    },
+    {
+      "title": "Clemson HGIC: Cast Iron Plant",
+      "url": "https://hgic.clemson.edu/cast-iron-plant/"
+    },
+    {
+      "title": "NC State Plant Toolbox: Aspidistra elatior",
+      "url": "https://plants.ces.ncsu.edu/plants/aspidistra-elatior/"
+    },
+    {
+      "title": "ASPCA: Cast Iron Plant (non-toxic)",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/cast-iron-plant"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "hoya",
+  "name": "Wax Plant",
+  "scientificName": "Hoya carnosa",
+  "hook": "No flowers yet? Stop cutting off the old stalks.",
+  "difficulty": "easy",
+  "tags": [
+    "bright indirect",
+    "flowering",
+    "pet safe"
+  ],
+  "leafShape": "trailing",
+  "palette": {
+    "background": "#1A2A44",
+    "accent": "#F7C6D0",
+    "leaf": "#4F8A5B",
+    "pot": "#D6B48C"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright, out of hot sun",
+      "tip": "Give it bright, indirect light and shade it from hot summer sun. Too little light means no flowers.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "water",
+      "title": "Let it dry between drinks",
+      "tip": "Let the mix dry between waterings and use room-temperature water. Water less from October to February.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "temperature",
+      "title": "Keep it at 16–24°C",
+      "tip": "Aim for 16–24°C in spring and summer, away from radiators and drafts. It takes winter nights to 10°C.",
+      "stat": "16–24°C",
+      "sourceRefs": [0]
+    },
+    {
+      "kind": "soil",
+      "title": "Chunky mix, snug pot",
+      "tip": "Mix equal parts orchid bark, peat-free compost and coarse perlite. It likes being a bit root-bound.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "prune",
+      "title": "Keep the old flower spurs",
+      "tip": "New blooms grow from old flower stalks, so never cut them off. Don't move the plant once buds form.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "pests",
+      "title": "Watch for mealybugs",
+      "tip": "Check often for mealybugs, scale and whitefly. Spider mites show up when the air is too dry.",
+      "sourceRefs": [0, 1]
+    }
+  ],
+  "outro": "Bright light, a dry-out between drinks, and leave those spurs alone.",
+  "sources": [
+    {
+      "title": "RHS: How to grow hoya",
+      "url": "https://www.rhs.org.uk/plants/hoya/how-to-grow"
+    },
+    {
+      "title": "NC State Plant Toolbox: Hoya carnosa",
+      "url": "https://plants.ces.ncsu.edu/plants/hoya-carnosa/"
+    },
+    {
+      "title": "Penn State Extension: Hoyas as Houseplants",
+      "url": "https://extension.psu.edu/hoyas-as-houseplants"
+    },
+    {
+      "title": "ASPCA: Wax Plant (Hoya carnosa)",
+      "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/wax-plant"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why won't my hoya flower?",
+      "answer": "Most don't bloom until they are 2 or 3 years old. Give it plenty of bright light, water carefully, and leave old flower stalks on, since new blooms grow from them.",
+      "sources": [
+        {
+          "title": "NC State Plant Toolbox: Hoya carnosa",
+          "url": "https://plants.ces.ncsu.edu/plants/hoya-carnosa/"
+        },
+        {
+          "title": "RHS: How to grow hoya",
+          "url": "https://www.rhs.org.uk/plants/hoya/how-to-grow"
+        }
+      ]
+    }
+  ]
+}

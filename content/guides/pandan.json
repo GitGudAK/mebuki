@@ -1,0 +1,80 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "pandan",
+  "name": "Pandan",
+  "scientificName": "Pandanus amaryllifolius",
+  "origin": "Southeast Asia",
+  "hook": "Pandan stunted? Give it more water, not less.",
+  "difficulty": "moderate",
+  "tags": [
+    "edible",
+    "herb",
+    "bright indirect"
+  ],
+  "leafShape": "long",
+  "palette": {
+    "background": "#14382B",
+    "accent": "#E6F28A",
+    "leaf": "#3FA34D",
+    "pot": "#A9835E"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright light, some shade",
+      "tip": "Give it under 4 hours of direct sun, or 6–8 hours of bright indirect light. Semi-shade suits it.",
+      "stat": "6–8 hrs",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "water",
+      "title": "Keep it moist, even wet",
+      "tip": "It loves water and grows in waterlogged ground. It survives drought, but dry soil stunts its growth.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "soil",
+      "title": "Loamy soil, 10 cm deep",
+      "tip": "Its roots are shallow, so it grows well in a pot. Fill it with loamy soil at least 10 cm deep.",
+      "stat": "10 cm+",
+      "sourceRefs": [0]
+    },
+    {
+      "kind": "temperature",
+      "title": "Keep it warm",
+      "tip": "Pandan is a tropical plant, too tender to grow outdoors in a cool climate like Britain's.",
+      "sourceRefs": [2, 3]
+    },
+    {
+      "kind": "propagate",
+      "title": "Pot up rooted offshoots",
+      "tip": "Once an offshoot has its own roots, cut or twist it off at the base of the parent and pot it up.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "pests",
+      "title": "Watch for mealybugs",
+      "tip": "Mealybugs, aphids and mites hit stressed or root-bound plants. Cut off infested leaves and fix the cause.",
+      "sourceRefs": [0, 1]
+    }
+  ],
+  "outro": "Plenty of water, soft light and warmth keep the leaves coming.",
+  "sources": [
+    {
+      "title": "NParks Gardening with Edibles: Pandan",
+      "url": "https://gardeningsg.nparks.gov.sg/gardening-resource-library/pandan/"
+    },
+    {
+      "title": "NParks Flora & Fauna Web: Pandanus amaryllifolius",
+      "url": "https://www.nparks.gov.sg/florafaunaweb/flora/2/2/2299"
+    },
+    {
+      "title": "RHS: Chinatown vegetable inspiration",
+      "url": "https://www.rhs.org.uk/advice/grow-your-own/features/chinatown-inspiration"
+    },
+    {
+      "title": "USDA ARS: Viruses in pandan (Pandanus amaryllifolius) from South Florida",
+      "url": "https://www.ars.usda.gov/research/publications/publication/?seqNo115=392081"
+    }
+  ]
+}

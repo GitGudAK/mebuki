@@ -1,0 +1,92 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "bird-of-paradise",
+  "name": "Bird of Paradise",
+  "scientificName": "Strelitzia reginae",
+  "hook": "No flowers yet? Your bird of paradise needs more sun.",
+  "difficulty": "moderate",
+  "tags": [
+    "full sun",
+    "statement plant",
+    "flowering",
+    "toxic to pets"
+  ],
+  "leafShape": "long",
+  "palette": {
+    "background": "#3A1F2B",
+    "accent": "#FF7A2F",
+    "leaf": "#3C8C6A",
+    "pot": "#D6C6A8"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "As much sun as you can",
+      "tip": "Put it by a big sunny window. It needs near full sun in summer and all the light it can get in winter.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "water",
+      "title": "Moist summer, dry winter",
+      "tip": "Water freely in spring and summer, never soggy. From late autumn let it get fairly dry between drinks.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "temperature",
+      "title": "Keep it above 10–12°C",
+      "tip": "Bring it in before frost. If it summers outdoors, move it into stronger sun gradually to avoid sunburn.",
+      "stat": "10–12°C+",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed every 2 weeks",
+      "tip": "Liquid houseplant feed every two weeks in spring and summer, then about monthly in winter.",
+      "stat": "2 wks",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "repot",
+      "title": "Repot only when full",
+      "tip": "Repot in spring once roots fill the pot, going only slightly bigger. Swap the top 5 cm of soil each spring.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "pests",
+      "title": "Wipe leaves, check pests",
+      "tip": "Wipe leaves with a soft cloth, no leaf shine, and check for mealybugs, scale and spider mites.",
+      "sourceRefs": [0, 1, 2]
+    }
+  ],
+  "outro": "Bright sun and patience: flowers can take 5–10 years to come.",
+  "sources": [
+    {
+      "title": "RHS: How to grow strelitzia",
+      "url": "https://www.rhs.org.uk/plants/strelitzia/how-to-grow-strelitzia"
+    },
+    {
+      "title": "Wisconsin Horticulture Extension: Bird of Paradise, Strelitzia reginae",
+      "url": "https://hort.extension.wisc.edu/articles/bird-of-paradise-strelitzia-reginae/"
+    },
+    {
+      "title": "NC State Plant Toolbox: Strelitzia reginae",
+      "url": "https://plants.ces.ncsu.edu/plants/strelitzia-reginae/"
+    },
+    {
+      "title": "ASPCA: Bird of Paradise Flower",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/bird-paradise-flower"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why hasn't my bird of paradise flowered?",
+      "answer": "It may simply be too young. Plants usually need to be 5–10 years old before they flower, and they need lots of bright light.",
+      "sources": [
+        {
+          "title": "RHS: How to grow strelitzia",
+          "url": "https://www.rhs.org.uk/plants/strelitzia/how-to-grow-strelitzia"
+        }
+      ]
+    }
+  ]
+}

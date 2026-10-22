@@ -33,6 +33,7 @@ export const AUTHORITATIVE_DOMAINS = [
   "aspca.org",
   // Government plant databases
   "usda.gov",
+  "nparks.gov.sg", // Singapore National Parks Board (tropical and Southeast Asian plants)
   // University extension services whose host name has no "extension" label
   "ces.ncsu.edu", // NC State Extension Plant Toolbox (plants.ces.ncsu.edu)
   "hgic.clemson.edu", // Clemson Home & Garden Information Center

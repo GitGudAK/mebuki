@@ -1,0 +1,75 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "peperomia",
+  "name": "Baby Rubber Plant",
+  "scientificName": "Peperomia obtusifolia",
+  "hook": "Leaves dropping? Your peperomia is too wet.",
+  "difficulty": "easy",
+  "tags": [
+    "bright indirect",
+    "beginner",
+    "compact",
+    "pet safe"
+  ],
+  "leafShape": "round",
+  "palette": {
+    "background": "#2C3A28",
+    "accent": "#C9E265",
+    "leaf": "#3D8B4A",
+    "pot": "#CFA27A"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright, indirect light",
+      "tip": "An east or south window is ideal. Direct sun scorches the leaves, but it copes with low light for months.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "water",
+      "title": "Let the soil dry first",
+      "tip": "Water only once the soil has dried, then let it drain. Soggy soil causes leaf drop and root rot.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "soil",
+      "title": "Fast-draining mix",
+      "tip": "Use a well-drained houseplant or cactus mix. It rarely needs repotting and can stay put for years.",
+      "sourceRefs": [0]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed lightly in summer",
+      "tip": "A weak liquid feed now and then in spring and summer, or one slow-release dose a year.",
+      "sourceRefs": [0]
+    },
+    {
+      "kind": "propagate",
+      "title": "Root cuttings in water",
+      "tip": "Cut a 10–15 cm stem just below a node and stand it in water in bright, indirect light.",
+      "stat": "10–15 cm",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "pests",
+      "title": "Check for mealybugs",
+      "tip": "Look for mealybugs, spider mites and whiteflies, and keep leaves dry when watering to avoid leaf spots.",
+      "sourceRefs": [0, 1]
+    }
+  ],
+  "outro": "Bright light and a dry-out between drinks keep it plump for years.",
+  "sources": [
+    {
+      "title": "Clemson HGIC: Peperomia Indoor Plant Care and Growing Guide",
+      "url": "https://hgic.clemson.edu/factsheet/peperomia-peperomia-spp-indoor-plant-care-and-growing-guide/"
+    },
+    {
+      "title": "NC State Plant Toolbox: Peperomia obtusifolia",
+      "url": "https://plants.ces.ncsu.edu/plants/peperomia-obtusifolia/"
+    },
+    {
+      "title": "ASPCA: Baby Rubber Plant (Peperomia obtusifolia)",
+      "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/baby-rubber-plant"
+    }
+  ]
+}
