@@ -58,6 +58,34 @@ jobs:
           printf '%s' "$ASC_KEY_P8" > "$RUNNER_TEMP/asc/AuthKey_${ASC_KEY_ID}.p8"
           echo "ASC_KEY_PATH=$RUNNER_TEMP/asc/AuthKey_${ASC_KEY_ID}.p8" >> "$GITHUB_ENV"
 
+      # One long-lived Apple Distribution certificate and App Store profile, kept in secrets,
+      # so CI never asks Apple for a new certificate (the account caps how many it can hold).
+      - name: Install signing certificate and profile
+        env:
+          DIST_CERT_P12: ${{ secrets.DIST_CERT_P12 }}
+          DIST_CERT_PASSWORD: ${{ secrets.DIST_CERT_PASSWORD }}
+          DIST_PROFILE: ${{ secrets.DIST_PROFILE }}
+        run: |
+          if [ -z "$DIST_CERT_P12" ] || [ -z "$DIST_PROFILE" ]; then
+            echo "::error::Missing DIST_CERT_P12 / DIST_CERT_PASSWORD / DIST_PROFILE repository secrets."
+            exit 1
+          fi
+          KC="$RUNNER_TEMP/signing.keychain-db"
+          KC_PW=$(openssl rand -hex 16)
+          security create-keychain -p "$KC_PW" "$KC"
+          security set-keychain-settings -lut 21600 "$KC"
+          security unlock-keychain -p "$KC_PW" "$KC"
+          printf '%s' "$DIST_CERT_P12" | base64 --decode > "$RUNNER_TEMP/dist.p12"
+          security import "$RUNNER_TEMP/dist.p12" -P "$DIST_CERT_PASSWORD" -A -t cert -f pkcs12 -k "$KC"
+          rm "$RUNNER_TEMP/dist.p12"
+          security set-key-partition-list -S apple-tool:,apple: -k "$KC_PW" "$KC" > /dev/null
+          security list-keychains -d user -s "$KC" $(security list-keychains -d user | tr -d '"')
+          for dir in "$HOME/Library/MobileDevice/Provisioning Profiles" "$HOME/Library/Developer/Xcode/UserData/Provisioning Profiles"; do
+            mkdir -p "$dir"
+            printf '%s' "$DIST_PROFILE" | base64 --decode > "$dir/mebuki-app-store.mobileprovision"
+          done
+          security find-identity -v -p codesigning "$KC"
+
       - name: Archive
         working-directory: ios/App
         run: |
@@ -67,10 +95,6 @@ jobs:
             -configuration Release \
             -destination 'generic/platform=iOS' \
             -archivePath "$RUNNER_TEMP/Mebuki.xcarchive" \
-            -allowProvisioningUpdates \
-            -authenticationKeyPath "$ASC_KEY_PATH" \
-            -authenticationKeyID "${{ secrets.ASC_KEY_ID }}" \
-            -authenticationKeyIssuerID "${{ secrets.ASC_ISSUER_ID }}" \
             CURRENT_PROJECT_VERSION="$BUILD_NUMBER"
 
       - name: Upload to App Store Connect
@@ -85,9 +109,11 @@ jobs:
             -authenticationKeyID "${{ secrets.ASC_KEY_ID }}" \
             -authenticationKeyIssuerID "${{ secrets.ASC_ISSUER_ID }}"
 
-      - name: Remove API key
+      - name: Remove API key and signing keychain
         if: always()
-        run: rm -rf "$RUNNER_TEMP/asc"
+        run: |
+          rm -rf "$RUNNER_TEMP/asc"
+          security delete-keychain "$RUNNER_TEMP/signing.keychain-db" 2>/dev/null || true
 
       - name: Keep build logs on failure
         if: failure()

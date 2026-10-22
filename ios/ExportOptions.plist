@@ -5,7 +5,12 @@
     <key>method</key><string>app-store-connect</string>
     <key>destination</key><string>upload</string>
     <key>teamID</key><string>Z55WHWJ3ZV</string>
-    <key>signingStyle</key><string>automatic</string>
+    <key>signingStyle</key><string>manual</string>
+    <key>signingCertificate</key><string>Apple Distribution</string>
+    <key>provisioningProfiles</key>
+    <dict>
+        <key>com.gitgudak.mebuki</key><string>Mebuki App Store</string>
+    </dict>
     <key>uploadSymbols</key><true/>
     <key>manageAppVersionAndBuildNumber</key><false/>
 </dict>
