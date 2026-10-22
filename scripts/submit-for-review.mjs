@@ -150,14 +150,18 @@ const ENUM_NONE = [
 ];
 const BOOL_FALSE = [
   "gambling", "unrestrictedWebAccess", "lootBox", "messagingAndChat", "parentalControls", "ageAssurance",
-  "userGeneratedContent", "advertising", "healthOrWellnessTopics", "seventeenPlus",
+  "userGeneratedContent", "advertising", "healthOrWellnessTopics", "seventeenPlus", "socialMedia",
+  "socialMediaAgeRestricted",
 ];
+// Optional, for other regions' ratings or a developer's own policy page.
+const OPTIONAL = ["kidsAgeBand", "gracRatingClassificationNumber", "developerAgeRatingInfoUrl", "koreaAgeRatingOverride"];
 const infos = (await get(`/v1/apps/${app.id}/appInfos`)).data;
 const info = infos.find((i) => !["READY_FOR_DISTRIBUTION", "READY_FOR_SALE"].includes(i.attributes.appStoreState ?? i.attributes.state)) ?? infos[0];
 const rating = (await get(`/v1/appInfos/${info.id}/ageRatingDeclaration`)).data;
 const unanswered = Object.entries(rating.attributes).filter(([, v]) => v === null).map(([k]) => k);
-const unknown = unanswered.filter((k) => !ENUM_NONE.includes(k) && !BOOL_FALSE.includes(k) && k !== "kidsAgeBand" && !k.startsWith("ageRatingOverride") && k !== "koreaAgeRatingOverride");
-note(unanswered.length === 0, `Age rating: ${unanswered.length ? `${unanswered.length} unanswered` : "answered"}`);
+const required = unanswered.filter((k) => !OPTIONAL.includes(k) && !k.startsWith("ageRatingOverride"));
+const unknown = required.filter((k) => !ENUM_NONE.includes(k) && !BOOL_FALSE.includes(k));
+note(required.length === 0, `Age rating: ${required.length ? `${required.length} unanswered` : "answered"}`);
 if (unknown.length) note(false, `  Questions this script does not know: ${unknown.join(", ")}`);
 if (submitting) {
   const attributes = {};
