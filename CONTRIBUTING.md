@@ -88,7 +88,7 @@ The full contract is the JSON Schema in
 | `hook` | Opening line of the guide | 60 characters |
 | `difficulty` | `easy`, `moderate` or `tricky` | |
 | `tags` | Lowercase filters, e.g. `low light`, `balcony`, `edible`, `pet safe`, `toxic to pets` | 1 to 8 tags, 24 characters each |
-| `leafShape` | Which plant drawing to use: `round`, `long`, `split`, `succulent`, `trailing`, `herb`, `cactus`, `flowering` or `oval` | |
+| `leafShape` | Fallback drawing until the plant has its own: `round`, `long`, `split`, `succulent`, `trailing`, `herb`, `cactus`, `flowering`, `oval`, `fern` or `palm` | |
 | `palette` | `background`, `accent`, `leaf` and `pot` colors | 6-digit hex, e.g. `"#2E7D4F"` |
 | `steps` | The care routine, one scene each | 4 to 6 steps, must include `water` and `light` |
 | `steps[].kind` | `water`, `light`, `soil`, `humidity`, `fertilize`, `prune`, `repot`, `pests`, `temperature` or `propagate` | |
@@ -106,6 +106,14 @@ Tips for good guides:
 - Name sources as `Publisher: Page title`, e.g. `"RHS: How to grow Swiss cheese plants"`.
 - Pick palette colors with enough contrast between `background`, `accent` and `leaf`.
   The validator can't judge colors, so check the guide in the app.
+
+## Draw the plant (optional)
+
+Every plant in the library has its own animated SVG drawing in
+[`src/video/plants/`](src/video/plants/), one file per plant, with the container it is
+usually grown in. A file registers itself by exporting a `drawing` with the guide's `id`;
+until a new plant has one, the app uses the shape named by `leafShape`. Start from a
+drawing close to yours and keep it recognisable at the size of a home screen tile.
 
 ## Link sources to chapters (optional)
 
