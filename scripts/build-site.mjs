@@ -16,6 +16,13 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = path.join(ROOT, "site");
 const BASE_URL = process.env.SITE_URL ?? "https://gitgudak.github.io/mebuki";
 
+// Where a shared link sends people. iPhone and iPad go to the App Store, Android to
+// Google Play once there is an Android app (set PLAY_STORE_ID), everyone else to
+// the web app. Until then Android also gets the web app.
+const APP_STORE_URL = "https://apps.apple.com/app/id6825408150";
+const PLAY_STORE_ID = process.env.PLAY_STORE_ID ?? "";
+const PLAY_STORE_URL = PLAY_STORE_ID ? `https://play.google.com/store/apps/details?id=${PLAY_STORE_ID}` : "";
+
 const esc = (s) =>
   String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
@@ -45,14 +52,26 @@ const sharePage = (g) => {
 <meta name="twitter:image" content="${image}">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="stylesheet" href="../style.css">
-<script>location.replace(${JSON.stringify(appUrl)});</script>
+<meta name="apple-itunes-app" content="app-id=6825408150, app-argument=${BASE_URL}/p/${g.id}.html">
+<script>
+(function () {
+  var ua = navigator.userAgent;
+  var ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  var android = /Android/.test(ua);
+  var target = ${JSON.stringify(appUrl)};
+  if (ios) target = ${JSON.stringify(APP_STORE_URL)};
+  else if (android && ${JSON.stringify(PLAY_STORE_URL)}) target = ${JSON.stringify(PLAY_STORE_URL)};
+  location.replace(target);
+})();
+</script>
 </head>
 <body>
 <main>
 <h1>${esc(g.name)}</h1>
 <p class="muted">${esc(g.scientificName)}</p>
 <p>${esc(g.hook)}</p>
-<p><a href="${appUrl}">Open the ${esc(g.name)} guide</a></p>
+<p><a href="${APP_STORE_URL}">Get Mebuki on the App Store</a></p>
+<p><a href="${appUrl}">Open the ${esc(g.name)} guide on the web</a></p>
 </main>
 </body>
 </html>
