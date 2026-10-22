@@ -1586,3 +1586,12 @@ h2 {
   font-weight: 600;
   text-decoration: none;
 }
+
+.g-stage-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.share-button {
+  cursor: pointer;
+}

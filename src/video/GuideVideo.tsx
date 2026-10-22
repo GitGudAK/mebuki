@@ -509,9 +509,6 @@ export const OutroScene: React.FC<{ guide: PlantGuide }> = ({ guide }) => {
   const theme = useTheme(guide.palette);
   const s = (delay: number, damping = 14) => spring({ frame: frame - delay, fps, config: { damping, stiffness: 140 } });
   const text = s(14, 13);
-  const cta = s(34, 9);
-  const follow = s(50);
-  const pulse = frame > 50 ? 1 + Math.sin((frame - 50) / 5) * 0.035 : 1;
   const fadeOut = interpolate(frame, [OUTRO_FRAMES - 6, OUTRO_FRAMES], [1, 0.85], clamp);
   const plantW = 380;
 
@@ -576,28 +573,6 @@ export const OutroScene: React.FC<{ guide: PlantGuide }> = ({ guide }) => {
           }}
         >
           {guide.outro}
-        </div>
-        <div style={{ marginTop: 60, transform: `scale(${cta * pulse})`, opacity: cta }}>
-          <Pill
-            bg={guide.palette.accent}
-            color={theme.accentInk}
-            fontSize={54}
-            style={{ boxShadow: `0 16px 40px ${withAlpha(shade(guide.palette.accent, -0.4), 0.35)}`, letterSpacing: 0 }}
-          >
-            Save this for later 🌱
-          </Pill>
-        </div>
-        <div
-          style={{
-            marginTop: 40,
-            fontSize: 40,
-            fontWeight: 600,
-            color: theme.inkSoft,
-            opacity: follow,
-            transform: `translateY(${(1 - follow) * 20}px)`,
-          }}
-        >
-          Follow for a new plant guide every week
         </div>
       </div>
     </AbsoluteFill>
