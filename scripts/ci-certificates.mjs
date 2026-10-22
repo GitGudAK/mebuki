@@ -49,3 +49,36 @@ if (MODE === "clean") {
     console.log(`revoked ${c.attributes.displayName ?? c.attributes.name}`);
   }
 }
+
+// With MODE=create and CSR (a certificate signing request, base64 without PEM headers),
+// creates the one Apple Distribution certificate CI signs with, and an App Store
+// provisioning profile for it. Prints both; neither is secret (the private key never leaves
+// the machine that made the CSR).
+if (MODE === "create") {
+  const cert = (
+    await call("POST", "/v1/certificates", {
+      data: { type: "certificates", attributes: { certificateType: "DISTRIBUTION", csrContent: env("CSR") } },
+    })
+  ).data;
+  console.log(`created certificate ${cert.attributes.displayName ?? cert.attributes.name} (${cert.id}), expires ${cert.attributes.expirationDate}`);
+  const bundle = (await get(`/v1/bundleIds?filter[identifier]=${env("BUNDLE_ID", "com.gitgudak.mebuki")}`)).data[0];
+  const NAME = "Mebuki App Store";
+  for (const p of (await get(`/v1/profiles?filter[name]=${encodeURIComponent(NAME)}`)).data) {
+    await call("DELETE", `/v1/profiles/${p.id}`);
+  }
+  const profile = (
+    await call("POST", "/v1/profiles", {
+      data: {
+        type: "profiles",
+        attributes: { name: NAME, profileType: "IOS_APP_STORE" },
+        relationships: {
+          bundleId: { data: { type: "bundleIds", id: bundle.id } },
+          certificates: { data: [{ type: "certificates", id: cert.id }] },
+        },
+      },
+    })
+  ).data;
+  console.log(`created profile ${NAME} (${profile.attributes.uuid})`);
+  console.log(`CERTIFICATE_DER_BASE64=${cert.attributes.certificateContent}`);
+  console.log(`PROFILE_BASE64=${profile.attributes.profileContent}`);
+}

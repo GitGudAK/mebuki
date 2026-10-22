@@ -1,5 +1,6 @@
 # Lists signing certificates, or revokes the throwaway development certificates that
-# each TestFlight run creates (Apple caps how many an account can hold).
+# Xcode used to create on each CI run (Apple caps how many an account can hold),
+# or creates the one distribution certificate and App Store profile CI signs with.
 
 name: Signing certificates
 
@@ -9,8 +10,11 @@ on:
       mode:
         description: list shows them; clean revokes only CI-created development certificates
         type: choice
-        options: [list, clean]
+        options: [list, clean, create]
         default: list
+      csr:
+        description: For create, a certificate signing request (base64, no PEM headers)
+        required: false
 
 jobs:
   certificates:
@@ -23,6 +27,7 @@ jobs:
           node-version: 22
       - env:
           MODE: ${{ inputs.mode }}
+          CSR: ${{ inputs.csr }}
           ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
           ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
           ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
