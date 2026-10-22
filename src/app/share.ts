@@ -13,7 +13,7 @@ export type ShareResult = "shared" | "copied" | "cancelled";
 export const sharePlant = async (guide: PlantGuide): Promise<ShareResult> => {
   const url = shareUrlFor(guide);
   const title = `${guide.name} care`;
-  const text = `${guide.hook} A short care guide from Mebuki.`;
+  const text = `${guide.hook} Free plant care guides from Mebuki.`;
   try {
     if (isNativeApp && (await Share.canShare()).value) {
       await Share.share({ title, text, url, dialogTitle: `Share ${guide.name}` });
