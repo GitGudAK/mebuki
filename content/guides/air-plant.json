@@ -1,0 +1,82 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "air-plant",
+  "name": "Air Plant",
+  "scientificName": "Tillandsia",
+  "hook": "Air plant rotting? Dry it upside down after a soak.",
+  "difficulty": "easy",
+  "tags": [
+    "bright indirect",
+    "no soil",
+    "beginner"
+  ],
+  "leafShape": "succulent",
+  "palette": {
+    "background": "#24343F",
+    "accent": "#9FD3C7",
+    "leaf": "#9DB5A0",
+    "pot": "#C8B79A"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright, indirect light",
+      "tip": "An east or west window is ideal. Outdoors, keep it in shade so the sun doesn't scorch it.",
+      "sourceRefs": [0, 1, 3]
+    },
+    {
+      "kind": "water",
+      "title": "Soak once a week",
+      "tip": "Submerge in room-temperature water for 20–60 minutes weekly. Soak less often in winter.",
+      "stat": "20–60 min",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "humidity",
+      "title": "Dry it upside down",
+      "tip": "Shake out the water and dry it upside down for 4+ hours with good airflow, or the base can rot.",
+      "stat": "4+ hrs",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "temperature",
+      "title": "Warm days, mild nights",
+      "tip": "Keep days at 18–32°C and nights above 13°C, away from heaters and air-con vents.",
+      "stat": "18–32°C",
+      "sourceRefs": [0]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed monthly, very weak",
+      "tip": "Once a month, add bromeliad or air plant feed to the soak water at a quarter strength.",
+      "stat": "Monthly",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "propagate",
+      "title": "Split off the pups",
+      "tip": "It blooms once, then makes pups. Separate them at a third of the mother's size, or keep the clump.",
+      "stat": "⅓ size",
+      "sourceRefs": [0, 3]
+    }
+  ],
+  "outro": "Soak it, dry it upside down, give it light: no soil required.",
+  "sources": [
+    {
+      "title": "Penn State Extension: Tillandsias as Houseplants",
+      "url": "https://extension.psu.edu/tillandsias-as-houseplants"
+    },
+    {
+      "title": "UC Marin Master Gardeners (UC ANR): Fabulous air plants!",
+      "url": "https://ucanr.edu/site/uc-marin-master-gardeners/article/fabulous-air-plants"
+    },
+    {
+      "title": "NC State Plant Toolbox: Tillandsia xerographica",
+      "url": "https://plants.ces.ncsu.edu/plants/tillandsia-xerographica/"
+    },
+    {
+      "title": "NC State Plant Toolbox: Tillandsia ionantha",
+      "url": "https://plants.ces.ncsu.edu/plants/tillandsia-ionantha/"
+    }
+  ]
+}

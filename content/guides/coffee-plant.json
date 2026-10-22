@@ -1,0 +1,92 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "coffee-plant",
+  "name": "Coffee Plant",
+  "scientificName": "Coffea arabica",
+  "hook": "Coffee plant dropping leaves? It's probably too cold.",
+  "difficulty": "moderate",
+  "tags": [
+    "bright indirect",
+    "high humidity",
+    "houseplant"
+  ],
+  "leafShape": "oval",
+  "palette": {
+    "background": "#2B1E1A",
+    "accent": "#D9473B",
+    "leaf": "#2F7A50",
+    "pot": "#D8C3A5"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright, indirect light",
+      "tip": "Indoors it needs bright light but no harsh direct sun, like the dappled shade it grows in outdoors.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "water",
+      "title": "Evenly moist, never soggy",
+      "tip": "Keep the soil consistently moist in the growing season; overwatering causes root rot. Water less in winter.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "humidity",
+      "title": "Humid air, no draughts",
+      "tip": "Give it moderate to high humidity and keep it away from draughty doors and vents.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "temperature",
+      "title": "Warm days, mild nights",
+      "tip": "Aim for 21–27°C by day and 16–18°C at night. Leaves can drop below about 13°C.",
+      "stat": "21–27°C",
+      "sourceRefs": [0, 2]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed every 2 weeks",
+      "tip": "In the growing season, give a balanced liquid feed every two weeks. Repot every 2–3 years in spring.",
+      "stat": "2 wks",
+      "sourceRefs": [0, 2]
+    },
+    {
+      "kind": "pests",
+      "title": "Check for scale and mites",
+      "tip": "Look under leaves and on stems for scale, mealybugs, thrips and spider mites.",
+      "sourceRefs": [0, 1, 2]
+    }
+  ],
+  "outro": "Warmth, humidity and steady moisture keep coffee leaves glossy.",
+  "sources": [
+    {
+      "title": "NC State Plant Toolbox: Coffea arabica",
+      "url": "https://plants.ces.ncsu.edu/plants/coffea-arabica/"
+    },
+    {
+      "title": "UF/IFAS: Coffea arabica, Coffee (FPS135)",
+      "url": "https://ask.ifas.ufl.edu/publication/fp135"
+    },
+    {
+      "title": "RHS: Coffea arabica (Arabian coffee)",
+      "url": "https://www.rhs.org.uk/plants/4159/coffea-arabica/details"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Will my coffee plant ever make beans?",
+      "answer": "Expect flowers about 3–4 years after planting: small, fragrant and white, followed by berries that ripen from green to deep red. The seeds inside are the coffee beans.",
+      "sources": [
+        {
+          "title": "NC State Plant Toolbox: Coffea arabica",
+          "url": "https://plants.ces.ncsu.edu/plants/coffea-arabica/"
+        },
+        {
+          "title": "UF/IFAS: Coffea arabica, Coffee (FPS135)",
+          "url": "https://ask.ifas.ufl.edu/publication/fp135"
+        }
+      ]
+    }
+  ],
+  "origin": "Ethiopia"
+}

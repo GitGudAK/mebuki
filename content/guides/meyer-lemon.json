@@ -1,0 +1,97 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "meyer-lemon",
+  "name": "Meyer Lemon",
+  "scientificName": "Citrus × meyeri",
+  "origin": "China",
+  "hook": "Leaves falling off your indoor lemon tree?",
+  "difficulty": "moderate",
+  "tags": [
+    "edible",
+    "full sun",
+    "balcony",
+    "toxic to pets"
+  ],
+  "leafShape": "oval",
+  "palette": {
+    "background": "#23395B",
+    "accent": "#FFE45C",
+    "leaf": "#3E8E4F",
+    "pot": "#D8CFC0"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "6–8 hours of sun",
+      "tip": "Use your brightest south-facing window, and add a grow light if winter light is low.",
+      "stat": "6–8 hrs",
+      "sourceRefs": [1, 2]
+    },
+    {
+      "kind": "water",
+      "title": "Moist, never waterlogged",
+      "tip": "Keep it just moist in summer. In winter let the surface dry, then water well; never leave it in water.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "temperature",
+      "title": "Bring it in before frost",
+      "tip": "Move it indoors gradually so fruit doesn't drop. Keep winters above 5°C and away from heater vents.",
+      "stat": "5°C+",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Citrus feed in summer",
+      "tip": "Use a high-nitrogen citrus feed from late March to October, then a winter citrus feed or less.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "humidity",
+      "title": "Humid air, hand pollinate",
+      "tip": "Dry air and drafts drop leaves, so use a humidifier. Brush flowers with a soft paintbrush to set fruit.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "pests",
+      "title": "Check for scale and mites",
+      "tip": "Look for scale, aphids and spider mites. Wash the leaves before it comes in, and wash off scale.",
+      "sourceRefs": [0, 1]
+    }
+  ],
+  "outro": "Big sun, steady warmth and a paintbrush: lemons in your living room.",
+  "sources": [
+    {
+      "title": "RHS: How to grow citrus",
+      "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+    },
+    {
+      "title": "Oregon State Extension: How to grow Meyer lemons successfully in the Pacific Northwest",
+      "url": "https://extension.oregonstate.edu/news/how-grow-meyer-lemons-successfully-pacific-northwest"
+    },
+    {
+      "title": "Penn State Extension: Grow Your Own Lemons",
+      "url": "https://extension.psu.edu/grow-your-own-lemons"
+    },
+    {
+      "title": "UF/IFAS Gardening Solutions: Meyer Lemon",
+      "url": "https://gardeningsolutions.ifas.ufl.edu/plants/edibles/fruits/meyer-lemon/"
+    },
+    {
+      "title": "ASPCA: Lemon (Citrus limonia)",
+      "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/lemon"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why is my lemon tree dropping its leaves?",
+      "answer": "Usually cool or swinging temperatures, cold drafts or dry air. Overwatering and too little food can also yellow leaves and make them fall.",
+      "sources": [
+        {
+          "title": "RHS: How to grow citrus",
+          "url": "https://www.rhs.org.uk/fruit/citrus/grow-your-own"
+        }
+      ]
+    }
+  ]
+}

@@ -1595,3 +1595,9 @@ h2 {
 .share-button {
   cursor: pointer;
 }
+
+.g-origin {
+  margin: -4px 0 10px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}

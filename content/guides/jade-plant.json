@@ -1,0 +1,92 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "jade-plant",
+  "name": "Jade Plant",
+  "scientificName": "Crassula ovata",
+  "hook": "Leaves dropping? Your jade is probably overwatered.",
+  "difficulty": "easy",
+  "tags": [
+    "full sun",
+    "succulent",
+    "beginner",
+    "toxic to pets"
+  ],
+  "leafShape": "succulent",
+  "palette": {
+    "background": "#4A3A28",
+    "accent": "#E9887A",
+    "leaf": "#5E9E6E",
+    "pot": "#D0D4C8"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "4+ hours of direct sun",
+      "tip": "A south window is ideal. Too little light gives dark, droopy growth without red leaf edges.",
+      "stat": "4+ hrs",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "water",
+      "title": "Let it dry out fully",
+      "tip": "Water deeply only once the soil is completely dry, and less in winter. Wet soil causes leaf drop and rot.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "soil",
+      "title": "Gritty mix, clay pot",
+      "tip": "Use cactus or succulent mix in a pot with a drainage hole; terracotta dries out faster than plastic.",
+      "sourceRefs": [0, 1, 2]
+    },
+    {
+      "kind": "temperature",
+      "title": "Warm days, cool nights",
+      "tip": "Best at 18–24°C by day and 10–13°C at night. Keep leaves off cold windowpanes in winter.",
+      "stat": "10–24°C",
+      "sourceRefs": [1]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed lightly",
+      "tip": "A balanced liquid feed 2–3 times in spring and summer. Too much fertilizer makes it leggy.",
+      "sourceRefs": [2]
+    },
+    {
+      "kind": "pests",
+      "title": "Swab off mealybugs",
+      "tip": "Dab white, fluffy mealybugs with rubbing alcohol on a cotton swab. Skip insecticidal soap.",
+      "sourceRefs": [0, 1, 2]
+    }
+  ],
+  "outro": "Lots of sun and a dry spell between drinks keep a jade happy.",
+  "sources": [
+    {
+      "title": "Wisconsin Horticulture Extension: Jade Plant, Crassula ovata",
+      "url": "https://hort.extension.wisc.edu/articles/jade-plant-crassula-ovata/"
+    },
+    {
+      "title": "Clemson HGIC: Jade Plant",
+      "url": "https://hgic.clemson.edu/factsheet/jade-plant/"
+    },
+    {
+      "title": "Penn State Extension: Jade Plant, A No Fuss Houseplant",
+      "url": "https://extension.psu.edu/jade-plant-a-no-fuss-houseplant"
+    },
+    {
+      "title": "ASPCA: Jade Plant (listed as Crassula argentea)",
+      "url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/jade-plant"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What are the tiny white or black dots on the leaves?",
+      "answer": "They're normal. The dots are hydathodes, pores the plant uses to move water, not a disease or a pest.",
+      "sources": [
+        {
+          "title": "Penn State Extension: Jade Plant, A No Fuss Houseplant",
+          "url": "https://extension.psu.edu/jade-plant-a-no-fuss-houseplant"
+        }
+      ]
+    }
+  ]
+}

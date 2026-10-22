@@ -176,6 +176,7 @@ export const GuideDetail = ({ guide }: { guide: PlantGuide }) => {
             {guide.scientificName} · <DifficultyBadge difficulty={guide.difficulty} /> ·{" "}
             {Math.round(durationInFrames / FPS)}s
           </p>
+          {guide.origin && <p className="g-origin">Native to {guide.origin}</p>}
           <p className="g-hook">{guide.hook}</p>
           <ul className="tag-list" aria-label="Tags">
             {guide.tags.map((t) => (

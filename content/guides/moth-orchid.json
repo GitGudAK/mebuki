@@ -1,0 +1,92 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "moth-orchid",
+  "name": "Moth Orchid",
+  "scientificName": "Phalaenopsis",
+  "hook": "Flowers gone? Don't throw your orchid out.",
+  "difficulty": "moderate",
+  "tags": [
+    "bright indirect",
+    "flowering",
+    "pet safe"
+  ],
+  "leafShape": "flowering",
+  "palette": {
+    "background": "#3E2440",
+    "accent": "#F5A3D3",
+    "leaf": "#4C7F55",
+    "pot": "#E3E8EC"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Bright, no summer sun",
+      "tip": "An east or west window is ideal. Keep it out of summer sun, and keep leaves off cold glass in winter.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "water",
+      "title": "Water weekly, then drain",
+      "tip": "Run lukewarm water through the bark, let it drain fully, and never let it sit in water or wet the crown.",
+      "stat": "Weekly",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "soil",
+      "title": "Bark mix in a clear pot",
+      "tip": "Use bark-based orchid compost, never regular potting mix. A clear pot lets you see the roots.",
+      "sourceRefs": [0]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Feed lightly in summer",
+      "tip": "Use orchid fertiliser lightly but regularly from spring to early autumn, and little or none in winter.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "temperature",
+      "title": "A cool spell for new blooms",
+      "tip": "Keep it at 19–30°C by day. To trigger flowers, move it somewhere about 5°C cooler for a month.",
+      "stat": "5°C cooler",
+      "sourceRefs": [0]
+    },
+    {
+      "kind": "repot",
+      "title": "Repot after it flowers",
+      "tip": "Repot every 2 years or so, never in bloom. Leave the aerial roots alone: don't bury or cut them.",
+      "stat": "2 yrs",
+      "sourceRefs": [0, 1]
+    }
+  ],
+  "outro": "Bright shade, weekly drinks and a cool spell: it will bloom again.",
+  "sources": [
+    {
+      "title": "RHS: How to grow Phalaenopsis (moth orchids)",
+      "url": "https://www.rhs.org.uk/plants/phalaenopsis/growing-guide"
+    },
+    {
+      "title": "Clemson HGIC: General Care for Phalaenopsis Orchids",
+      "url": "https://hgic.clemson.edu/general-care-for-phalaenopsis-orchids/"
+    },
+    {
+      "title": "ASPCA: Phalaenopsis Orchid (Phalaenopsis sp.)",
+      "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/phalaenopsis-orchid"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I get my moth orchid to flower again?",
+      "answer": "After the flowers fall, cut the stalk just above the second node below the spent blooms, or back to the leaves if it dries out. Keep feeding, and give it a month about 5°C cooler.",
+      "sources": [
+        {
+          "title": "RHS: How to grow Phalaenopsis (moth orchids)",
+          "url": "https://www.rhs.org.uk/plants/phalaenopsis/growing-guide"
+        },
+        {
+          "title": "Clemson HGIC: General Care for Phalaenopsis Orchids",
+          "url": "https://hgic.clemson.edu/general-care-for-phalaenopsis-orchids/"
+        }
+      ]
+    }
+  ]
+}

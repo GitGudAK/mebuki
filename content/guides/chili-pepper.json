@@ -1,0 +1,90 @@
+{
+  "$schema": "../schema/plant-guide.schema.json",
+  "id": "chili-pepper",
+  "name": "Chili Pepper",
+  "scientificName": "Capsicum annuum",
+  "origin": "Tropical North and South America",
+  "hook": "Chili flowers dropping off? Your pot is drying out.",
+  "difficulty": "moderate",
+  "tags": [
+    "edible",
+    "full sun",
+    "balcony"
+  ],
+  "leafShape": "herb",
+  "palette": {
+    "background": "#3D2320",
+    "accent": "#F0442E",
+    "leaf": "#4F9A42",
+    "pot": "#8A6A55"
+  },
+  "steps": [
+    {
+      "kind": "light",
+      "title": "Your sunniest spot",
+      "tip": "A sunny windowsill, balcony or patio. Chilies need lots of sun to fruit well.",
+      "stat": "6+ hrs",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "temperature",
+      "title": "Out once nights hit 12°C",
+      "tip": "Keep it indoors until nights stay above 12°C. It grows best above 15°C; over 30°C cuts fruiting.",
+      "stat": "12°C+",
+      "sourceRefs": [0, 2]
+    },
+    {
+      "kind": "water",
+      "title": "Keep evenly moist",
+      "tip": "Dry compost makes flower buds drop. In hot weather, pots may need water every day.",
+      "sourceRefs": [0, 1]
+    },
+    {
+      "kind": "soil",
+      "title": "One plant per 22 cm pot",
+      "tip": "Use peat-free multi-purpose compost, one plant per 22 cm pot, and canes to support big plants.",
+      "stat": "22 cm",
+      "sourceRefs": [0]
+    },
+    {
+      "kind": "fertilize",
+      "title": "Weekly feed once in flower",
+      "tip": "As soon as flowers appear, give a high-potassium liquid feed every week.",
+      "stat": "Weekly",
+      "sourceRefs": [0]
+    },
+    {
+      "kind": "pests",
+      "title": "Watch for aphids and mites",
+      "tip": "Indoors, check for aphids, red spider mite and whitefly. Wear gloves when picking hot chilies.",
+      "sourceRefs": [0, 2]
+    }
+  ],
+  "outro": "Sun, warmth and steady water: a pot of chilies on your sill.",
+  "sources": [
+    {
+      "title": "RHS: How to grow chilli peppers",
+      "url": "https://www.rhs.org.uk/vegetables/chilli-pepper/grow-your-own"
+    },
+    {
+      "title": "NC State Plant Toolbox: Capsicum annuum",
+      "url": "https://plants.ces.ncsu.edu/plants/capsicum-annuum/"
+    },
+    {
+      "title": "UMN Extension: Growing peppers in home gardens",
+      "url": "https://extension.umn.edu/vegetables/growing-peppers"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I keep my chili plant over winter?",
+      "answer": "Yes. Bring it somewhere heated, prune it to a manageable size, keep it warm and bright, and water sparingly until spring.",
+      "sources": [
+        {
+          "title": "RHS: How to grow chilli peppers",
+          "url": "https://www.rhs.org.uk/vegetables/chilli-pepper/grow-your-own"
+        }
+      ]
+    }
+  ]
+}

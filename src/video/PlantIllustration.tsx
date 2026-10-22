@@ -509,6 +509,98 @@ const FloweringPlant: React.FC<{ c: Ctx }> = ({ c }) => {
   );
 };
 
+/** Point and direction on a quadratic bezier, for laying leaflets along a curved frond. */
+const qbez = (p0: number[], p1: number[], p2: number[], t: number) => {
+  const u = 1 - t;
+  const x = u * u * p0[0] + 2 * u * t * p1[0] + t * t * p2[0];
+  const y = u * u * p0[1] + 2 * u * t * p1[1] + t * t * p2[1];
+  const dx = 2 * u * (p1[0] - p0[0]) + 2 * t * (p2[0] - p1[0]);
+  const dy = 2 * u * (p1[1] - p0[1]) + 2 * t * (p2[1] - p1[1]);
+  return { x, y, angle: (Math.atan2(dy, dx) * 180) / Math.PI };
+};
+
+/** A frond: an arching midrib with paired leaflets that shrink towards the tip. */
+const Frond: React.FC<{
+  c: Ctx;
+  i: number;
+  angle: number;
+  length: number;
+  bend: number;
+  grow: number;
+  leaflet: number;
+  pairs: number;
+  slender?: boolean;
+  /** Where leaflets begin along the frond (0 = base); palms have a bare stalk. */
+  leafStart?: number;
+}> = ({ c, i, angle, length, bend, grow, leaflet, pairs, slender = false, leafStart = 0.18 }) => {
+  const p0 = [0, 0];
+  const p1 = [0, -length * 0.85];
+  const p2 = [bend * length * 0.55, -length * 0.7];
+  const color = leafTone(c.leaf, i);
+  const shown = Math.min(1, grow);
+  const steps = 22;
+  const rib = Array.from({ length: steps + 1 }, (_, k) => qbez(p0, p1, p2, (k / steps) * shown));
+  const d = rib.map((p, k) => `${k ? "L" : "M"}${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(" ");
+  return (
+    <g transform={`translate(${BASE_X} ${BASE_Y}) rotate(${angle + c.sway(i, 2)})`}>
+      <path d={d} stroke={shade(c.leaf, -0.3)} strokeWidth={slender ? 4 : 3.5} fill="none" strokeLinecap="round" />
+      {Array.from({ length: pairs }).map((_, k) => {
+        const t = leafStart + (k / pairs) * (0.98 - leafStart);
+        if (t > shown) return null;
+        const p = qbez(p0, p1, p2, t);
+        const size = leaflet * (1 - (t - leafStart) * 0.7) * Math.min(1, (shown - t) * 6);
+        return [-1, 1].map((side) => (
+          <ellipse
+            key={`${k}${side}`}
+            cx={0}
+            cy={-size}
+            rx={slender ? size * 0.16 : size * 0.32}
+            ry={size}
+            fill={side > 0 ? color : shade(color, -0.08)}
+            transform={`translate(${p.x} ${p.y}) rotate(${p.angle + 90 + side * (slender ? 62 : 70)})`}
+          />
+        ));
+      })}
+    </g>
+  );
+};
+
+const FernPlant: React.FC<{ c: Ctx }> = ({ c }) => {
+  const fronds = [
+    { a: -64, l: 230, b: -1 },
+    { a: 62, l: 225, b: 1 },
+    { a: -40, l: 280, b: -1 },
+    { a: 38, l: 275, b: 1 },
+    { a: -16, l: 310, b: -1 },
+    { a: 14, l: 305, b: 1 },
+    { a: -1, l: 260, b: 1 },
+  ];
+  return (
+    <g>
+      {fronds.map((f, i) => (
+        <Frond key={i} c={c} i={i} angle={f.a} length={f.l} bend={f.b} grow={c.grow(i * 3)} leaflet={26} pairs={16} />
+      ))}
+    </g>
+  );
+};
+
+const PalmPlant: React.FC<{ c: Ctx }> = ({ c }) => {
+  const fronds = [
+    { a: -34, l: 300, b: -0.8 },
+    { a: 32, l: 295, b: 0.8 },
+    { a: -14, l: 360, b: -0.7 },
+    { a: 12, l: 355, b: 0.7 },
+    { a: -2, l: 390, b: 0.5 },
+  ];
+  return (
+    <g>
+      {fronds.map((f, i) => (
+        <Frond key={i} c={c} i={i} angle={f.a} length={f.l} bend={f.b} grow={c.grow(i * 4)} leaflet={44} pairs={12} slender leafStart={0.42} />
+      ))}
+    </g>
+  );
+};
+
 const OvalPlant: React.FC<{ c: Ctx }> = ({ c }) => {
   const leafD = "M0 0 C -50 -10 -58 -96 0 -134 C 58 -96 50 -10 0 0 Z";
   const leaves = [
@@ -629,6 +721,8 @@ export const PlantIllustration: React.FC<PlantIllustrationProps> = ({
         {leafShape === "cactus" && <CactusPlant c={c} />}
         {leafShape === "flowering" && <FloweringPlant c={c} />}
         {leafShape === "oval" && <OvalPlant c={c} />}
+        {leafShape === "fern" && <FernPlant c={c} />}
+        {leafShape === "palm" && <PalmPlant c={c} />}
         <Pot pot={palette.pot} />
         {leafShape === "trailing" && <TrailingVines c={c} />}
       </g>
