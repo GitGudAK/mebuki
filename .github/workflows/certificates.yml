@@ -1,0 +1,29 @@
+# Lists signing certificates, or revokes the throwaway development certificates that
+# each TestFlight run creates (Apple caps how many an account can hold).
+
+name: Signing certificates
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: list shows them; clean revokes only CI-created development certificates
+        type: choice
+        options: [list, clean]
+        default: list
+
+jobs:
+  certificates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - env:
+          MODE: ${{ inputs.mode }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+        run: node scripts/ci-certificates.mjs
