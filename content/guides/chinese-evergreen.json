@@ -3,7 +3,7 @@
   "id": "chinese-evergreen",
   "name": "Chinese Evergreen",
   "scientificName": "Aglaonema",
-  "hook": "Chinese evergreen sulking? It hates the cold.",
+  "hook": "Chinese evergreen struggling? It hates the cold.",
   "difficulty": "easy",
   "tags": [
     "low light",
@@ -21,20 +21,20 @@
     {
       "kind": "light",
       "title": "Low to medium light",
-      "tip": "Green types cope with low light; variegated ones need brighter, indirect light. Keep sun off the leaves.",
+      "tip": "Plain green types handle low light; patterned ones need brighter, indirect light. Keep sun off the leaves.",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "water",
       "title": "Water when 2–5 cm is dry",
-      "tip": "Keep it moist, not soggy, using room-temperature water. Let it dry more between waterings in winter.",
+      "tip": "Keep it moist but not soggy, using room-temperature water. In winter, let it dry more between waterings.",
       "stat": "2–5 cm",
       "sourceRefs": [0, 1]
     },
     {
       "kind": "temperature",
       "title": "Keep it warm",
-      "tip": "Best at 20–27°C by day. Below 10°C it gets chill damage, so keep it away from cold drafts.",
+      "tip": "It's best at 20–27°C by day. Below 10°C it gets chill damage, so keep it away from cold drafts.",
       "stat": "20–27°C",
       "sourceRefs": [0, 1]
     },
@@ -51,7 +51,7 @@
       "sourceRefs": [0, 1]
     }
   ],
-  "outro": "Warm, evenly moist and out of the sun: the easy keeper of dim rooms.",
+  "outro": "Warm, evenly moist and out of the sun: an easy plant for dim rooms.",
   "sources": [
     {
       "title": "Clemson HGIC: Chinese Evergreen (Aglaonema) Care, Cultivation & Growing Guide",

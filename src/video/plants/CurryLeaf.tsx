@@ -160,4 +160,4 @@ const Matka: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "curry-leaf", Component: CurryLeaf };
+export const drawing: PlantDrawing = { id: "curry-leaf", Component: CurryLeaf, anchors: { soil: [200, 328], snip: [333, 207], snipR: 35 } };

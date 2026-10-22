@@ -22,39 +22,39 @@
     {
       "kind": "light",
       "title": "Full sun is a must",
-      "tip": "Pick your sunniest balcony spot; fewer than 6 hours of sun means few flowers or fruit.",
+      "tip": "Pick your sunniest spot. With less than 6 hours of sun, you get few flowers or fruit.",
       "stat": "6–8 hrs"
     },
     {
       "kind": "repot",
       "title": "Go big on the pot",
-      "tip": "Use a container of at least 20 L with drainage holes; small pots dry out too fast.",
+      "tip": "Use a container of at least 20 L with drainage holes. Small pots dry out too fast.",
       "stat": "20+ L"
     },
     {
       "kind": "water",
       "title": "Water deeply, daily",
-      "tip": "Water at the base each morning in summer; uneven watering causes split fruit.",
+      "tip": "Water at the base each morning in summer. Uneven watering makes the fruit split.",
       "stat": "Daily"
     },
     {
       "kind": "fertilize",
       "title": "Feed once fruit swells",
-      "tip": "Once the first fruits swell, give a high-potassium tomato feed every 10–14 days.",
+      "tip": "Once the first fruits start to swell, use a high-potassium tomato fertilizer every 10–14 days.",
       "stat": "10–14 days"
     },
     {
       "kind": "prune",
       "title": "Stake and pinch side shoots",
-      "tip": "Tall (cordon) types: tie to a stake, pinch side shoots in leaf joints. Bush types: leave them."
+      "tip": "Tall, vining types: tie to a stake and pinch off shoots between leaf and stem. Bush types: leave them."
     },
     {
       "kind": "pests",
       "title": "Check for aphids",
-      "tip": "Blast aphids off with a strong water spray, or use insecticidal soap on leaf undersides."
+      "tip": "Blast aphids off with a strong spray of water, or use insecticidal soap under the leaves."
     }
   ],
-  "outro": "Sun, a big pot and steady water = handfuls of sweet tomatoes.",
+  "outro": "Sun, a big pot and steady water: handfuls of sweet tomatoes.",
   "sources": [
     {
       "title": "RHS: How to grow tomatoes",

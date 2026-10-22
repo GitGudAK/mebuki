@@ -168,4 +168,4 @@ const Cachepot: React.FC<{ color: string }> = ({ color }) => (
   </g>
 );
 
-export const drawing: PlantDrawing = { id: "moth-orchid", Component: MothOrchid };
+export const drawing: PlantDrawing = { id: "moth-orchid", Component: MothOrchid, anchors: { soil: [200, 410], snip: [244, 352], snipR: 48 } };

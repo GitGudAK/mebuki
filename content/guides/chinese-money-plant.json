@@ -3,7 +3,7 @@
   "id": "chinese-money-plant",
   "name": "Chinese Money Plant",
   "scientificName": "Pilea peperomioides",
-  "hook": "Pilea getting leggy? It's asking for more light.",
+  "hook": "Pilea growing tall and thin? It needs more light.",
   "difficulty": "easy",
   "tags": [
     "bright indirect",
@@ -22,29 +22,29 @@
     {
       "kind": "light",
       "title": "Bright, indirect light",
-      "tip": "Set it back from a bright window or behind a sheer curtain; direct summer sun scorches the coin leaves."
+      "tip": "Set it back from a bright window or behind a sheer curtain. Direct summer sun scorches the round leaves."
     },
     {
       "kind": "water",
       "title": "Water when top 2 cm is dry",
-      "tip": "Water through, then never leave it standing in water. Pilea is prone to root rot.",
+      "tip": "Water until it drains through, and never leave it standing in water. Pilea is prone to root rot.",
       "stat": "Top 2 cm"
     },
     {
       "kind": "temperature",
-      "title": "Comfortable room temps",
-      "tip": "18–24°C by day and above 13°C at night, away from drafts, vents and heaters.",
+      "title": "Normal room temperatures",
+      "tip": "Keep it at 18–24°C by day and above 13°C at night, away from drafts, vents and heaters.",
       "stat": "18–24°C"
     },
     {
       "kind": "propagate",
-      "title": "Pot up the pups",
-      "tip": "Separate the offsets that pop up around the base and pot them on their own: free plants for friends."
+      "title": "Pot up the baby plants",
+      "tip": "Separate the baby plants that pop up around the base and pot them on their own: free plants for friends."
     },
     {
       "kind": "repot",
       "title": "Go up 5 cm at a time",
-      "tip": "Repot into free-draining, peat-free houseplant mix, in a pot about 5 cm wider than the root ball.",
+      "tip": "Repot into fast-draining, peat-free houseplant mix, in a pot about 5 cm wider than the root ball.",
       "stat": "+5 cm"
     },
     {
@@ -53,7 +53,7 @@
       "tip": "Water the soil, not the leaves, to avoid leaf spot, and check for mites, mealybugs and fungus gnats."
     }
   ],
-  "outro": "Bright, indirect light and careful watering: then share the pups.",
+  "outro": "Bright, indirect light and careful watering, then share the babies.",
   "sources": [
     {
       "title": "Penn State Extension: Pilea as a Houseplant",

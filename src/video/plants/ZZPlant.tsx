@@ -99,4 +99,4 @@ const SquareConcrete: React.FC<{ color: string }> = ({ color }) => (
   </g>
 );
 
-export const drawing: PlantDrawing = { id: "zz-plant", Component: ZZPlant };
+export const drawing: PlantDrawing = { id: "zz-plant", Component: ZZPlant, anchors: { soil: [232, 412], snip: [358, 232], snipR: 30 } };

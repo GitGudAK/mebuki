@@ -163,4 +163,4 @@ export const GoldenPothos: React.FC<{ c: Ctx }> = ({ c }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "golden-pothos", Component: GoldenPothos, shadow: false };
+export const drawing: PlantDrawing = { id: "golden-pothos", Component: GoldenPothos, shadow: false, anchors: { soil: [200, 203], snip: [323, 404], snipR: 30 } };

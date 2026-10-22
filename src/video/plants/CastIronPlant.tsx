@@ -83,4 +83,4 @@ const CobaltPot: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "cast-iron-plant", Component: CastIronPlant };
+export const drawing: PlantDrawing = { id: "cast-iron-plant", Component: CastIronPlant, anchors: { soil: [199, 388], snip: [295, 254], snipR: 35 } };

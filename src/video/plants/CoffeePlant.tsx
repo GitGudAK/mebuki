@@ -199,4 +199,4 @@ const BurlapPot: React.FC<{ color: string; id: string }> = ({ color, id }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "coffee-plant", Component: CoffeePlant };
+export const drawing: PlantDrawing = { id: "coffee-plant", Component: CoffeePlant, anchors: { soil: [197, 338], snip: [357, 165], snipR: 38 } };

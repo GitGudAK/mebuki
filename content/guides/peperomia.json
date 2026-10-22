@@ -34,19 +34,19 @@
     {
       "kind": "soil",
       "title": "Fast-draining mix",
-      "tip": "Use a well-drained houseplant or cactus mix. It rarely needs repotting and can stay put for years.",
+      "tip": "Use a fast-draining houseplant or cactus mix. It rarely needs repotting and can stay in one pot for years.",
       "sourceRefs": [0]
     },
     {
       "kind": "fertilize",
       "title": "Feed lightly in summer",
-      "tip": "A weak liquid feed now and then in spring and summer, or one slow-release dose a year.",
+      "tip": "Give a weak liquid fertilizer now and then in spring and summer, or one slow-release dose a year.",
       "sourceRefs": [0]
     },
     {
       "kind": "propagate",
       "title": "Root cuttings in water",
-      "tip": "Cut a 10–15 cm stem just below a node and stand it in water in bright, indirect light.",
+      "tip": "Cut a 10–15 cm stem just below a node (leaf joint) and stand it in water in bright, indirect light.",
       "stat": "10–15 cm",
       "sourceRefs": [0, 1]
     },
@@ -57,7 +57,7 @@
       "sourceRefs": [0, 1]
     }
   ],
-  "outro": "Bright light and a dry-out between drinks keep it plump for years.",
+  "outro": "Bright light and dry soil between drinks keep it plump for years.",
   "sources": [
     {
       "title": "Clemson HGIC: Peperomia Indoor Plant Care and Growing Guide",

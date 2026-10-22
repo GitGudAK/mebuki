@@ -23,41 +23,41 @@
     {
       "kind": "light",
       "title": "6+ hours of full sun",
-      "tip": "Put it on your sunniest balcony or windowsill in summer, and in a bright spot indoors over winter.",
+      "tip": "In summer, put it on your sunniest balcony or windowsill. In winter, keep it in a bright spot indoors.",
       "stat": "6+ hrs",
       "sourceRefs": [0, 1]
     },
     {
       "kind": "water",
       "title": "Never let the pot dry out",
-      "tip": "Keep the compost evenly moist in warm weather but never waterlogged. Water sparingly in winter.",
+      "tip": "Keep the soil evenly moist in warm weather, but never waterlogged. Water only a little in winter.",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "temperature",
       "title": "Inside before nights hit 7°C",
-      "tip": "It thrives above 13°C. Bring the pot indoors before nights drop below 7°C and keep it warmer than that.",
+      "tip": "It grows best above 13°C. Bring the pot indoors before nights drop below 7°C, and keep it warmer than that.",
       "stat": "7°C+",
       "sourceRefs": [0]
     },
     {
       "kind": "fertilize",
-      "title": "Liquid feed in summer",
-      "tip": "Potted plants need feeding: give a liquid feed every 2–3 weeks from spring to late summer.",
+      "title": "Liquid fertilizer in summer",
+      "tip": "Potted plants need feeding. Give liquid fertilizer every 2–3 weeks from spring to late summer.",
       "stat": "2–3 wks",
       "sourceRefs": [0, 2]
     },
     {
       "kind": "prune",
       "title": "Harvest thick outer stems",
-      "tip": "Cut stems with swollen bases from the edge of the clump, as low as you can. Use the bottom 10 cm.",
+      "tip": "Cut thick stems with swollen bases from the edge of the clump, as low as you can. Use the bottom 10 cm.",
       "stat": "10 cm",
       "sourceRefs": [0, 2]
     },
     {
       "kind": "propagate",
-      "title": "Root a shop-bought stalk",
-      "tip": "Fresh stalks from the shop root in a glass of water in about 2 weeks. Or divide a clump in spring.",
+      "title": "Root a store-bought stalk",
+      "tip": "Fresh stalks from the store root in a glass of water in about 2 weeks. Or divide a clump in spring.",
       "stat": "2 wks",
       "sourceRefs": [0, 2]
     }

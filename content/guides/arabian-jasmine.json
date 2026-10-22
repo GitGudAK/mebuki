@@ -22,43 +22,43 @@
     {
       "kind": "light",
       "title": "Bright, no hot sun",
-      "tip": "Give it your brightest spot or some direct sun, but shade it from hot afternoon sun.",
+      "tip": "Give it your brightest spot, even some direct sun, but shade it from hot afternoon sun.",
       "sourceRefs": [0, 2]
     },
     {
       "kind": "water",
       "title": "Moist, drier in winter",
-      "tip": "Keep the soil moist but well drained while it grows, and water sparingly in winter.",
+      "tip": "Keep the soil moist but well drained while it grows. Water only a little in winter.",
       "sourceRefs": [0, 2]
     },
     {
       "kind": "temperature",
       "title": "Frost-free all winter",
-      "tip": "It tolerates cool nights but not freezing. Keep it indoors or under glass through winter.",
+      "tip": "It handles cool nights but not freezing. Keep it indoors or in a greenhouse all winter.",
       "stat": "No frost",
       "sourceRefs": [0]
     },
     {
       "kind": "fertilize",
-      "title": "Low-nitrogen feed monthly",
-      "tip": "Feed once a month while it is growing with a low-nitrogen fertiliser.",
+      "title": "Feed monthly, low nitrogen",
+      "tip": "While it is growing, feed it once a month with a low-nitrogen fertilizer.",
       "stat": "Monthly",
       "sourceRefs": [0]
     },
     {
       "kind": "pests",
       "title": "Watch for mites indoors",
-      "tip": "Check often for aphids, scale, mealybugs and red spider mite, which strike plants kept indoors.",
+      "tip": "Check often for aphids, scale, mealybugs and spider mites, which attack plants kept indoors.",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "propagate",
       "title": "Root summer cuttings",
-      "tip": "Take semi-ripe cuttings in summer, or layer a low stem into a pot of compost in autumn.",
+      "tip": "In summer, root cuttings of firm new shoots. In autumn, you can also pin a low stem into a nearby pot to root.",
       "sourceRefs": [0, 1]
     }
   ],
-  "outro": "Bright light, no frost and a monthly feed keep mogra in scented bloom.",
+  "outro": "Bright light, no frost, monthly feeding: mogra in scented bloom.",
   "sources": [
     {
       "title": "RHS: Jasminum sambac (Arabian jasmine)",

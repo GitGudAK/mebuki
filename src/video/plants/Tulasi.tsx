@@ -196,4 +196,4 @@ const VrindavanFront: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "tulasi", Component: Tulasi };
+export const drawing: PlantDrawing = { id: "tulasi", Component: Tulasi, anchors: { soil: [200, 326], snip: [329, 173], snipR: 34 } };

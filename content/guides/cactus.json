@@ -23,37 +23,37 @@
     {
       "kind": "light",
       "title": "Your sunniest window",
-      "tip": "A south or west window with several hours of direct sun, all year. Under grow lights, run them 14–16 h.",
+      "tip": "Use a south or west window with several hours of direct sun all year. Run grow lights 14–16 hours a day.",
       "stat": "All year"
     },
     {
       "kind": "water",
       "title": "Soak, then let it dry",
-      "tip": "In spring and summer water only once the soil is completely dry; in winter, just enough to stop shrivelling.",
+      "tip": "In spring and summer, water only once the soil is fully dry. In winter, give just enough to stop shriveling.",
       "stat": "Bone dry"
     },
     {
       "kind": "soil",
       "title": "Gritty, fast-draining mix",
-      "tip": "Cactus compost, or half potting soil and half coarse sand or grit, in a pot with drainage holes.",
+      "tip": "Use cactus soil, or half potting soil and half coarse sand or grit, in a pot with drainage holes.",
       "stat": "1:1"
     },
     {
       "kind": "temperature",
       "title": "A cool winter rest",
-      "tip": "Grow it at 18–29°C, then give it a cool 7–13°C winter rest away from radiators to set flowers.",
+      "tip": "Grow it at 18–29°C. In winter, give it a cool rest at 7–13°C, away from radiators, so it sets flowers.",
       "stat": "7–13°C"
     },
     {
       "kind": "fertilize",
       "title": "Feed sparingly",
-      "tip": "A low-nitrogen cactus feed at most monthly in the growing season, and none at all in winter.",
-      "stat": "≤ monthly"
+      "tip": "Use a low-nitrogen cactus fertilizer at most once a month in the growing season, and none in winter.",
+      "stat": "Monthly at most"
     },
     {
       "kind": "repot",
       "title": "Repot with care",
-      "tip": "In spring, move up one pot size only. Wrap it in newspaper to handle, and wait a few days to water."
+      "tip": "In spring, move up one pot size only. Wrap it in newspaper to handle it, and wait a few days to water."
     }
   ],
   "outro": "Lots of sun, little water, a cool winter: then come the flowers.",

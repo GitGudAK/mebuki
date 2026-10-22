@@ -22,7 +22,7 @@
     {
       "kind": "light",
       "title": "Indirect light, no hot sun",
-      "tip": "Bright, indirect light is best and it copes with low light. Direct summer sun scorches the leaves.",
+      "tip": "Bright, indirect light is best, but it copes with low light. Direct summer sun scorches the leaves.",
       "sourceRefs": [0, 1, 2]
     },
     {
@@ -41,24 +41,24 @@
     {
       "kind": "fertilize",
       "title": "Feed April to September",
-      "tip": "Use a dilute houseplant feed while it grows. Too much fertilizer makes leaf tips curl and brown.",
+      "tip": "Use a diluted houseplant fertilizer while it grows. Too much makes the leaf tips curl and turn brown.",
       "sourceRefs": [0, 2]
     },
     {
       "kind": "prune",
       "title": "Trim and root the cuttings",
-      "tip": "Cut long stems back in spring just after a leaf node. 10 cm cuttings root in water in a couple of weeks.",
+      "tip": "In spring, cut long stems back just after a leaf node. 10 cm cuttings root in water in about 2 weeks.",
       "stat": "10 cm",
       "sourceRefs": [0, 1]
     },
     {
       "kind": "pests",
       "title": "Check for mealybugs",
-      "tip": "Look now and then for mealybugs, spider mites, scale and aphids.",
+      "tip": "Check now and then for mealybugs, spider mites, scale and aphids.",
       "sourceRefs": [0, 1, 2]
     }
   ],
-  "outro": "Go easy on the water and it will keep on trailing.",
+  "outro": "Go easy on the water and it will keep growing long vines.",
   "sources": [
     {
       "title": "RHS: How to grow philodendrons",

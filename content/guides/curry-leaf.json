@@ -28,7 +28,7 @@
     {
       "kind": "water",
       "title": "Let it dry between drinks",
-      "tip": "Water when the soil has dried out, and use a free-draining pot so the roots never sit wet.",
+      "tip": "Water when the soil has dried out, and use a fast-draining pot so the roots never sit wet.",
       "sourceRefs": [0, 1]
     },
     {
@@ -40,8 +40,8 @@
     },
     {
       "kind": "soil",
-      "title": "Acid to neutral compost",
-      "tip": "Use a compost that holds some moisture but drains well, acidic to neutral rather than chalky.",
+      "title": "Acidic to neutral soil",
+      "tip": "Use potting soil that holds some moisture but drains well. It should be acidic to neutral, not alkaline.",
       "sourceRefs": [1]
     },
     {
@@ -53,11 +53,11 @@
     {
       "kind": "pests",
       "title": "Check for mites and scale",
-      "tip": "Look under the leaves for red spider mite, scale insects and mealybugs, especially indoors.",
+      "tip": "Look under the leaves for spider mites, scale insects and mealybugs, especially indoors.",
       "sourceRefs": [1]
     }
   ],
-  "outro": "Sun, a dry spell between drinks and a warm winter: fresh leaves.",
+  "outro": "Sun, dry soil between waterings and a warm winter: fresh leaves.",
   "sources": [
     {
       "title": "UC Master Gardeners of Santa Clara County: Curry Leaf",
@@ -75,7 +75,7 @@
   "faqs": [
     {
       "question": "Should I dry curry leaves to store them?",
-      "answer": "Fresh leaves have the best flavour, and drying loses much of it. Freeze surplus leaves instead.",
+      "answer": "Fresh leaves have the best flavor, and drying loses much of it. Freeze extra leaves instead.",
       "sources": [
         {
           "title": "UC Master Gardeners of Santa Clara County: Curry Leaf",
@@ -88,5 +88,5 @@
       ]
     }
   ],
-  "origin": "the Indian subcontinent and SE Asia"
+  "origin": "South and Southeast Asia"
 }

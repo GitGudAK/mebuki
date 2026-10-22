@@ -145,4 +145,4 @@ const LowBowl: React.FC<{ color: string }> = ({ color }) => (
   </g>
 );
 
-export const drawing: PlantDrawing = { id: "prayer-plant", Component: PrayerPlant };
+export const drawing: PlantDrawing = { id: "prayer-plant", Component: PrayerPlant, anchors: { soil: [200, 416], snip: [350, 358], snipR: 54 } };

@@ -139,4 +139,4 @@ const GrowBag: React.FC<{ color: string }> = ({ color }) => (
   </g>
 );
 
-export const drawing: PlantDrawing = { id: "chili-pepper", Component: ChiliPepper };
+export const drawing: PlantDrawing = { id: "chili-pepper", Component: ChiliPepper, anchors: { soil: [199, 340], snip: [310, 125], snipR: 30 } };

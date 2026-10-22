@@ -30,32 +30,32 @@
     {
       "kind": "water",
       "title": "Moist, never waterlogged",
-      "tip": "Keep it just moist in summer. In winter let the surface dry, then water well; never leave it in water.",
+      "tip": "Keep it just moist in summer. In winter, let the surface dry, then water well. Never let it sit in water.",
       "sourceRefs": [0, 1]
     },
     {
       "kind": "temperature",
       "title": "Bring it in before frost",
-      "tip": "Move it indoors gradually so fruit doesn't drop. Keep winters above 5°C and away from heater vents.",
+      "tip": "Move it indoors gradually so the fruit doesn't drop. Keep it above 5°C in winter, away from heater vents.",
       "stat": "5°C+",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "fertilize",
-      "title": "Citrus feed in summer",
-      "tip": "Use a high-nitrogen citrus feed from late March to October, then a winter citrus feed or less.",
+      "title": "Citrus fertilizer in summer",
+      "tip": "Use a high-nitrogen citrus fertilizer from late March to October, then a winter citrus fertilizer, or less.",
       "sourceRefs": [0, 1]
     },
     {
       "kind": "humidity",
-      "title": "Humid air, hand pollinate",
-      "tip": "Dry air and drafts drop leaves, so use a humidifier. Brush flowers with a soft paintbrush to set fruit.",
+      "title": "Humid air, hand-pollinate",
+      "tip": "Dry air and drafts make leaves drop, so use a humidifier. Brush flowers with a soft paintbrush to set fruit.",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "pests",
       "title": "Check for scale and mites",
-      "tip": "Look for scale, aphids and spider mites. Wash the leaves before it comes in, and wash off scale.",
+      "tip": "Look for scale, aphids and spider mites. Wash the leaves before bringing it inside, and wash off any scale.",
       "sourceRefs": [0, 1]
     }
   ],
@@ -85,7 +85,7 @@
   "faqs": [
     {
       "question": "Why is my lemon tree dropping its leaves?",
-      "answer": "Usually cool or swinging temperatures, cold drafts or dry air. Overwatering and too little food can also yellow leaves and make them fall.",
+      "answer": "Usually cold or changing temperatures, cold drafts or dry air. Overwatering and too little fertilizer can also make leaves yellow and fall.",
       "sources": [
         {
           "title": "RHS: How to grow citrus",

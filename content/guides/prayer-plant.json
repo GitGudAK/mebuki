@@ -21,7 +21,7 @@
     {
       "kind": "light",
       "title": "Bright, indirect light",
-      "tip": "Keep it out of direct sun, which bleaches the leaf colors. It copes with lower light, but colors fade.",
+      "tip": "Keep it out of direct sun, which bleaches the leaf colors. It copes with lower light, but the colors fade.",
       "sourceRefs": [0, 1, 2]
     },
     {
@@ -39,24 +39,24 @@
     {
       "kind": "temperature",
       "title": "Warm, with no cold drafts",
-      "tip": "Keep it warm and away from cold drafts and chilly windows; it does not tolerate low temperatures.",
+      "tip": "Keep it warm and away from cold drafts and chilly windows. It does not tolerate low temperatures.",
       "sourceRefs": [1, 2]
     },
     {
       "kind": "fertilize",
       "title": "Feed monthly, go light",
-      "tip": "A monthly feed keeps it growing, but don't overdo it: too much fertilizer burns the leaves.",
+      "tip": "Feed it monthly to keep it growing, but don't overdo it: too much fertilizer burns the leaves.",
       "stat": "Monthly",
       "sourceRefs": [0, 1]
     },
     {
       "kind": "pests",
       "title": "Check for mites",
-      "tip": "Look for spider mites and mealybugs, and keep water off the crown so the stems don't rot.",
+      "tip": "Look for spider mites and mealybugs, and keep water out of the plant's center so the stems don't rot.",
       "sourceRefs": [0, 1, 2]
     }
   ],
-  "outro": "Humid air, steady moisture, soft light. Then watch it fold at night.",
+  "outro": "Humid air, moist soil, soft light. Watch its leaves fold up at night.",
   "sources": [
     {
       "title": "RHS: Maranta leuconeura",

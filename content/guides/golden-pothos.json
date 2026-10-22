@@ -21,29 +21,29 @@
   "steps": [
     {
       "kind": "light",
-      "title": "Low to bright indirect",
-      "tip": "It tolerates dim corners, but brighter light keeps the golden variegation bold."
+      "title": "Low or bright indirect light",
+      "tip": "It tolerates dim corners, but brighter light keeps the gold patterns on its leaves bold."
     },
     {
       "kind": "water",
-      "title": "Water when top 5 cm is dry",
-      "tip": "Let the top 4–5 cm of soil dry out; droopy leaves are its signal that it's thirsty.",
+      "title": "Water when top 4–5 cm is dry",
+      "tip": "Let the top 4–5 cm of soil dry out. Droopy leaves are its signal that it's thirsty.",
       "stat": "Top 5 cm"
     },
     {
       "kind": "prune",
-      "title": "Pinch for fullness",
-      "tip": "Trim leggy vines just above a leaf to push out new growth and keep it bushy."
+      "title": "Trim to keep it full",
+      "tip": "Trim long, bare vines just above a leaf to push out new growth and keep it bushy."
     },
     {
       "kind": "propagate",
       "title": "Root cuttings in water",
-      "tip": "Cut stems with at least one node, stand them in water in bright light, and pot up once roots form.",
+      "tip": "Cut stems with at least one node (leaf joint). Stand them in water in bright light; pot them once roots form.",
       "stat": "3–4 wks"
     },
     {
       "kind": "fertilize",
-      "title": "Feed in spring & summer",
+      "title": "Feed in spring and summer",
       "tip": "Use a general houseplant fertilizer once a month from spring to early autumn.",
       "stat": "Monthly"
     }

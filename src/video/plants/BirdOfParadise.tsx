@@ -148,4 +148,4 @@ const RibbedUrn: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "bird-of-paradise", Component: BirdOfParadise };
+export const drawing: PlantDrawing = { id: "bird-of-paradise", Component: BirdOfParadise, anchors: { soil: [198, 381], snip: [327, 258], snipR: 50 } };

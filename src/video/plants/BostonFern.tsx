@@ -131,4 +131,4 @@ const PlantStand: React.FC = () => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "boston-fern", Component: BostonFern };
+export const drawing: PlantDrawing = { id: "boston-fern", Component: BostonFern, anchors: { soil: [199, 238], snip: [379, 296], snipR: 32 } };

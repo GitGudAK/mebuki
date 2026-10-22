@@ -21,39 +21,39 @@
     {
       "kind": "light",
       "title": "4–5+ hours of direct sun",
-      "tip": "A south or west window or a sunny balcony; more sun means more flowers. Shade it from scorching afternoons.",
+      "tip": "A south or west window or sunny balcony is best: more sun, more flowers. Shade it from hot afternoon sun.",
       "stat": "4–5+ hrs"
     },
     {
       "kind": "water",
       "title": "Evenly moist, never soggy",
-      "tip": "Water until it drains, empty the saucer, and never let it wilt. In winter let the top dry out first."
+      "tip": "Water until it drains, empty the saucer, and never let it wilt. In winter, let the top dry out first."
     },
     {
       "kind": "temperature",
       "title": "Keep it warm and still",
-      "tip": "Buds need 18–24°C. Keep it away from drafts and radiators, and bring it in before nights drop below 12°C.",
+      "tip": "Buds need 18–24°C. Keep it away from drafts and radiators. Bring it in before nights drop below 12°C.",
       "stat": "18–24°C"
     },
     {
       "kind": "fertilize",
-      "title": "Half-strength feed",
-      "tip": "Balanced feed at half strength every 2–4 weeks in spring and summer; little or none in winter.",
+      "title": "Feed at half strength",
+      "tip": "Use balanced fertilizer at half strength every 2–4 weeks in spring and summer, and little or none in winter.",
       "stat": "2–4 wks"
     },
     {
       "kind": "prune",
       "title": "Cut back in late winter",
-      "tip": "Trim by up to half in Feb–Mar. Flowers form on new growth, so pruning later delays blooms.",
+      "tip": "Cut it back by up to half in February–March. Flowers form on new growth, so later pruning delays blooms.",
       "stat": "Up to ½"
     },
     {
       "kind": "pests",
       "title": "Rinse off aphids and mites",
-      "tip": "Check leaf undersides for aphids, spider mites and whitefly; rinse often, insecticidal soap if needed."
+      "tip": "Check leaf undersides for aphids, spider mites and whitefly. Rinse often; use insecticidal soap if needed."
     }
   ],
-  "outro": "Steady sun, steady water, and let it stay put: blooms all summer.",
+  "outro": "Steady sun, steady water and no moving it: blooms all summer.",
   "sources": [
     {
       "title": "University of Minnesota Extension: Hibiscus",

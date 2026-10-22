@@ -159,4 +159,4 @@ const VersaillesPlanter: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "meyer-lemon", Component: MeyerLemon };
+export const drawing: PlantDrawing = { id: "meyer-lemon", Component: MeyerLemon, anchors: { soil: [236, 369], snip: [352, 148], snipR: 26 } };

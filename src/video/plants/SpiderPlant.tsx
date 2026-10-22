@@ -156,4 +156,4 @@ const WoodStand: React.FC = () => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "spider-plant", Component: SpiderPlant };
+export const drawing: PlantDrawing = { id: "spider-plant", Component: SpiderPlant, anchors: { soil: [200, 320], snip: [352, 430], snipR: 40 } };

@@ -21,19 +21,19 @@
     {
       "kind": "light",
       "title": "Bright, indirect light",
-      "tip": "Indoors it needs bright light but no harsh direct sun, like the dappled shade it grows in outdoors.",
+      "tip": "Indoors, it needs bright light but no harsh direct sun, like the dappled shade it grows in outdoors.",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "water",
       "title": "Evenly moist, never soggy",
-      "tip": "Keep the soil consistently moist in the growing season; overwatering causes root rot. Water less in winter.",
+      "tip": "Keep the soil evenly moist in the growing season, but overwatering causes root rot. Water less in winter.",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "humidity",
-      "title": "Humid air, no draughts",
-      "tip": "Give it moderate to high humidity and keep it away from draughty doors and vents.",
+      "title": "Humid air, no drafts",
+      "tip": "Give it moderate to high humidity, and keep it away from drafty doors and vents.",
       "sourceRefs": [0, 1, 2]
     },
     {
@@ -46,7 +46,7 @@
     {
       "kind": "fertilize",
       "title": "Feed every 2 weeks",
-      "tip": "In the growing season, give a balanced liquid feed every two weeks. Repot every 2–3 years in spring.",
+      "tip": "In the growing season, give a balanced liquid fertilizer every 2 weeks. Repot every 2–3 years in spring.",
       "stat": "2 wks",
       "sourceRefs": [0, 2]
     },

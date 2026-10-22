@@ -214,4 +214,4 @@ const BalconyPot: React.FC<{ color: string }> = ({ color }) => (
   </g>
 );
 
-export const drawing: PlantDrawing = { id: "balcony-cherry-tomato", Component: CherryTomato };
+export const drawing: PlantDrawing = { id: "balcony-cherry-tomato", Component: CherryTomato, anchors: { soil: [199, 372], snip: [242, 152], snipR: 28 } };

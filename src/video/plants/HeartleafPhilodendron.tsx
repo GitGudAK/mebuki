@@ -118,4 +118,4 @@ export const HeartleafPhilodendron: React.FC<{ c: Ctx }> = ({ c }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "heartleaf-philodendron", Component: HeartleafPhilodendron, shadow: false };
+export const drawing: PlantDrawing = { id: "heartleaf-philodendron", Component: HeartleafPhilodendron, shadow: false, anchors: { soil: [199, 200], snip: [377, 391], snipR: 30 } };

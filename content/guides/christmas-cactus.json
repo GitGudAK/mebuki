@@ -27,27 +27,27 @@
     {
       "kind": "temperature",
       "title": "Long, cool autumn nights",
-      "tip": "From mid-September, give 13+ hours of total darkness and 13–18°C nights until buds show.",
+      "tip": "From mid-September, give it at least 13 hours of total darkness and 13–18°C nights until buds show.",
       "stat": "13+ hrs",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "water",
       "title": "Let the top dry out",
-      "tip": "Water when the top few cm are dry, then empty the saucer. Standing water rots roots and drops buds.",
+      "tip": "Water when the top few cm are dry, then empty the saucer. Standing water rots roots and makes buds drop.",
       "sourceRefs": [0, 1, 2]
     },
     {
       "kind": "fertilize",
       "title": "Feed through summer",
-      "tip": "Half-strength balanced feed monthly in summer while it grows. Stop by the end of September.",
+      "tip": "Give half-strength balanced fertilizer monthly while it grows in summer. Stop by the end of September.",
       "stat": "Monthly",
       "sourceRefs": [0, 1]
     },
     {
       "kind": "prune",
       "title": "Pinch tips for more flowers",
-      "tip": "Flowers form on stem tips, so pinch a few segments in spring to make it branch. Root them as cuttings.",
+      "tip": "Flowers form at the stem tips, so pinch off a few segments in spring to make it branch. Root them as cuttings.",
       "sourceRefs": [1]
     }
   ],
@@ -73,7 +73,7 @@
   "faqs": [
     {
       "question": "Why does my Christmas cactus drop its buds?",
-      "answer": "Usually swings in temperature, drafts from heaters or vents, moving the plant once buds form, or overwatering. Keep it in one steady spot.",
+      "answer": "Usually it's temperature swings, drafts from heaters or vents, moving the plant once buds form, or overwatering. Keep it in one steady spot.",
       "sources": [
         {
           "title": "University of Minnesota Extension: Growing holiday cacti",

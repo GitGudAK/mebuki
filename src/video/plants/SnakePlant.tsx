@@ -85,4 +85,4 @@ const ConcretePlanter: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "snake-plant", Component: SnakePlant };
+export const drawing: PlantDrawing = { id: "snake-plant", Component: SnakePlant, anchors: { soil: [200, 368], snip: [290, 216], snipR: 30 } };

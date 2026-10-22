@@ -22,12 +22,12 @@
     {
       "kind": "light",
       "title": "Bright, indirect light",
-      "tip": "Hang it near an east window; a little gentle morning sun keeps the pearls plump."
+      "tip": "Hang it near an east window. A little gentle morning sun keeps the pearls plump."
     },
     {
       "kind": "water",
-      "title": "Water when pearls pucker",
-      "tip": "Water when the soil is dry and pearls look slightly wrinkled; mushy pearls mean too much.",
+      "title": "Water when pearls wrinkle",
+      "tip": "Water when the soil is dry and the pearls look slightly wrinkled. Mushy pearls mean too much water.",
       "stat": "When dry"
     },
     {
@@ -38,13 +38,13 @@
     {
       "kind": "propagate",
       "title": "Root stem cuttings",
-      "tip": "Press 10 cm cuttings into moist gritty mix, lightly covering the lower nodes; roots form there.",
+      "tip": "Press 10 cm cuttings into moist, gritty mix and lightly cover the lower leaf joints. Roots form there.",
       "stat": "About 4 wks"
     },
     {
       "kind": "temperature",
       "title": "Cooler winter rest",
-      "tip": "Keep it cooler and drier in winter; water only if the pearls start to shrivel.",
+      "tip": "Keep it cooler and drier in winter. Water only if the pearls start to shrivel.",
       "stat": "10–16°C"
     }
   ],

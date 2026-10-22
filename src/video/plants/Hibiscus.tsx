@@ -149,4 +149,4 @@ const PatioPot: React.FC<{ color: string }> = ({ color }) => (
   </g>
 );
 
-export const drawing: PlantDrawing = { id: "hibiscus", Component: Hibiscus };
+export const drawing: PlantDrawing = { id: "hibiscus", Component: Hibiscus, anchors: { soil: [199, 375], snip: [329, 315], snipR: 35 } };

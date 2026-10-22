@@ -22,7 +22,7 @@
     {
       "kind": "light",
       "title": "4+ hours of direct sun",
-      "tip": "A south window is ideal. Too little light gives dark, droopy growth without red leaf edges.",
+      "tip": "A south window is ideal. With too little light, growth is dark and droopy, without red leaf edges.",
       "stat": "4+ hrs",
       "sourceRefs": [0, 1, 2]
     },
@@ -41,24 +41,24 @@
     {
       "kind": "temperature",
       "title": "Warm days, cool nights",
-      "tip": "Best at 18–24°C by day and 10–13°C at night. Keep leaves off cold windowpanes in winter.",
+      "tip": "It's best at 18–24°C by day and 10–13°C at night. Keep leaves off cold windows in winter.",
       "stat": "10–24°C",
       "sourceRefs": [1]
     },
     {
       "kind": "fertilize",
       "title": "Feed lightly",
-      "tip": "A balanced liquid feed 2–3 times in spring and summer. Too much fertilizer makes it leggy.",
+      "tip": "Use a balanced liquid fertilizer 2–3 times in spring and summer. Too much makes it long and weak.",
       "sourceRefs": [2]
     },
     {
       "kind": "pests",
       "title": "Swab off mealybugs",
-      "tip": "Dab white, fluffy mealybugs with rubbing alcohol on a cotton swab. Skip insecticidal soap.",
+      "tip": "Dab white, fluffy mealybugs with a cotton swab dipped in rubbing alcohol. Don't use insecticidal soap.",
       "sourceRefs": [0, 1, 2]
     }
   ],
-  "outro": "Lots of sun and a dry spell between drinks keep a jade happy.",
+  "outro": "Lots of sun and dry soil between drinks keep a jade happy.",
   "sources": [
     {
       "title": "Wisconsin Horticulture Extension: Jade Plant, Crassula ovata",
@@ -80,7 +80,7 @@
   "faqs": [
     {
       "question": "What are the tiny white or black dots on the leaves?",
-      "answer": "They're normal. The dots are hydathodes, pores the plant uses to move water, not a disease or a pest.",
+      "answer": "They're normal. The dots are hydathodes, tiny pores the plant uses to move water. They aren't a disease or a pest.",
       "sources": [
         {
           "title": "Penn State Extension: Jade Plant, A No Fuss Houseplant",

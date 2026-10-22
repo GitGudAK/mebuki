@@ -124,4 +124,4 @@ const BrassPot: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "arabian-jasmine", Component: ArabianJasmine };
+export const drawing: PlantDrawing = { id: "arabian-jasmine", Component: ArabianJasmine, anchors: { soil: [198, 393], snip: [313, 322], snipR: 35 } };

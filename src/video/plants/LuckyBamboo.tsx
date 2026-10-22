@@ -106,4 +106,4 @@ export const LuckyBamboo: React.FC<{ c: Ctx }> = ({ c }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "lucky-bamboo", Component: LuckyBamboo };
+export const drawing: PlantDrawing = { id: "lucky-bamboo", Component: LuckyBamboo, anchors: { soil: [200, 384], snip: [267, 175], snipR: 32 } };

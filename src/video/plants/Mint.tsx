@@ -165,4 +165,4 @@ const WindowBox: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "mint", Component: Mint };
+export const drawing: PlantDrawing = { id: "mint", Component: Mint, anchors: { soil: [230, 388], snip: [260, 160], snipR: 32 } };

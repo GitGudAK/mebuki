@@ -27,7 +27,7 @@
     {
       "kind": "water",
       "title": "Let the top dry slightly",
-      "tip": "Water thoroughly, then let the topsoil dry a little. Yellowing leaves mean the soil stays too wet."
+      "tip": "Water thoroughly, then let the top of the soil dry a little. Yellow leaves mean the soil stays too wet."
     },
     {
       "kind": "temperature",
@@ -37,8 +37,8 @@
     },
     {
       "kind": "fertilize",
-      "title": "Feed spring and summer",
-      "tip": "Liquid houseplant feed every 2–4 weeks while it grows, less in low light, and none in winter.",
+      "title": "Feed in spring and summer",
+      "tip": "Use liquid houseplant fertilizer every 2–4 weeks while it grows, less in low light, and none in winter.",
       "stat": "2–4 wks"
     },
     {
@@ -49,7 +49,7 @@
     {
       "kind": "repot",
       "title": "Repot every 2–3 years",
-      "tip": "Repot in late winter or early spring, and top-dress with fresh compost in the years between.",
+      "tip": "Repot in late winter or early spring. In the years between, replace the top layer of soil with fresh mix.",
       "stat": "2–3 yrs"
     }
   ],

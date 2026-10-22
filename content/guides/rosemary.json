@@ -3,7 +3,7 @@
   "id": "rosemary",
   "name": "Rosemary",
   "scientificName": "Salvia rosmarinus",
-  "origin": "Mediterranean",
+  "origin": "The Mediterranean",
   "hook": "Rosemary dying indoors? It's usually too much water.",
   "difficulty": "moderate",
   "tags": [
@@ -30,36 +30,36 @@
     {
       "kind": "water",
       "title": "Let it dry between drinks",
-      "tip": "Water when the compost dries out, and never let it sit waterlogged. Overwatering is the top killer.",
+      "tip": "Water when the soil dries out, and never let it sit in soggy soil. Overwatering is the top killer.",
       "sourceRefs": [0, 1]
     },
     {
       "kind": "soil",
       "title": "Gritty soil, 30 cm pot",
-      "tip": "Use a pot at least 30 cm wide and deep with drainage holes, and soil-based compost mixed with grit.",
+      "tip": "Use a pot at least 30 cm wide and deep with drainage holes. Fill it with potting soil mixed with grit.",
       "stat": "30 cm",
       "sourceRefs": [0]
     },
     {
       "kind": "prune",
       "title": "Trim after it flowers",
-      "tip": "Trim lightly each year after flowering, never into bare old wood. Soft new tips taste best.",
+      "tip": "Trim lightly each year after flowering, but never into old, bare wood. Soft new tips taste best.",
       "sourceRefs": [0]
     },
     {
       "kind": "temperature",
       "title": "Shelter pots in winter",
-      "tip": "Pots feel the cold more than garden plants. Wrap them or move them to a porch, out of winter wet.",
+      "tip": "Pots feel the cold more than plants in the ground. Wrap the pot or move it to a porch, out of winter rain.",
       "sourceRefs": [0]
     },
     {
       "kind": "pests",
       "title": "Indoors, check for pests",
-      "tip": "Indoors, watch for aphids, mealybugs, whiteflies and spider mites, and give it good air flow.",
+      "tip": "Indoors, watch for aphids, mealybugs, whiteflies and spider mites, and give it good airflow.",
       "sourceRefs": [1]
     }
   ],
-  "outro": "Sun, sharp drainage and a light hand with water: sprigs all year.",
+  "outro": "Sun, fast drainage and little water: fresh sprigs all year.",
   "sources": [
     {
       "title": "RHS: How to grow rosemary",

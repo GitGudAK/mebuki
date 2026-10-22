@@ -136,4 +136,4 @@ const SquatPot: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "cactus", Component: Cactus };
+export const drawing: PlantDrawing = { id: "cactus", Component: Cactus, anchors: { soil: [199, 391], snip: [281, 359], snipR: 30 } };

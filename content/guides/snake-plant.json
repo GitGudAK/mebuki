@@ -21,14 +21,14 @@
   "steps": [
     {
       "kind": "water",
-      "title": "Let soil dry fully",
-      "tip": "Water only when the soil is dry; a whole plant leaning over can signal root rot.",
+      "title": "Let the soil dry fully",
+      "tip": "Water only when the soil is dry. A whole plant leaning over can be a sign of root rot.",
       "stat": "2–4 wks"
     },
     {
       "kind": "light",
       "title": "Any light works",
-      "tip": "Grows fastest in bright indirect light but tolerates dim hallways and north windows."
+      "tip": "It grows fastest in bright, indirect light, but tolerates dim hallways and north windows."
     },
     {
       "kind": "soil",
@@ -43,8 +43,8 @@
     },
     {
       "kind": "repot",
-      "title": "Repot when pot bulges",
-      "tip": "It likes being snug, so only go slightly bigger when roots fill or warp the pot.",
+      "title": "Repot when the pot bulges",
+      "tip": "It likes a snug pot, so only go slightly bigger when roots fill the pot or bend it out of shape.",
       "stat": "Every 3–5 yrs"
     }
   ],

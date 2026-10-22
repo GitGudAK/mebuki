@@ -146,4 +146,4 @@ const Bucket: React.FC<{ color: string }> = ({ color }) => {
   );
 };
 
-export const drawing: PlantDrawing = { id: "lemongrass", Component: Lemongrass };
+export const drawing: PlantDrawing = { id: "lemongrass", Component: Lemongrass, anchors: { soil: [240, 359], snip: [228, 340], snipR: 26 } };

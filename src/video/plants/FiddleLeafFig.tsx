@@ -118,4 +118,4 @@ const SeagrassBasket: React.FC<{ color: string; id: string }> = ({ color, id }) 
   );
 };
 
-export const drawing: PlantDrawing = { id: "fiddle-leaf-fig", Component: FiddleLeafFig };
+export const drawing: PlantDrawing = { id: "fiddle-leaf-fig", Component: FiddleLeafFig, anchors: { soil: [199, 396], snip: [293, 267], snipR: 40 } };

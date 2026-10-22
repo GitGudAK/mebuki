@@ -3,7 +3,7 @@
   "id": "parlor-palm",
   "name": "Parlor Palm",
   "scientificName": "Chamaedorea elegans",
-  "hook": "Brown frond tips? Your palm wants softer water.",
+  "hook": "Brown leaf tips? Your palm wants softer water.",
   "difficulty": "easy",
   "tags": [
     "low light",
@@ -20,14 +20,14 @@
   "steps": [
     {
       "kind": "light",
-      "title": "Bright shade, or low light",
-      "tip": "Bright, indirect light is best, but it tolerates low light. Direct summer sun scorches the fronds.",
+      "title": "Indirect light or low light",
+      "tip": "Bright, indirect light is best, but it tolerates low light. Direct summer sun scorches the leaves.",
       "sourceRefs": [0, 1]
     },
     {
       "kind": "water",
       "title": "Water when the top is dry",
-      "tip": "Water once the surface dries, then empty the tray. Rainwater is best; hard tap water browns the leaves.",
+      "tip": "Water once the surface dries, then empty the saucer. Rainwater is best; hard tap water browns the leaves.",
       "sourceRefs": [0, 1]
     },
     {
@@ -39,8 +39,8 @@
     },
     {
       "kind": "fertilize",
-      "title": "Feed monthly, not winter",
-      "tip": "Give a balanced liquid feed once a month from spring to autumn, and nothing in winter.",
+      "title": "Feed monthly, not in winter",
+      "tip": "Give a balanced liquid fertilizer once a month from spring to autumn, and nothing in winter.",
       "stat": "Monthly",
       "sourceRefs": [0, 1]
     },
@@ -58,7 +58,7 @@
       "sourceRefs": [0, 1]
     }
   ],
-  "outro": "Soft water, bright shade and a snug pot: a palm that lasts for years.",
+  "outro": "Soft water, indirect light and a snug pot: a palm that lasts years.",
   "sources": [
     {
       "title": "RHS: How to grow chamaedorea",
