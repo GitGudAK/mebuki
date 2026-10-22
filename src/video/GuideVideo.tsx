@@ -413,7 +413,7 @@ export const StepScene: React.FC<{
             border: `4px dashed ${withAlpha(guide.palette.accent, 0.3)}`,
           }}
         />
-        <StepMotif kind={step.kind} palette={guide.palette} size={motifSize} />
+        <StepMotif kind={step.kind} palette={guide.palette} guide={guide} size={motifSize} />
       </div>
 
       {hasStat && (

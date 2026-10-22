@@ -8,14 +8,15 @@ import {
   useVideoConfig,
 } from "../motion";
 import type { PlantGuide, StepKind } from "../types";
-import { mix, shade } from "./colors";
+import { shade } from "./colors";
+import { PLANT_VIEWBOX, PlantIllustration } from "./PlantIllustration";
 
 type Palette = PlantGuide["palette"];
+type MotifProps = { palette: Palette; guide: PlantGuide };
 
 /* ---------------------------------------------------------------- helpers */
 
 const SOIL = "#5A3D29";
-const SOIL_WET = "#3A2618";
 const WATER = "#4FB3EE";
 const FONT = "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif";
 
@@ -69,81 +70,32 @@ const Drop: React.FC<{ x: number; y: number; s: number; color?: string; opacity?
 
 const LEAF_D = "M0 0 C -14 -8 -18 -34 0 -48 C 18 -34 14 -8 0 0 Z";
 
-/** A small sprout in a pot. (x, y) = centre of the pot opening. */
-const MiniPlant: React.FC<{
-  x: number;
-  y: number;
-  w: number;
-  palette: Palette;
-  grow: number;
-  soil?: string;
-  children?: React.ReactNode;
-  leafBoost?: number;
-}> = ({ x, y, w, palette, grow, soil = SOIL, children, leafBoost = 0 }) => {
-  const frame = useCurrentFrame();
-  const h = w * 0.62;
-  const stemLen = w * 0.75 * grow;
-  const leaf = shade(palette.leaf, leafBoost);
-  const sway = Math.sin(frame / 14) * 4;
-  const leaves = [
-    { at: 0.45, a: -58, s: 0.9 },
-    { at: 0.45, a: 58, s: 0.9 },
-    { at: 0.8, a: -42, s: 1.05 },
-    { at: 0.8, a: 42, s: 1.05 },
-    { at: 1, a: 0, s: 0.9 },
-  ];
-  const scale = w / 150;
+/** The guide's own plant drawing, fully grown, with its container's base at (x, base) and `h` units tall. */
+const GuidePlant: React.FC<{ guide: PlantGuide; x: number; base: number; h: number; id: string }> = ({ guide, x, base, h, id }) => {
+  const w = (h * PLANT_VIEWBOX.width) / PLANT_VIEWBOX.height;
   return (
-    <g>
-      <ellipse cx={x} cy={y + 2} rx={w / 2 - 2} ry={w * 0.08} fill={soil} />
-      {children}
-      <g transform={`translate(${x} ${y}) rotate(${sway * 0.4})`}>
-        <path
-          d={`M0 4 Q ${-6 * scale} ${-stemLen * 0.5} 0 ${-stemLen}`}
-          stroke={shade(palette.leaf, -0.25)}
-          strokeWidth={6 * scale}
-          fill="none"
-          strokeLinecap="round"
-        />
-        {leaves.map((l, i) => {
-          const s = ci(grow, [l.at * 0.7, l.at], [0, l.s]) * scale * 1.5;
-          return (
-            <g
-              key={i}
-              transform={`translate(0 ${-stemLen * l.at}) rotate(${l.a + Math.sin(frame / 12 + i) * 5}) scale(${s})`}
-            >
-              <path d={LEAF_D} fill={shade(leaf, (i % 2) * 0.08)} />
-              <path d="M0 -3 L0 -40" stroke={shade(leaf, 0.25)} strokeWidth={2} />
-            </g>
-          );
-        })}
-      </g>
-      <path
-        d={`M${x - w / 2} ${y + 8} L${x + w / 2} ${y + 8} L${x + w * 0.38} ${y + h} Q ${x + w * 0.37} ${y + h + 6} ${x + w * 0.33} ${y + h + 6} L${x - w * 0.33} ${y + h + 6} Q ${x - w * 0.37} ${y + h + 6} ${x - w * 0.38} ${y + h} Z`}
-        fill={palette.pot}
-      />
-      <rect x={x - w / 2 - 8} y={y - 4} width={w + 16} height={h * 0.24} rx={8} fill={shade(palette.pot, 0.08)} />
-      <path
-        d={`M${x - w * 0.3} ${y + h * 0.35} L${x - w * 0.26} ${y + h * 0.85}`}
-        stroke="#fff"
-        strokeOpacity={0.2}
-        strokeWidth={8 * scale}
-        strokeLinecap="round"
-      />
-    </g>
+    <PlantIllustration
+      leafShape={guide.leafShape}
+      palette={guide.palette}
+      plantId={guide.id}
+      width={w}
+      x={x - w / 2}
+      y={base - (h * 514) / PLANT_VIEWBOX.height}
+      growStart={-120}
+      idPrefix={`${id}-${guide.id}`}
+    />
   );
 };
 
 /* ---------------------------------------------------------------- WATER */
 
-const WaterMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
+const WaterMotif: React.FC<MotifProps> = ({ palette, guide }) => {
   const f = useCurrentFrame();
   const sp = useSpring();
   const canIn = sp(0);
   const tilt = ci(f, [12, 28], [0, 28], Easing.out(Easing.cubic)) + (f > 28 ? Math.sin((f - 28) / 5) * 1.5 : 0);
   const potIn = sp(6);
-  const wet = ci(f, [40, 110], [0, 1]);
-  const soilTop = 292;
+  const soilTop = 312;
   const drops: React.ReactNode[] = [];
   for (let k = 0; k < 22; k++) {
     const spawn = 28 + k * 4;
@@ -175,19 +127,7 @@ const WaterMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
   return (
     <g>
       <g transform={`translate(0 ${(1 - potIn) * 120})`} opacity={potIn}>
-        <MiniPlant
-          x={268}
-          y={soilTop}
-          w={160}
-          palette={palette}
-          grow={ci(f, [20, 115], [0.35, 1], Easing.out(Easing.quad))}
-          soil={mix(SOIL, SOIL_WET, wet)}
-          leafBoost={wet * 0.08}
-        >
-          {wet > 0 && (
-            <ellipse cx={268} cy={soilTop + 2} rx={60 * wet} ry={8 * wet} fill={WATER} opacity={0.25} />
-          )}
-        </MiniPlant>
+        <GuidePlant guide={guide} x={262} base={400} h={300} id="water" />
       </g>
       {drops}
       <g transform={`translate(${(1 - canIn) * -220} ${(1 - canIn) * -40}) rotate(${tilt} 130 130)`}>
@@ -205,7 +145,7 @@ const WaterMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
 
 /* ---------------------------------------------------------------- LIGHT */
 
-const LightMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
+const LightMotif: React.FC<MotifProps> = ({ palette, guide }) => {
   const f = useCurrentFrame();
   const sp = useSpring();
   const sunIn = sp(0, { damping: 10 });
@@ -228,7 +168,7 @@ const LightMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
         const y = 200 + t * 160;
         return <circle key={i} cx={x} cy={y} r={2.5 + random(`mr${i}`) * 2.5} fill="#FFE58A" opacity={beam * (1 - Math.abs(t - 0.5) * 2) * 0.9} />;
       })}
-      <MiniPlant x={200} y={318} w={112} palette={palette} grow={ci(f, [15, 110], [0.45, 1])} leafBoost={beam * 0.12} />
+      <GuidePlant guide={guide} x={200} base={398} h={230} id="light" />
       <g transform={`translate(${sunCx} ${sunCy}) scale(${sunIn})`}>
         <circle r={92 + Math.sin(f / 6) * 6} fill="#FFD54A" opacity={0.22} />
         <g transform={`rotate(${f * 1.4})`}>
@@ -262,7 +202,7 @@ const LightMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
 
 /* ---------------------------------------------------------------- SOIL */
 
-const SoilMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
+const SoilMotif: React.FC<MotifProps> = ({ palette, guide }) => {
   const f = useCurrentFrame();
   const sp = useSpring();
   const potIn = sp(0);
@@ -271,9 +211,13 @@ const SoilMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
     { top: 222, bottom: 300, fill: "#A3744B", delay: 30, label: "airy mix", kind: "perlite" },
     { top: 152, bottom: 224, fill: SOIL, delay: 52, label: "rich soil", kind: "speck" },
   ] as const;
-  const sprout = sp(84, { damping: 9 });
+  const sprout = sp(66, { damping: 11 });
   return (
     <g transform={`translate(0 ${(1 - potIn) * 60})`} opacity={potIn}>
+      <g transform={`translate(318 398) scale(${0.4 + sprout * 0.6}) translate(-318 -398)`} opacity={Math.min(1, sprout * 1.5)}>
+        <GuidePlant guide={guide} x={318} base={398} h={250} id="soil" />
+      </g>
+      <g transform="translate(-39 98) scale(0.72)">
       <defs>
         <clipPath id="soil-pot">
           <polygon points="76,-80 252,-80 252,112 236,350 92,350 76,112" />
@@ -326,14 +270,6 @@ const SoilMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
           </g>
         );
       })}
-      <g transform={`translate(164 ${150}) scale(${sprout})`}>
-        <path d="M0 0 Q -4 -30 2 -52" stroke={shade(palette.leaf, -0.2)} strokeWidth={6} fill="none" strokeLinecap="round" />
-        <g transform={`translate(2 -48) rotate(${-55 + Math.sin(f / 10) * 5}) scale(1.1)`}>
-          <path d={LEAF_D} fill={palette.leaf} />
-        </g>
-        <g transform={`translate(2 -48) rotate(${50 + Math.sin(f / 10 + 1) * 5}) scale(0.9)`}>
-          <path d={LEAF_D} fill={shade(palette.leaf, 0.1)} />
-        </g>
       </g>
     </g>
   );
@@ -341,7 +277,7 @@ const SoilMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
 
 /* ---------------------------------------------------------------- HUMIDITY */
 
-const HumidityMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
+const HumidityMotif: React.FC<MotifProps> = ({ palette, guide }) => {
   const f = useCurrentFrame();
   const sp = useSpring();
   const bottleIn = sp(0);
@@ -382,39 +318,30 @@ const HumidityMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
     );
   });
   const beads = [
-    [-6, -60, 0],
-    [24, -110, 1],
-    [-28, -130, 2],
-    [10, -160, 3],
-    [-40, -86, 4],
-    [34, -66, 5],
-    [-10, -190, 6],
+    [250, 200, 0],
+    [302, 168, 1],
+    [334, 232, 2],
+    [268, 262, 3],
+    [312, 290, 4],
+    [236, 244, 5],
+    [290, 138, 6],
   ];
   const sway = Math.sin(f / 18) * 3;
   return (
     <g>
       {ambient}
-      <g transform={`translate(292 380) rotate(${sway})`}>
-        <path d="M0 0 Q 10 -60 -6 -120" stroke={shade(palette.leaf, -0.25)} strokeWidth={8} fill="none" strokeLinecap="round" />
-        <g transform={`translate(-6 -118) rotate(-18) scale(${leafIn})`}>
-          <path d="M0 0 C -80 -30 -90 -170 0 -230 C 90 -170 80 -30 0 0 Z" fill={palette.leaf} />
-          <path d="M0 -4 L0 -215" stroke={shade(palette.leaf, 0.2)} strokeWidth={4} />
-          {[-1, 1].map((s) =>
-            [50, 95, 140, 180].map((y) => (
-              <path key={`${s}${y}`} d={`M0 ${-y} Q ${s * 30} ${-y - 10} ${s * 52} ${-y - 30}`} stroke={shade(palette.leaf, 0.15)} strokeWidth={3} fill="none" />
-            )),
-          )}
-          {beads.map(([x, y, i]) => {
-            const s = sp(34 + i * 10, { damping: 9 });
-            return (
-              <g key={i} transform={`translate(${x} ${y}) scale(${s})`}>
-                <circle r={7 + (i % 3) * 2} fill="#E9F7FF" opacity={0.85} />
-                <circle cx={-2.5} cy={-2.5} r={2.5} fill="#fff" />
-              </g>
-            );
-          })}
-        </g>
+      <g transform={`translate(285 400) scale(${leafIn}) rotate(${sway * 0.3}) translate(-285 -400)`}>
+        <GuidePlant guide={guide} x={285} base={400} h={300} id="mist" />
       </g>
+      {beads.map(([x, y, i]) => {
+        const s = sp(34 + i * 10, { damping: 9 });
+        return (
+          <g key={i} transform={`translate(${x} ${y}) scale(${s})`}>
+            <circle r={6 + (i % 3) * 2} fill="#E9F7FF" opacity={0.85} />
+            <circle cx={-2} cy={-2} r={2.2} fill="#fff" />
+          </g>
+        );
+      })}
       {particles}
       <g transform={`translate(${(1 - bottleIn) * -200} 0)`}>
         <rect x={38} y={176} width={78} height={170} rx={20} fill={palette.accent} />
@@ -439,7 +366,7 @@ const HumidityMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
 
 /* ---------------------------------------------------------------- FERTILIZE */
 
-const FertilizeMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
+const FertilizeMotif: React.FC<MotifProps> = ({ palette, guide }) => {
   const f = useCurrentFrame();
   const sp = useSpring();
   const bagIn = sp(0);
@@ -454,7 +381,7 @@ const FertilizeMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
     if (age < 0) continue;
     const startX = 178 + random(`fx${k}`) * 10;
     const endX = 205 + random(`fe${k}`) * 90;
-    const endY = 282 + random(`fy${k}`) * 8;
+    const endY = 306 + random(`fy${k}`) * 8;
     const x = ci(age, [0, 20], [startX, endX]);
     const y = ci(age, [0, 20], [118, endY], Easing.bounce);
     pellets.push(
@@ -476,16 +403,10 @@ const FertilizeMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
   return (
     <g>
       <g transform={`translate(0 ${(1 - potIn) * 120})`} opacity={potIn}>
-        <MiniPlant
-          x={250}
-          y={282}
-          w={170}
-          palette={palette}
-          grow={0.6 + growPulse * 0.42}
-          leafBoost={growPulse * 0.1}
-        >
-          {pellets}
-        </MiniPlant>
+        <g transform={`translate(250 398) scale(${1 + growPulse * 0.05}) translate(-250 -398)`}>
+          <GuidePlant guide={guide} x={250} base={398} h={290} id="feed" />
+        </g>
+        {pellets}
       </g>
       {sparkles}
       <g transform={`translate(${(1 - bagIn) * -220} 0) rotate(${tilt} 110 125)`}>
@@ -510,7 +431,7 @@ const Blade: React.FC = () => (
   </g>
 );
 
-const PruneMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
+const PruneMotif: React.FC<MotifProps> = ({ palette, guide }) => {
   const f = useCurrentFrame();
   const sp = useSpring();
   const plantIn = sp(0);
@@ -532,24 +453,12 @@ const PruneMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
   const burst = ci(f, [SNIP, SNIP + 12], [0, 1]);
   const leaf = palette.leaf;
   const sway = Math.sin(f / 16) * 2;
-  const mainLeaves = [
-    { x: 166, y: 302, a: -60, s: 1.5 },
-    { x: 172, y: 240, a: 55, s: 1.6 },
-    { x: 162, y: 160, a: -50, s: 1.7 },
-    { x: 162, y: 96, a: 8, s: 1.6 },
-  ];
   return (
     <g>
-      <g transform={`translate(0 ${(1 - plantIn) * 100}) rotate(${sway} 170 360)`} opacity={plantIn}>
-        <path d="M170 360 C 164 300 182 230 162 92" stroke={shade(leaf, -0.25)} strokeWidth={9} fill="none" strokeLinecap="round" />
-        {/* remaining petiole stub */}
-        <path d={`M174 222 Q 210 196 ${f < SNIP ? cut.x : cut.x - 14} ${f < SNIP ? cut.y : cut.y + 6}`} stroke={shade(leaf, -0.25)} strokeWidth={6} fill="none" strokeLinecap="round" />
-        {mainLeaves.map((l, i) => (
-          <g key={i} transform={`translate(${l.x} ${l.y}) rotate(${l.a + Math.sin(f / 12 + i) * 4}) scale(${l.s})`}>
-            <path d={LEAF_D} fill={shade(leaf, (i % 2) * 0.08)} />
-            <path d="M0 -3 L0 -40" stroke={shade(leaf, 0.25)} strokeWidth={2} />
-          </g>
-        ))}
+      <g transform={`translate(0 ${(1 - plantIn) * 100}) rotate(${sway} 180 400)`} opacity={plantIn}>
+        <GuidePlant guide={guide} x={180} base={400} h={300} id="prune" />
+        {/* the petiole of the leaf that gets cut */}
+        <path d={`M206 226 Q 226 200 ${f < SNIP ? cut.x : cut.x - 14} ${f < SNIP ? cut.y : cut.y + 6}`} stroke={shade(leaf, -0.25)} strokeWidth={6} fill="none" strokeLinecap="round" />
         {/* yellowing leaf that gets cut */}
         <g transform={`translate(${cut.x + (f >= SNIP ? fallX : 0)} ${cut.y + (f >= SNIP ? fallY : 0)}) rotate(${70 + (f >= SNIP ? fallRot : 0)})`} opacity={fallOpacity}>
           <path d="M0 0 L0 -10" stroke="#B49A3A" strokeWidth={5} />
@@ -561,9 +470,6 @@ const PruneMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
           </g>
         </g>
       </g>
-      {/* pot */}
-      <path d="M112 354 L228 354 L216 400 L124 400 Z" fill={palette.pot} />
-      <rect x={104} y={344} width={132} height={18} rx={8} fill={shade(palette.pot, 0.08)} />
       {/* snip burst */}
       {burst > 0 && burst < 1 &&
         [0, 60, 120, 180, 240, 300].map((a) => (
@@ -620,65 +526,29 @@ const PotShape: React.FC<{ x: number; y: number; w: number; h: number; color: st
   </g>
 );
 
-const RepotMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
+const RepotMotif: React.FC<MotifProps> = ({ palette, guide }) => {
   const f = useCurrentFrame();
   const sp = useSpring();
-  const intro = sp(0);
-  const lift = ci(f, [26, 48], [0, 1], Easing.inOut(Easing.cubic));
-  const swap = ci(f, [44, 66], [0, 1], Easing.inOut(Easing.cubic));
-  const lower = sp(68, { damping: 12 });
-  const grow = sp(92, { damping: 8, stiffness: 90 });
-  const smallY = 292;
-  const bigY = 236;
-  // base of the plant (top of root ball)
-  const baseY = smallY - lift * 140 + lower * (bigY + 8 - (smallY - 140));
-  const baseX = 200;
-  const wiggle = lift > 0 && lower < 0.5 ? Math.sin(f / 2.5) * 3 * (1 - swap * 0.5) : 0;
-  const leaf = palette.leaf;
-  const plantScale = 1 + grow * 0.25;
-  const rootGrow = 1 + grow * 0.25;
-  const sparkle = ci(f, [96, 106], [0, 1]) * ci(f, [118, 130], [1, 0]);
+  const before = sp(0);
+  const arrow = ci(f, [26, 46], [0, 1], Easing.out(Easing.cubic));
+  const after = sp(44, { damping: 11 });
+  const sparkle = ci(f, [70, 80], [0, 1]) * ci(f, [104, 118], [1, 0]);
   return (
-    <g opacity={intro}>
-      {/* plant + root ball */}
-      <g transform={`translate(${baseX} ${baseY}) rotate(${wiggle}) scale(${plantScale})`}>
-        <g>
-          {[-34, -12, 12, 34, -24, 22].map((a, i) => (
-            <path key={i} d={`M${a * 0.6} 30 Q ${a * 0.9} ${50 + (i % 3) * 10} ${a * 1.1} ${62 * rootGrow + (i % 2) * 10}`} stroke="#C9A27A" strokeWidth={4} fill="none" strokeLinecap="round" />
-          ))}
-          <ellipse cx={0} cy={22} rx={44} ry={30} fill={SOIL} />
-          <ellipse cx={-10} cy={14} rx={16} ry={6} fill="#7A5638" opacity={0.7} />
-        </g>
-        <path d="M0 0 L0 -90" stroke={shade(leaf, -0.25)} strokeWidth={7} strokeLinecap="round" />
-        {[
-          { a: -55, y: -40, s: 1.4 },
-          { a: 55, y: -48, s: 1.4 },
-          { a: -35, y: -78, s: 1.6 },
-          { a: 35, y: -84, s: 1.6 },
-          { a: 0, y: -90, s: 1.5 },
-        ].map((l, i) => (
-          <g key={i} transform={`translate(0 ${l.y}) rotate(${l.a + Math.sin(f / 10 + i) * 5}) scale(${l.s})`}>
-            <path d={LEAF_D} fill={shade(leaf, (i % 2) * 0.08)} />
-            <path d="M0 -3 L0 -40" stroke={shade(leaf, 0.25)} strokeWidth={2} />
-          </g>
-        ))}
+    <g>
+      {/* the plant as it is now, then one pot size up */}
+      <g transform={`translate(0 ${(1 - before) * 60})`} opacity={before}>
+        <GuidePlant guide={guide} x={98} base={396} h={180} id="repot-a" />
       </g>
-      {/* small pot slides away */}
-      <g transform={`translate(${-swap * 170} 0)`} opacity={1 - swap}>
-        <PotShape x={200} y={smallY} w={112} h={92} color={shade(palette.pot, 0.15)} />
+      <g opacity={arrow}>
+        <path d={`M150 300 L${150 + 52 * arrow} 300`} stroke={palette.accent} strokeWidth={9} strokeLinecap="round" />
+        <path d={`M${186 + 16 * arrow - 16} 284 L${202 + 16 * arrow - 16} 300 L${186 + 16 * arrow - 16} 316`} stroke={palette.accent} strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" />
       </g>
-      {/* big pot slides in */}
-      <g transform={`translate(${(1 - swap) * 170} 0)`} opacity={swap}>
-        <ellipse cx={200} cy={bigY + 14} rx={90} ry={12} fill={SOIL} opacity={lower} />
-        <PotShape x={200} y={bigY} w={196} h={150} color={palette.pot} />
+      <g transform={`translate(292 398) scale(${after}) translate(-292 -398)`} opacity={Math.min(1, after * 1.5)}>
+        <GuidePlant guide={guide} x={292} base={398} h={300} id="repot-b" />
       </g>
-      {/* up arrow during lift */}
-      <g opacity={ci(f, [26, 32], [0, 1]) * ci(f, [56, 64], [1, 0])} transform={`translate(330 ${210 - lift * 30})`}>
-        <path d="M0 40 L0 -10 M-16 6 L0 -12 L16 6" stroke={palette.accent} strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" />
-      </g>
-      <Sparkle x={100} y={170} r={18 * sparkle} color="#FFC93C" rotate={f * 3} />
-      <Sparkle x={310} y={140} r={14 * sparkle} color="#FFC93C" rotate={-f * 3} />
-      <Sparkle x={290} y={60} r={10 * sparkle} color={palette.accent} rotate={f * 3} />
+      <Sparkle x={196} y={150} r={16 * sparkle} color="#FFC93C" rotate={f * 3} />
+      <Sparkle x={380} y={130} r={12 * sparkle} color="#FFC93C" rotate={-f * 3} />
+      <Sparkle x={352} y={60} r={10 * sparkle} color={palette.accent} rotate={f * 3} />
     </g>
   );
 };
@@ -719,7 +589,7 @@ const Bug: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
-const PestsMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
+const PestsMotif: React.FC<MotifProps> = ({ palette, guide }) => {
   const f = useCurrentFrame();
   const sp = useSpring();
   const leafIn = sp(0);
@@ -734,25 +604,18 @@ const PestsMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
   const banOpacity = ci(f, [74, 86], [1, 0]);
   return (
     <g>
-      <g transform={`translate(200 360) rotate(-28) scale(${leafIn})`}>
-        <path d="M0 0 L0 -40" stroke={shade(palette.leaf, -0.25)} strokeWidth={9} strokeLinecap="round" />
-        <path d="M0 -30 C -130 -60 -130 -260 0 -340 C 130 -260 130 -60 0 -30 Z" fill={palette.leaf} />
-        <path d="M0 -34 L0 -320" stroke={shade(palette.leaf, 0.2)} strokeWidth={5} />
-        {[90, 150, 210, 260].map((y) =>
-          [-1, 1].map((s) => (
-            <path key={`${y}${s}`} d={`M0 ${-y} Q ${s * 40} ${-y - 16} ${s * 74} ${-y - 44}`} stroke={shade(palette.leaf, 0.15)} strokeWidth={3.5} fill="none" />
-          )),
-        )}
-        {/* little bite marks / spots that get wiped */}
-        {[
-          [-40, -140],
-          [30, -200],
-          [-20, -250],
-          [44, -120],
-        ].map(([x, y], i) => (
-          <circle key={i} cx={x} cy={y} r={7} fill="#C9B458" opacity={0.8 * (1 - clean)} />
-        ))}
+      <g transform={`translate(200 400) scale(${leafIn}) translate(-200 -400)`}>
+        <GuidePlant guide={guide} x={200} base={400} h={320} id="pests" />
       </g>
+      {/* little bite marks / spots that get wiped */}
+      {[
+        [160, 200],
+        [236, 168],
+        [206, 252],
+        [256, 232],
+      ].map(([x, y], i) => (
+        <circle key={i} cx={x} cy={y} r={7} fill="#C9B458" opacity={0.85 * (1 - clean) * leafIn} />
+      ))}
       <g transform={`translate(${bugX + shake} ${bugY}) rotate(${50 - walk * 10}) scale(${0.95 * bugGone + 0.001})`} opacity={bugGone}>
         <Bug t={f} />
       </g>
@@ -788,7 +651,7 @@ const PestsMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
 
 /* ---------------------------------------------------------------- TEMPERATURE */
 
-const TemperatureMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
+const TemperatureMotif: React.FC<MotifProps> = ({ palette, guide }) => {
   const f = useCurrentFrame();
   const sp = useSpring();
   const tubeIn = sp(0);
@@ -804,8 +667,11 @@ const TemperatureMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
   const check = sp(58, { damping: 9 });
   return (
     <g>
+      <g transform={`translate(0 ${(1 - tubeIn) * 60})`} opacity={tubeIn}>
+        <GuidePlant guide={guide} x={96} base={398} h={236} id="temp" />
+      </g>
       {/* snowflake (cold) */}
-      <g transform={`translate(88 300) rotate(${f * 1.2}) scale(${sp(10)})`} opacity={0.9}>
+      <g transform={`translate(64 70) rotate(${f * 1.2}) scale(${sp(10) * 0.8})`} opacity={0.9}>
         {[0, 60, 120].map((a) => (
           <g key={a} transform={`rotate(${a})`}>
             <line x1={0} y1={-34} x2={0} y2={34} stroke="#7FC4EC" strokeWidth={7} strokeLinecap="round" />
@@ -814,7 +680,7 @@ const TemperatureMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
         ))}
       </g>
       {/* heat (sun) */}
-      <g transform={`translate(312 90) scale(${sp(18)})`}>
+      <g transform={`translate(346 70) scale(${sp(18) * 0.85})`}>
         <g transform={`rotate(${-f * 1.5})`}>
           {Array.from({ length: 8 }).map((_, i) => (
             <rect key={i} x={-4} y={-48} width={8} height={16} rx={4} fill="#FFB627" transform={`rotate(${i * 45})`} />
@@ -822,7 +688,7 @@ const TemperatureMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
         </g>
         <circle r={26} fill="#FFCB3C" />
       </g>
-      <g transform={`translate(0 ${(1 - tubeIn) * 80})`} opacity={tubeIn}>
+      <g transform={`translate(44 ${(1 - tubeIn) * 80})`} opacity={tubeIn}>
         {/* comfort zone band */}
         <rect
           x={238}
@@ -848,7 +714,7 @@ const TemperatureMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
           return <line key={i} x1={i % 2 ? 150 : 140} y1={y} x2={164} y2={y} stroke={shade(palette.pot, -0.2)} strokeWidth={4} strokeLinecap="round" />;
         })}
       </g>
-      <g transform={`translate(300 ${bottom - (bottom - top) * ((zone.from + zone.to) / 2)}) scale(${check * zoneGlow})`}>
+      <g transform={`translate(346 ${bottom - (bottom - top) * ((zone.from + zone.to) / 2)}) scale(${check * zoneGlow})`}>
         <circle r={28} fill="#2FA36B" />
         <path d="M-12 0 L-3 10 L13 -10" stroke="#fff" strokeWidth={7} fill="none" strokeLinecap="round" strokeLinejoin="round" />
       </g>
@@ -858,7 +724,7 @@ const TemperatureMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
 
 /* ---------------------------------------------------------------- PROPAGATE */
 
-const PropagateMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
+const PropagateMotif: React.FC<MotifProps> = ({ palette, guide }) => {
   const f = useCurrentFrame();
   const sp = useSpring();
   const glassIn = sp(0);
@@ -887,6 +753,8 @@ const PropagateMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
   const sway = Math.sin(f / 18) * 2;
   return (
     <g transform={`translate(0 ${(1 - glassIn) * 80})`} opacity={glassIn}>
+      <GuidePlant guide={guide} x={100} base={398} h={250} id="prop" />
+      <g transform="translate(136 128) scale(0.66)">
       <defs>
         <clipPath id="prop-glass">
           <path d="M118 140 L282 140 L264 372 Q 262 380 254 380 L146 380 Q 138 380 136 372 Z" />
@@ -924,13 +792,14 @@ const PropagateMotif: React.FC<{ palette: Palette }> = ({ palette }) => {
       <path d="M138 170 L150 350" stroke="#fff" strokeOpacity={0.6} strokeWidth={7} strokeLinecap="round" />
       <Sparkle x={300} y={250} r={14 * ci(f, [100, 110], [0, 1])} color="#FFC93C" rotate={f * 3} />
       <Sparkle x={100} y={210} r={10 * ci(f, [104, 114], [0, 1])} color="#FFC93C" rotate={-f * 3} />
+      </g>
     </g>
   );
 };
 
 /* ---------------------------------------------------------------- export */
 
-const MOTIFS: Record<StepKind, React.FC<{ palette: Palette }>> = {
+const MOTIFS: Record<StepKind, React.FC<MotifProps>> = {
   water: WaterMotif,
   light: LightMotif,
   soil: SoilMotif,
@@ -959,17 +828,19 @@ export const STEP_LABELS: Record<StepKind, string> = {
 export type StepMotifProps = {
   kind: StepKind;
   palette: Palette;
+  /** The guide whose own plant drawing appears in the scene. */
+  guide: PlantGuide;
   /** Rendered size in px (square). */
   size?: number;
   style?: React.CSSProperties;
 };
 
 /** Animated SVG motif for a care step. Animation is driven by the parent Sequence's frame. */
-export const StepMotif: React.FC<StepMotifProps> = ({ kind, palette, size = 560, style }) => {
+export const StepMotif: React.FC<StepMotifProps> = ({ kind, palette, guide, size = 560, style }) => {
   const Motif = MOTIFS[kind] ?? WaterMotif;
   return (
     <svg viewBox="0 0 400 400" width={size} height={size} style={{ overflow: "visible", ...style }}>
-      <Motif palette={palette} />
+      <Motif palette={palette} guide={guide} />
     </svg>
   );
 };

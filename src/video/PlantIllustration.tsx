@@ -15,6 +15,9 @@ export type PlantIllustrationProps = {
   plantId?: string;
   /** Rendered width in px; height follows the 400:560 viewBox. */
   width?: number;
+  /** Position when nested inside another SVG. */
+  x?: number;
+  y?: number;
   /** Frame (relative to the parent Sequence) at which the plant starts growing. */
   growStart?: number;
   /** Unique-ish prefix for SVG defs ids (needed if several plants render at once). */
@@ -640,6 +643,8 @@ export const PlantIllustration: React.FC<PlantIllustrationProps> = ({
   palette,
   plantId,
   width = 400,
+  x,
+  y,
   growStart = 0,
   idPrefix = "plant",
   style,
@@ -682,6 +687,8 @@ export const PlantIllustration: React.FC<PlantIllustrationProps> = ({
   return (
     <svg
       viewBox={`0 0 ${PLANT_VIEWBOX.width} ${PLANT_VIEWBOX.height}`}
+      x={x}
+      y={y}
       width={width}
       height={height}
       style={{ overflow: "visible", ...style }}
