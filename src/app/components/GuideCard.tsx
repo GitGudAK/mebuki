@@ -25,6 +25,7 @@ export const GuideCard = ({ guide }: { guide: PlantGuide }) => {
         <Timeline frame={150} config={STILL_CONFIG}>
           <PlantIllustration
             leafShape={guide.leafShape}
+            plantId={guide.id}
             palette={guide.palette}
             width={78}
             idPrefix={`tile-${guide.id}`}

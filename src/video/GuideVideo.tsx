@@ -255,7 +255,7 @@ export const IntroScene: React.FC<{ guide: PlantGuide }> = ({ guide }) => {
             transform: `scale(${s(4, 18)})`,
           }}
         />
-        <PlantIllustration leafShape={guide.leafShape} palette={guide.palette} width={plantW} growStart={6} idPrefix={`intro-${guide.id}`} />
+        <PlantIllustration leafShape={guide.leafShape} palette={guide.palette} plantId={guide.id} width={plantW} growStart={6} idPrefix={`intro-${guide.id}`} />
       </div>
 
       <div
@@ -535,7 +535,7 @@ export const OutroScene: React.FC<{ guide: PlantGuide }> = ({ guide }) => {
             transform: `scale(${s(0, 18)})`,
           }}
         />
-        <PlantIllustration leafShape={guide.leafShape} palette={guide.palette} width={plantW} growStart={0} idPrefix={`outro-${guide.id}`} />
+        <PlantIllustration leafShape={guide.leafShape} palette={guide.palette} plantId={guide.id} width={plantW} growStart={0} idPrefix={`outro-${guide.id}`} />
       </div>
       <div
         style={{

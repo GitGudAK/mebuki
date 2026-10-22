@@ -2,6 +2,8 @@ import React from "react";
 import { spring, useCurrentFrame, useVideoConfig, interpolate } from "../motion";
 import type { PlantGuide } from "../types";
 import { mix, shade } from "./colors";
+import { PLANT_DRAWINGS } from "./plants";
+import { BASE_X, BASE_Y, type Ctx, SOIL, leafTone, qbez } from "./plants/kit";
 
 type LeafShape = PlantGuide["leafShape"];
 type Palette = PlantGuide["palette"];
@@ -9,6 +11,8 @@ type Palette = PlantGuide["palette"];
 export type PlantIllustrationProps = {
   leafShape: LeafShape;
   palette: Palette;
+  /** Guide id; plants with a drawing of their own use it instead of the generic shape. */
+  plantId?: string;
   /** Rendered width in px; height follows the 400:560 viewBox. */
   width?: number;
   /** Frame (relative to the parent Sequence) at which the plant starts growing. */
@@ -19,23 +23,6 @@ export type PlantIllustrationProps = {
 };
 
 export const PLANT_VIEWBOX = { width: 400, height: 560 };
-
-const BASE_X = 200;
-const BASE_Y = 344;
-const SOIL = "#5A3D29";
-
-type Ctx = {
-  frame: number;
-  grow: (delay: number) => number;
-  sway: (i: number, amp?: number) => number;
-  leaf: string;
-  accent: string;
-  bg: string;
-  id: string;
-};
-
-const leafTone = (leaf: string, i: number) =>
-  shade(leaf, ((i % 3) - 1) * 0.08);
 
 /* ---------------------------------------------------------------- shapes */
 
@@ -509,16 +496,6 @@ const FloweringPlant: React.FC<{ c: Ctx }> = ({ c }) => {
   );
 };
 
-/** Point and direction on a quadratic bezier, for laying leaflets along a curved frond. */
-const qbez = (p0: number[], p1: number[], p2: number[], t: number) => {
-  const u = 1 - t;
-  const x = u * u * p0[0] + 2 * u * t * p1[0] + t * t * p2[0];
-  const y = u * u * p0[1] + 2 * u * t * p1[1] + t * t * p2[1];
-  const dx = 2 * u * (p1[0] - p0[0]) + 2 * t * (p2[0] - p1[0]);
-  const dy = 2 * u * (p1[1] - p0[1]) + 2 * t * (p2[1] - p1[1]);
-  return { x, y, angle: (Math.atan2(dy, dx) * 180) / Math.PI };
-};
-
 /** A frond: an arching midrib with paired leaflets that shrink towards the tip. */
 const Frond: React.FC<{
   c: Ctx;
@@ -661,6 +638,7 @@ const Pot: React.FC<{ pot: string }> = ({ pot }) => (
 export const PlantIllustration: React.FC<PlantIllustrationProps> = ({
   leafShape,
   palette,
+  plantId,
   width = 400,
   growStart = 0,
   idPrefix = "plant",
@@ -694,9 +672,11 @@ export const PlantIllustration: React.FC<PlantIllustrationProps> = ({
     leaf: palette.leaf,
     accent: palette.accent,
     bg: palette.background,
+    pot: palette.pot,
     id: idPrefix,
   };
 
+  const Drawing = plantId ? PLANT_DRAWINGS[plantId] : undefined;
   const height = (width * PLANT_VIEWBOX.height) / PLANT_VIEWBOX.width;
 
   return (
@@ -706,25 +686,31 @@ export const PlantIllustration: React.FC<PlantIllustrationProps> = ({
       height={height}
       style={{ overflow: "visible", ...style }}
     >
-      <ellipse cx={200} cy={514} rx={110 * potIn} ry={12} fill="#000" opacity={0.12} />
+      {Drawing?.shadow !== false && <ellipse cx={200} cy={514} rx={110 * potIn} ry={12} fill="#000" opacity={0.12} />}
       <g
         transform={`translate(0 ${(1 - potIn) * 80})`}
         opacity={Math.min(1, potIn * 1.5)}
       >
-        <ellipse cx={200} cy={340} rx={96} ry={14} fill={SOIL} />
-        {leafShape === "round" && <RoundPlant c={c} />}
-        {leafShape === "long" && <LongPlant c={c} />}
-        {leafShape === "split" && <SplitPlant c={c} />}
-        {leafShape === "succulent" && <SucculentPlant c={c} />}
-        {leafShape === "trailing" && <TrailingTop c={c} />}
-        {leafShape === "herb" && <HerbPlant c={c} />}
-        {leafShape === "cactus" && <CactusPlant c={c} />}
-        {leafShape === "flowering" && <FloweringPlant c={c} />}
-        {leafShape === "oval" && <OvalPlant c={c} />}
-        {leafShape === "fern" && <FernPlant c={c} />}
-        {leafShape === "palm" && <PalmPlant c={c} />}
-        <Pot pot={palette.pot} />
-        {leafShape === "trailing" && <TrailingVines c={c} />}
+        {Drawing ? (
+          <Drawing.Component c={c} />
+        ) : (
+          <>
+            <ellipse cx={200} cy={340} rx={96} ry={14} fill={SOIL} />
+            {leafShape === "round" && <RoundPlant c={c} />}
+            {leafShape === "long" && <LongPlant c={c} />}
+            {leafShape === "split" && <SplitPlant c={c} />}
+            {leafShape === "succulent" && <SucculentPlant c={c} />}
+            {leafShape === "trailing" && <TrailingTop c={c} />}
+            {leafShape === "herb" && <HerbPlant c={c} />}
+            {leafShape === "cactus" && <CactusPlant c={c} />}
+            {leafShape === "flowering" && <FloweringPlant c={c} />}
+            {leafShape === "oval" && <OvalPlant c={c} />}
+            {leafShape === "fern" && <FernPlant c={c} />}
+            {leafShape === "palm" && <PalmPlant c={c} />}
+            <Pot pot={palette.pot} />
+            {leafShape === "trailing" && <TrailingVines c={c} />}
+          </>
+        )}
       </g>
     </svg>
   );
