@@ -82,12 +82,50 @@ if (existing) {
   say(`Added tester ${EMAIL} to ${GROUP}`);
 }
 
-// Beta App Review readiness
-const detail = (await get(`/v1/apps/${app.id}/betaAppReviewDetail`)).data;
+// Test Information: the beta contact comes from the same secrets as the App Review contact.
+let detail = (await get(`/v1/apps/${app.id}/betaAppReviewDetail`)).data;
+const contact = {
+  contactFirstName: process.env.REVIEW_FIRST_NAME,
+  contactLastName: process.env.REVIEW_LAST_NAME,
+  contactPhone: process.env.REVIEW_PHONE,
+  contactEmail: process.env.REVIEW_EMAIL,
+};
+if (Object.values(contact).every(Boolean)) {
+  detail = (
+    await call("PATCH", `/v1/betaAppReviewDetails/${detail.id}`, {
+      data: {
+        type: "betaAppReviewDetails",
+        id: detail.id,
+        attributes: {
+          ...contact,
+          demoAccountRequired: false,
+          notes: "No account or sign-in. Browse the plant guides, play a guide, save a plant with the heart, and share it.",
+        },
+      },
+    })
+  ).data;
+  say("Saved the beta contact");
+}
+const DESCRIPTION =
+  "Mebuki is a free, open-source plant care guide. Each of its 42 plants has a short animated guide " +
+  "with chapters for light, water, soil and more, and every tip cites its source.";
+let locs = (await get(`/v1/apps/${app.id}/betaAppLocalizations`)).data;
+let loc = locs.find((l) => l.attributes.locale?.startsWith("en")) ?? locs[0];
+if (contact.contactEmail) {
+  const attributes = { feedbackEmail: contact.contactEmail, description: DESCRIPTION };
+  if (loc) {
+    loc = (await call("PATCH", `/v1/betaAppLocalizations/${loc.id}`, { data: { type: "betaAppLocalizations", id: loc.id, attributes } })).data;
+  } else {
+    loc = (
+      await call("POST", "/v1/betaAppLocalizations", {
+        data: { type: "betaAppLocalizations", attributes: { ...attributes, locale: "en-US" }, relationships: { app: { data: { type: "apps", id: app.id } } } },
+      })
+    ).data;
+  }
+  say("Saved the feedback email and beta description");
+}
 const d = detail.attributes;
 const missing = ["contactFirstName", "contactLastName", "contactPhone", "contactEmail"].filter((k) => !d[k]);
-const locs = (await get(`/v1/apps/${app.id}/betaAppLocalizations`)).data;
-const loc = locs.find((l) => l.attributes.locale?.startsWith("en")) ?? locs[0];
 if (!loc?.attributes.feedbackEmail) missing.push("feedbackEmail");
 if (!loc?.attributes.description) missing.push("beta description");
 const review = (await get(`/v1/builds/${build.id}/betaAppReviewSubmission`, { allow404: true }))?.data;

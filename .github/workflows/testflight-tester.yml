@@ -1,5 +1,6 @@
 # Invites an external TestFlight tester: adds them to a beta group, gives the group a build,
-# and submits that build for Beta App Review when the Test Information is complete.
+# fills in the Test Information from the REVIEW_* contact secrets (shared with App Review),
+# and submits that build for Beta App Review.
 
 name: TestFlight tester
 
@@ -34,4 +35,8 @@ jobs:
           ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
           ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
           ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          REVIEW_FIRST_NAME: ${{ secrets.REVIEW_FIRST_NAME }}
+          REVIEW_LAST_NAME: ${{ secrets.REVIEW_LAST_NAME }}
+          REVIEW_PHONE: ${{ secrets.REVIEW_PHONE }}
+          REVIEW_EMAIL: ${{ secrets.REVIEW_EMAIL }}
         run: node scripts/testflight-tester.mjs
