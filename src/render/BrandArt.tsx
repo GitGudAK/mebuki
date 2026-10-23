@@ -1,4 +1,4 @@
-// App icon and launch screen artwork: the Mebuki earth-and-roots mark.
+// App icon and launch screen artwork: the Mebuki gold grid-M mark.
 
 import { BRAND_COLORS, BrandMark } from "../app/components/BrandMark";
 
@@ -10,7 +10,7 @@ export const BrandArt = ({ asset }: { asset: BrandAsset }) => {
   const size = BRAND_SIZES[asset];
 
   // The icon is the full-bleed tile (iOS rounds the corners itself); the launch
-  // screen shows the rounded tile small and centred on matching soil.
+  // screen shows the rounded tile small and centred on matching black.
   if (asset === "icon") return <BrandMark size={size} rounded={false} />;
 
   return (
@@ -20,7 +20,7 @@ export const BrandArt = ({ asset }: { asset: BrandAsset }) => {
         placeItems: "center",
         width: size,
         height: size,
-        background: BRAND_COLORS.earthDeep,
+        background: BRAND_COLORS.blackDeep,
       }}
     >
       <BrandMark size={size * 0.2} />

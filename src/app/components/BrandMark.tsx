@@ -1,11 +1,11 @@
 // The Mebuki mark: a plant rises from the middle of the soil line, and its roots
-// spread below to form an "M" on a 45°/90° grid. Polished gold on brown earth,
-// with a faint engraved grid under the soil. Drawn in a 128x128 tile so it scales
+// spread below to form an "M" on a 45°/90° grid. Polished gold on black, with a
+// faint engraved grid under the soil. Drawn in a 128x128 tile so it scales
 // cleanly from favicon to app icon.
 
 export const BRAND_COLORS = {
-  earth: "#5E4130",
-  earthDeep: "#3E2A1C",
+  black: "#1E2127",
+  blackDeep: "#08090B",
   goldLight: "#F6E9C6",
   goldBright: "#E2C25A",
   gold: "#D4AF37",
@@ -52,9 +52,9 @@ export const BrandMark = ({ size, rounded = true, id = "mebuki" }: BrandMarkProp
           <stop offset="0.6" stopColor={c.gold} />
           <stop offset="1" stopColor={c.goldDeep} />
         </linearGradient>
-        <radialGradient id={`${id}-earth`} cx="0.5" cy="0.42" r="0.75">
-          <stop offset="0" stopColor={c.earth} />
-          <stop offset="1" stopColor={c.earthDeep} />
+        <radialGradient id={`${id}-ground`} cx="0.5" cy="0.42" r="0.75">
+          <stop offset="0" stopColor={c.black} />
+          <stop offset="1" stopColor={c.blackDeep} />
         </radialGradient>
         <pattern id={`${id}-grid`} width="8" height="8" patternUnits="userSpaceOnUse">
           <path d="M8 0 H0 V8" stroke={c.gold} strokeOpacity="0.09" strokeWidth="0.5" />
@@ -67,7 +67,7 @@ export const BrandMark = ({ size, rounded = true, id = "mebuki" }: BrandMarkProp
         </clipPath>
       </defs>
       <g clipPath={`url(#${id}-tile)`}>
-        <rect width="128" height="128" fill={`url(#${id}-earth)`} />
+        <rect width="128" height="128" fill={`url(#${id}-ground)`} />
         <rect y={SOIL} width="128" height={128 - SOIL} fill={`url(#${id}-grid)`} />
       </g>
       <path d={`M12 ${SOIL} H116`} stroke={c.goldDeep} strokeWidth="1.6" />
