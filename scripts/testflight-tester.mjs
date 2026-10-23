@@ -68,7 +68,10 @@ if (!inGroup) {
 } else say(`Build ${BUILD_NUMBER} already in ${GROUP}`);
 
 const existing = (await get(`/v1/betaTesters?filter[email]=${encodeURIComponent(EMAIL)}&filter[apps]=${app.id}&limit=1`)).data[0];
-if (existing) {
+const members = (await get(`/v1/betaGroups/${group.id}/betaTesters?limit=200`)).data;
+if (existing && members.some((m) => m.id === existing.id)) {
+  say(`Tester ${EMAIL} already in ${GROUP}`);
+} else if (existing) {
   await call("POST", `/v1/betaGroups/${group.id}/relationships/betaTesters`, { data: [{ type: "betaTesters", id: existing.id }] });
   say(`Tester ${EMAIL} already known; added to ${GROUP}`);
 } else {
