@@ -1,14 +1,20 @@
 :root {
-  --bg: #f6f3ea;
-  --surface: #fffdf7;
-  --surface-2: #efeadb;
-  --ink: #1d2a20;
-  --ink-soft: #536257;
-  --line: #ddd6c3;
-  --brand: #2f6b45;
-  --brand-ink: #ffffff;
-  --brand-soft: #dcebdc;
-  --focus: #e0a43a;
+  /* White and gold in light mode, black and gold in dark mode, matching the icon. */
+  --bg: #fbfaf6;
+  --glow: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f1eee5;
+  --ink: #1a1712;
+  --ink-soft: #6b6455;
+  --line: rgba(138, 109, 59, 0.2);
+  --gold: #a8841f;
+  --grid: rgba(168, 132, 31, 0.12);
+  --gold-text: linear-gradient(160deg, #d9b54a 0%, #b8922f 45%, #8a6d3b 100%);
+  --gold-pill: linear-gradient(160deg, #e2c25a, #b8922f);
+  --brand: #a8841f;
+  --brand-ink: #1a1712;
+  --brand-soft: #f3ead2;
+  --focus: #d4af37;
   --easy: #2f7d4f;
   --easy-bg: #dff0e2;
   --moderate: #9a6a12;
@@ -16,7 +22,7 @@
   --tricky: #b0442f;
   --tricky-bg: #f8dfd8;
   --radius: 18px;
-  --shadow: 0 1px 2px rgba(29, 42, 32, 0.06), 0 8px 24px rgba(29, 42, 32, 0.07);
+  --shadow: 0 1px 2px rgba(26, 23, 18, 0.06), 0 8px 24px rgba(26, 23, 18, 0.07);
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   color-scheme: light;
@@ -24,15 +30,20 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #121a15;
-    --surface: #1a241d;
-    --surface-2: #223026;
-    --ink: #e9efe6;
-    --ink-soft: #a5b3a8;
-    --line: #2e3d32;
-    --brand: #7cc496;
-    --brand-ink: #10180f;
-    --brand-soft: #24392b;
+    --bg: #08090b;
+    --glow: #1e2127;
+    --surface: #131518;
+    --surface-2: rgba(255, 255, 255, 0.06);
+    --ink: #eaeaea;
+    --ink-soft: #9a9fa5;
+    --line: rgba(212, 175, 55, 0.18);
+    --gold: #d4af37;
+    --grid: rgba(212, 175, 55, 0.11);
+    --gold-text: linear-gradient(160deg, #f6e9c6 0%, #e2c25a 40%, #d4af37 65%, #8a6d3b 100%);
+    --brand: #d4af37;
+    --brand-ink: #08090b;
+    --brand-soft: #17181c;
+    --focus: #e2c25a;
     --easy: #8fd4a6;
     --easy-bg: #1f3a28;
     --moderate: #e9c27a;
@@ -56,7 +67,7 @@ body {
 }
 
 body {
-  background: var(--bg);
+  background: radial-gradient(120% 60% at 50% 0%, var(--glow) 0%, var(--bg) 60%) fixed var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
@@ -1444,7 +1455,27 @@ h2 {
 /* ---------- Home: less, but better ---------- */
 
 .home {
+  position: relative;
   padding: 18px 0 40px;
+}
+
+/* The icon's engraved grid, fading out down the screen. */
+.home::before {
+  content: "";
+  position: absolute;
+  inset: -140px -40px auto;
+  height: 640px;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.55) 45%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.55) 45%, transparent 100%);
+}
+
+.home > * {
+  position: relative;
 }
 
 .home-top {
@@ -1455,8 +1486,13 @@ h2 {
 }
 
 .home-top h1 {
-  font-size: 2.3rem;
+  font-size: 2.6rem;
   letter-spacing: -0.02em;
+  background: var(--gold-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
 }
 
 .home-search {
@@ -1465,6 +1501,7 @@ h2 {
   align-items: center;
   height: 42px;
   padding: 0 12px;
+  border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--surface-2);
   color: var(--ink-soft);
@@ -1490,6 +1527,7 @@ h2 {
   gap: 2px;
   margin: 12px 0 18px;
   padding: 2px;
+  border: 1px solid var(--line);
   border-radius: 10px;
   background: var(--surface-2);
 }
@@ -1508,9 +1546,9 @@ h2 {
 }
 
 .segmented button[aria-pressed="true"] {
-  background: var(--surface);
-  color: var(--ink);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  background: var(--gold-pill);
+  color: #1a1712;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
 
 .tiles {
@@ -1536,6 +1574,7 @@ h2 {
   overflow: hidden;
   border-radius: 18px;
   background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--tile-bg) 80%, white), var(--tile-bg) 70%);
+  box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.22);
   transition: transform 0.2s ease;
 }
 
@@ -1582,7 +1621,7 @@ h2 {
 .home-footer a {
   display: block;
   margin-top: 4px;
-  color: var(--brand);
+  color: var(--gold);
   font-weight: 600;
   text-decoration: none;
 }
