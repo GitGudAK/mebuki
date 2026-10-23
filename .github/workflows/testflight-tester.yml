@@ -1,0 +1,37 @@
+# Invites an external TestFlight tester: adds them to a beta group, gives the group a build,
+# and submits that build for Beta App Review when the Test Information is complete.
+
+name: TestFlight tester
+
+on:
+  workflow_dispatch:
+    inputs:
+      email:
+        description: Tester's email
+        required: true
+      build_number:
+        description: Build to share
+        required: true
+        default: "12"
+      group:
+        description: External beta group
+        required: true
+        default: Friends
+
+jobs:
+  invite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - env:
+          TESTER_EMAIL: ${{ inputs.email }}
+          BUILD_NUMBER: ${{ inputs.build_number }}
+          GROUP: ${{ inputs.group }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+        run: node scripts/testflight-tester.mjs
