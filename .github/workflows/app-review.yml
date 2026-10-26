@@ -11,9 +11,9 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: check reports only; submit sends the version for review
+        description: check reports only; notes saves the review notes; submit sends the version for review
         type: choice
-        options: [check, submit]
+        options: [check, notes, submit]
         default: check
       build_number:
         description: Build to submit

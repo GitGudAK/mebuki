@@ -6,12 +6,14 @@
 //      REVIEW_FIRST_NAME, REVIEW_LAST_NAME, REVIEW_PHONE, REVIEW_EMAIL.
 //
 // check  reads everything and reports what is missing. It changes nothing.
+// notes  only saves the review contact and the notes in fastlane/app-review-notes.txt.
 // submit sets the build, a free price in every territory, the age rating (all "none"),
 //        the content rights answer and the review contact, then submits for review.
 //
 // App Privacy ("data not collected") has no API; publish it on the website first.
 
 import { createSign } from "node:crypto";
+import { readFileSync } from "node:fs";
 
 const env = (k, fallback) => {
   const v = process.env[k] ?? fallback;
@@ -182,19 +184,18 @@ if (submitting && !app.attributes.contentRightsDeclaration) {
   note(true, "  → does not use third-party content");
 }
 
-// --- App Review contact
+// --- App Review contact and notes (the notes live in fastlane/app-review-notes.txt)
+const NOTES = readFileSync(new URL("../fastlane/app-review-notes.txt", import.meta.url), "utf8").trim().slice(0, 4000);
 const detail = (await get(`/v1/appStoreVersions/${version.id}/appStoreReviewDetail`, { allow404: true }))?.data;
 note(!!detail?.attributes?.contactPhone, `Review contact: ${detail?.attributes?.contactPhone ? "set" : "not set"}`);
-if (submitting) {
+if (submitting || MODE === "notes") {
   const attributes = {
     contactFirstName: env("REVIEW_FIRST_NAME"),
     contactLastName: env("REVIEW_LAST_NAME"),
     contactPhone: env("REVIEW_PHONE"),
     contactEmail: env("REVIEW_EMAIL"),
     demoAccountRequired: false,
-    notes:
-      "Mebuki is a free plant care guide with no account, no sign-in and no data collection. " +
-      "Saved plants sync through the user's own iCloud key-value store. Every care tip links to its published source.",
+    notes: NOTES,
   };
   if (detail) {
     await call("PATCH", `/v1/appStoreReviewDetails/${detail.id}`, { data: { type: "appStoreReviewDetails", id: detail.id, attributes } });
@@ -203,7 +204,7 @@ if (submitting) {
       data: { type: "appStoreReviewDetails", attributes, relationships: { appStoreVersion: { data: { type: "appStoreVersions", id: version.id } } } },
     });
   }
-  note(true, "  → review contact saved");
+  note(true, "  → review contact and notes saved");
 }
 
 note(true, "App Privacy: no API; must be published on the website (Data Not Collected)");
