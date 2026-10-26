@@ -59,6 +59,14 @@
       "sourceRefs": [1]
     }
   ],
+  "climate": {
+    "minTempC": -5,
+    "idealTempC": [10, 27],
+    "maxTempC": 35,
+    "humidity": "low",
+    "outdoors": "year-round",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Sun, fast drainage and little water: fresh sprigs all year.",
   "sources": [
     {

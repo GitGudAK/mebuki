@@ -48,6 +48,14 @@
       "stat": "Monthly"
     }
   ],
+  "climate": {
+    "minTempC": 15,
+    "idealTempC": [18, 29],
+    "maxTempC": 32,
+    "humidity": "average",
+    "outdoors": "never",
+    "sourceRefs": [0, 1, 2]
+  },
   "outro": "Trim, root, repeat: one pothos can fill your whole apartment.",
   "sources": [
     {

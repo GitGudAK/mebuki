@@ -58,6 +58,14 @@
       "sourceRefs": [0, 1, 2]
     }
   ],
+  "climate": {
+    "minTempC": 5,
+    "idealTempC": [10, 24],
+    "maxTempC": 32,
+    "humidity": "low",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1, 2]
+  },
   "outro": "Lots of sun and dry soil between drinks keep a jade happy.",
   "sources": [
     {

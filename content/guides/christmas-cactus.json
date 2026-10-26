@@ -51,6 +51,14 @@
       "sourceRefs": [1]
     }
   ],
+  "climate": {
+    "minTempC": 10,
+    "idealTempC": [15, 24],
+    "maxTempC": 30,
+    "humidity": "high",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1, 2]
+  },
   "outro": "Long, cool nights in autumn, then don't move it: blooms follow.",
   "sources": [
     {

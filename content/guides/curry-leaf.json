@@ -57,6 +57,14 @@
       "sourceRefs": [1]
     }
   ],
+  "climate": {
+    "minTempC": 5,
+    "idealTempC": [18, 30],
+    "maxTempC": 35,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Sun, dry soil between waterings and a warm winter: fresh leaves.",
   "sources": [
     {

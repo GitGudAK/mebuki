@@ -49,6 +49,14 @@
       "tip": "Orange spots mean mint rust. Remove those shoots fast and throw them away. Hose off spider mites."
     }
   ],
+  "climate": {
+    "minTempC": -15,
+    "idealTempC": [15, 25],
+    "maxTempC": 32,
+    "humidity": "average",
+    "outdoors": "year-round",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Contain it, cut it often, and you'll never run out of mint.",
   "sources": [
     {

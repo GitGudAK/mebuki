@@ -79,9 +79,9 @@ export const Library = () => {
       )}
 
       <p className="home-footer">
-        Open source. Every tip cites its source.{" "}
-        <a href="https://github.com/GitGudAK/mebuki" target="_blank" rel="noopener noreferrer">
-          Add a plant on GitHub
+        Know a better way?{" "}
+        <a href="https://github.com/GitGudAK/mebuki/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">
+          Suggest a tip
         </a>
       </p>
     </section>

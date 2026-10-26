@@ -53,6 +53,14 @@
       "tip": "Water the soil, not the leaves, to avoid leaf spot, and check for mites, mealybugs and fungus gnats."
     }
   ],
+  "climate": {
+    "minTempC": 13,
+    "idealTempC": [18, 24],
+    "maxTempC": 27,
+    "humidity": "average",
+    "outdoors": "never",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Bright, indirect light and careful watering, then share the babies.",
   "sources": [
     {

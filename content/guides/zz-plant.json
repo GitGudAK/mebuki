@@ -48,6 +48,14 @@
       "stat": "When crowded"
     }
   ],
+  "climate": {
+    "minTempC": 16,
+    "idealTempC": [18, 27],
+    "maxTempC": 32,
+    "humidity": "low",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1, 2]
+  },
   "outro": "Less water, less fuss. The ZZ thrives on being ignored.",
   "sources": [
     {

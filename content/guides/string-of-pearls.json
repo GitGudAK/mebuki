@@ -48,6 +48,14 @@
       "stat": "10–16°C"
     }
   ],
+  "climate": {
+    "minTempC": 10,
+    "idealTempC": [15, 25],
+    "maxTempC": 30,
+    "humidity": "low",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1, 2]
+  },
   "outro": "Bright light, a gritty mix, and water only when the pearls ask.",
   "sources": [
     {

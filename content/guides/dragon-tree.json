@@ -59,6 +59,14 @@
       "sourceRefs": [0, 1, 2]
     }
   ],
+  "climate": {
+    "minTempC": 10,
+    "idealTempC": [18, 30],
+    "maxTempC": 32,
+    "humidity": "average",
+    "outdoors": "never",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Bright light, filtered water and dry topsoil: neat tips for years.",
   "sources": [
     {

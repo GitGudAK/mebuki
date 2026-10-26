@@ -58,6 +58,14 @@
       "sourceRefs": [0, 1, 2]
     }
   ],
+  "climate": {
+    "minTempC": 10,
+    "idealTempC": [16, 27],
+    "maxTempC": 32,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1, 2]
+  },
   "outro": "Bright sun and patience: flowers can take 5–10 years to appear.",
   "sources": [
     {

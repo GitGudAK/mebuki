@@ -56,6 +56,14 @@
       "sourceRefs": [0, 1, 2]
     }
   ],
+  "climate": {
+    "minTempC": 15,
+    "idealTempC": [18, 27],
+    "maxTempC": 30,
+    "humidity": "high",
+    "outdoors": "never",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Humid air, moist soil, soft light. Watch its leaves fold up at night.",
   "sources": [
     {

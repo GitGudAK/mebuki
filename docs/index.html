@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<title>Mebuki</title>
-<meta name="description" content="Mebuki for iPhone: how it is built, with an open-source React and SVG animation engine.">
+<title>Mebuki: see exactly how to care for your plants</title>
+<meta name="description" content="Mebuki shows you exactly how to water, repot and care for your plants in short animations, made for small spaces and your local weather.">
 </head>
 <body>
 <main>
@@ -14,24 +14,19 @@
   <span class="mark" aria-hidden="true"><svg viewBox="0 0 1024 1024" width="40" height="40" fill="none" aria-hidden="true"><rect width="1024" height="1024" rx="224" fill="#08090B"></rect><path d="M208 518 H816" stroke="#8A6D3B" stroke-width="36" stroke-linecap="round"></path><path d="M322 840 V680 A95 95 0 0 1 512 680 A95 95 0 0 1 702 680 V840 M512 680 V840" stroke="#D4AF37" stroke-width="76" stroke-linecap="round"></path><path d="M512 600 V380" stroke="#D4AF37" stroke-width="64" stroke-linecap="round"></path><path d="M512 380 Q447.9 226.6 282 237.4 Q346.1 390.8 512 380 Z" fill="#D4AF37"></path><path d="M512 380 Q576.1 226.6 742 237.4 Q677.9 390.8 512 380 Z" fill="#D4AF37"></path></svg></span>
   <a class="brand" href="./">Mebuki</a>
 </header>
-<h1>How Mebuki is built</h1>
-<p class="muted">A free iPhone app for keeping plants alive.</p>
-<h2>Animation engine</h2>
+<h1>See exactly how to care for your plants.</h1>
+<p class="muted">A free iPhone app for people growing plants in small homes, on windowsills and on balconies.</p>
 <div class="card">
-  <p>Every animation in Mebuki is drawn by a small open-source engine that lives in the app's own codebase (<a href="https://github.com/GitGudAK/mebuki/tree/main/src/motion"><code>src/motion</code></a>). It does not use a third-party animation library.</p>
-  <ul>
-    <li><strong>React + SVG.</strong> Each scene is a React component that draws vector shapes and reads the current frame, so artwork stays sharp at any screen size.</li>
-    <li><strong>Frame clock and timeline.</strong> <code>Sequence</code> and <code>Series</code> place scenes on a 30 fps timeline; the player renders in-between frames, so motion runs at the display's full refresh rate (up to 120 Hz).</li>
-    <li><strong>Motion primitives.</strong> Physically based springs, <code>interpolate</code> with easing curves, and seeded randomness keep every frame deterministic.</li>
-  </ul>
+  <p>Plant advice is full of phrases like "bright, indirect light" and "well-draining soil", and half of it contradicts the other half. Mebuki shows you instead. Each plant has short animations that show exactly how to water a snake plant, repot a monstera, pinch back basil or feed a chilli, step by step.</p>
 </div>
-<h2>The rest of the stack</h2>
-<ul>
-  <li><strong>Capacitor</strong> runs the app natively on iPhone, fully offline, with everything bundled.</li>
-  <li><strong>Vite</strong> and <strong>TypeScript</strong> build the app.</li>
-  <li><strong>Playwright</strong> and <strong>ffmpeg</strong> render the same scenes frame by frame to MP4 for sharing.</li>
-</ul>
-<p>The source code is public at <a href="https://github.com/GitGudAK/mebuki">github.com/GitGudAK/mebuki</a>.</p>
+<h2>Made for small spaces</h2>
+<p>Every guide is written for apartments: which window, what size pot, how to keep humidity up without a greenhouse, and what to do on a balcony when the weather turns.</p>
+<h2>Advice for your weather</h2>
+<p>Tap "Get advice" on a plant and Mebuki checks today's local forecast against what that plant tolerates. It tells you when to bring it in for the night, shade it from a heatwave, raise the humidity or skip watering after rain. It only uses your approximate location, and only when you ask.</p>
+<h2>Advice you can check</h2>
+<p>42 plants, from monstera and pothos to tulasi, curry leaf and lemongrass. Every tip links to the source it comes from, such as the Royal Horticultural Society and university extension services, with the ASPCA for pet safety.</p>
+<h2>Know a better way?</h2>
+<p>Mebuki is built in the open, so growers can suggest a tip, add a plant or fix something we got wrong. <a href="https://github.com/GitGudAK/mebuki/blob/main/CONTRIBUTING.md">Suggest a tip on GitHub</a>.</p>
 <footer><a href="./">Home</a> · <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a></footer>
 </main>
 </body>

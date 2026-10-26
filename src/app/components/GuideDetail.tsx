@@ -16,6 +16,7 @@ import { STEP_META } from "../meta";
 import { hrefFor } from "../router";
 import { DifficultyBadge } from "./DifficultyBadge";
 import { HeartButton } from "./HeartButton";
+import { WeatherCard } from "./WeatherCard";
 import { ShareButton } from "./ShareButton";
 import { ExportPanel } from "./ExportPanel";
 import { isNativeApp } from "../platform";
@@ -186,6 +187,8 @@ export const GuideDetail = ({ guide }: { guide: PlantGuide }) => {
             ))}
           </ul>
         </header>
+
+        <WeatherCard guide={guide} />
 
         <section aria-labelledby="chapters-title">
           <h2 id="chapters-title" className="g-section-title">

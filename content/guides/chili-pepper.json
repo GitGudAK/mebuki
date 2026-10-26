@@ -60,6 +60,14 @@
       "sourceRefs": [0, 2]
     }
   ],
+  "climate": {
+    "minTempC": 12,
+    "idealTempC": [15, 29],
+    "maxTempC": 32,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [0, 2]
+  },
   "outro": "Sun, warmth and steady water: a pot of chilies on your windowsill.",
   "sources": [
     {

@@ -47,6 +47,14 @@
       "tip": "Gently pull off the baby plants that have their own roots, and pot them in cactus mix."
     }
   ],
+  "climate": {
+    "minTempC": 13,
+    "idealTempC": [16, 27],
+    "maxTempC": 35,
+    "humidity": "low",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1, 2]
+  },
   "outro": "Lots of sun, fast drainage, and let it dry out between waterings.",
   "sources": [
     {

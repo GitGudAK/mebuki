@@ -1640,3 +1640,70 @@ h2 {
   color: var(--ink-soft);
   font-size: 0.9rem;
 }
+
+/* ---------- Weather advice ---------- */
+
+.weather-card {
+  margin: 18px 0 6px;
+}
+
+.weather-cta {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.weather-cta span {
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.weather-cta small,
+.weather-note,
+.weather-now {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.weather-now {
+  margin: 0 0 8px;
+}
+
+.weather-retry {
+  border: 0;
+  background: none;
+  color: var(--brand);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.weather-advice {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.weather-advice li {
+  padding: 10px 12px 10px 14px;
+  border-left: 3px solid var(--gold);
+  border-radius: 10px;
+  background: var(--surface);
+  line-height: 1.4;
+}
+
+.weather-advice .weather-warn {
+  border-left-color: var(--tricky);
+}
+
+.weather-advice .weather-ok {
+  border-left-color: var(--easy);
+}

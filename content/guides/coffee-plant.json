@@ -57,6 +57,14 @@
       "sourceRefs": [0, 1, 2]
     }
   ],
+  "climate": {
+    "minTempC": 13,
+    "idealTempC": [16, 27],
+    "maxTempC": 30,
+    "humidity": "high",
+    "outdoors": "never",
+    "sourceRefs": [0, 2]
+  },
   "outro": "Warmth, humidity and steady moisture keep coffee leaves glossy.",
   "sources": [
     {

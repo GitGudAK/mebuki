@@ -48,6 +48,14 @@
       "stat": "Spring–summer"
     }
   ],
+  "climate": {
+    "minTempC": 13,
+    "idealTempC": [18, 27],
+    "maxTempC": 32,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Find its spot, then leave it alone. Consistency is everything.",
   "sources": [
     {

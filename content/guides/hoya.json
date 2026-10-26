@@ -56,6 +56,14 @@
       "sourceRefs": [0, 1]
     }
   ],
+  "climate": {
+    "minTempC": 10,
+    "idealTempC": [16, 24],
+    "maxTempC": 30,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Bright light, dry soil between drinks, and leave old flower stalks on.",
   "sources": [
     {

@@ -59,6 +59,14 @@
       "sourceRefs": [0, 1]
     }
   ],
+  "climate": {
+    "minTempC": 5,
+    "idealTempC": [15, 29],
+    "maxTempC": 32,
+    "humidity": "high",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1, 2]
+  },
   "outro": "Big sun, steady warmth and a paintbrush: lemons in your living room.",
   "sources": [
     {

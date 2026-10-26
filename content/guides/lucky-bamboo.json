@@ -61,6 +61,14 @@
       "sourceRefs": [0, 1]
     }
   ],
+  "climate": {
+    "minTempC": 18,
+    "idealTempC": [18, 30],
+    "maxTempC": 32,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Fresh water each week and soft, indirect light keep it green.",
   "sources": [
     {

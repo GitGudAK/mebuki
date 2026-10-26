@@ -6,6 +6,10 @@
 	<string>$(CAPACITOR_DEBUG)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Mebuki uses your approximate location to fetch today's weather and tailor care advice for your plants.</string>
+	<key>NSLocationDefaultAccuracyReduced</key>
+	<true/>
 	<key>CFBundleDisplayName</key>
 	<string>Mebuki</string>
 	<key>CFBundleExecutable</key>
