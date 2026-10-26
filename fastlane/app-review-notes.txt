@@ -1,0 +1,21 @@
+1. Screen recording
+Attached to our reply in App Store Connect: a recording on a physical iPhone running the latest iOS, starting from launch. Mebuki has no account registration, login, user-generated content or paid content.
+
+2. Purpose and audience
+Mebuki is a free, open-source plant care guide for beginners and people growing plants in small homes, on windowsills and on balconies. Care advice online is scattered, often contradictory and rarely sourced. Mebuki gives each of 42 common houseplants, herbs and balcony plants a short animated guide with chapters for light, water, soil, feeding, pruning and more. Every tip links to the published horticultural source it comes from (for example the RHS, university extension services and the ASPCA for pet safety). There are no ads, no accounts and no in-app purchases.
+
+3. How to use it
+No setup, login, credentials or sample files are needed.
+- Open the app: the home screen lists every plant. Search by name or tag, or filter with All, Saved and Pet safe.
+- Tap a plant: its animated guide plays. Tap a chapter to jump to it; open "Sources" under a chapter to see and open the references.
+- Tap the heart to save a plant; it appears under Saved. Saved plants sync through the user's own iCloud key-value storage, with no account.
+- Tap the share button to share a link to the plant's guide with the iOS share sheet.
+
+4. External services
+None are needed for the core functionality. All guide content and animations are bundled in the app and work offline. The app uses Apple's iCloud key-value storage (NSUbiquitousKeyValueStore) to sync saved plants, and the iOS share sheet. Source links open in Safari. Shared links point to our public website on GitHub Pages. There are no analytics, advertising, authentication, payment or AI services.
+
+5. Regional differences
+None. The app works the same in every region. Content is in English and gives metric units.
+
+6. Regulated industry or protected material
+Not applicable. Mebuki is not in a regulated industry. All illustrations, animations and text are original work made for the app, and the project is open source (github.com/GitGudAK/mebuki). Care tips cite public sources by linking to them.
