@@ -47,6 +47,14 @@
       "stat": "6–8 wks"
     }
   ],
+  "climate": {
+    "minTempC": 12,
+    "idealTempC": [18, 27],
+    "maxTempC": 30,
+    "humidity": "average",
+    "outdoors": "never",
+    "sourceRefs": [0, 1, 2]
+  },
   "outro": "Soil dry? Then it's time. That's the whole peace lily trick.",
   "sources": [
     {

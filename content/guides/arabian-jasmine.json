@@ -58,6 +58,14 @@
       "sourceRefs": [0, 1]
     }
   ],
+  "climate": {
+    "minTempC": 5,
+    "idealTempC": [15, 29],
+    "maxTempC": 35,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Bright light, no frost, monthly feeding: mogra in scented bloom.",
   "sources": [
     {

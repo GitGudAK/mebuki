@@ -58,6 +58,14 @@
       "sourceRefs": [0, 1]
     }
   ],
+  "climate": {
+    "minTempC": 13,
+    "idealTempC": [16, 30],
+    "maxTempC": 32,
+    "humidity": "high",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Bright indirect light, weekly water and a cool month: more blooms.",
   "sources": [
     {

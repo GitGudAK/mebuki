@@ -53,6 +53,14 @@
       "stat": "2–3 yrs"
     }
   ],
+  "climate": {
+    "minTempC": 13,
+    "idealTempC": [16, 27],
+    "maxTempC": 30,
+    "humidity": "average",
+    "outdoors": "never",
+    "sourceRefs": [0, 1, 2]
+  },
   "outro": "Bright light, careful watering and no drafts keep those leaves on.",
   "sources": [
     {

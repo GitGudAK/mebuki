@@ -55,6 +55,14 @@
       "stat": "Few weeks"
     }
   ],
+  "climate": {
+    "minTempC": 10,
+    "idealTempC": [18, 27],
+    "maxTempC": 32,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Pinch often, pick often. The more you harvest, the more you get.",
   "sources": [
     {

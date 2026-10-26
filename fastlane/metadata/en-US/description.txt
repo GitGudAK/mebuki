@@ -1,18 +1,24 @@
-Keep your plants alive, one short guide at a time.
+See exactly how to care for your plants.
 
-Mebuki is open source plant care for apartment, balcony and windowsill growers. Pick a plant, press play, and watch its care routine unfold step by step: light, water, soil, feeding, pruning, repotting and more. Tap any step to jump straight to it.
+Plant advice is full of phrases like "bright, indirect light" and "well-draining soil", and half of it contradicts the other half. Mebuki shows you instead. Pick a plant, press play, and watch short animations of exactly what to do: how to water a snake plant, repot a monstera, pinch back basil or feed a chilli. Tap any step to jump straight to it.
+
+MADE FOR SMALL SPACES
+Every guide is written for apartments, windowsills and balconies: which window to use, what size pot, how to raise humidity without a greenhouse, and what to do when the weather turns.
+
+ADVICE FOR YOUR WEATHER
+Tap "Get advice" on a plant and Mebuki checks today's local forecast against what that plant can take. It tells you when to bring it in for the night, shade it from a heatwave, raise the humidity or skip watering after rain. It uses your approximate location, only when you ask.
 
 42 PLANTS FROM AROUND THE WORLD
-Houseplants like Monstera, Pothos, Fiddle Leaf Fig, Boston Fern, Moth Orchid and Bird of Paradise, plus plants people grow everywhere: Tulasi, Curry Leaf and Arabian Jasmine from South Asia, Lemongrass and Pandan, Lucky Bamboo, Juniper Bonsai, Coffee, Rosemary, Meyer Lemon, Chili Pepper and balcony tomatoes.
+Houseplants like Monstera, Pothos, Fiddle Leaf Fig, Boston Fern, Moth Orchid and Bird of Paradise, plus plants people grow everywhere: Tulasi, Curry Leaf and Arabian Jasmine, Lemongrass and Pandan, Lucky Bamboo, Juniper Bonsai, Coffee, Rosemary, Meyer Lemon, Chili Pepper and balcony tomatoes.
 
-ADVICE YOU CAN TRUST
-Every tip is checked against authoritative sources, listed at the bottom of each guide: the Royal Horticultural Society, university extension services, and the ASPCA for pet safety.
+ADVICE YOU CAN CHECK
+Every tip links to the source it comes from: the Royal Horticultural Society, university extension services, and the ASPCA for pet safety.
 
 PET SAFETY AT A GLANCE
 Filter for pet-safe plants, and see which ones are toxic to cats and dogs before you bring them home.
 
-GROWN IN THE OPEN
-Every guide is open source. Gardeners anywhere can suggest a plant or fix a tip, and every improvement grows the app.
+KNOW A BETTER WAY?
+Mebuki is built in the open, so growers can suggest a tip or add a plant.
 
-PRIVATE AND OFFLINE
-No account, no ads, no tracking. Every guide is built into the app and works without a connection.
+FREE AND PRIVATE
+No account, no ads, no tracking. Every guide is built into the app and works offline.

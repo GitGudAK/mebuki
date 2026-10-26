@@ -1,1 +1,1 @@
-plant care,houseplant,gardening,watering,indoor,succulent,cactus,monstera,herbs,balcony,pet safe
+plant care,houseplant,watering,repotting,apartment,balcony,how to,weather,monstera,herbs,pet safe

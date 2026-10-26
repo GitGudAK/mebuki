@@ -47,6 +47,14 @@
       "stat": "Every 2–3 yrs"
     }
   ],
+  "climate": {
+    "minTempC": 7,
+    "idealTempC": [10, 24],
+    "maxTempC": 30,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1, 2]
+  },
   "outro": "Pet safe, forgiving, and it multiplies. The perfect starter plant.",
   "sources": [
     {

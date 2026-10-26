@@ -51,6 +51,14 @@
       "sourceRefs": [0, 1]
     }
   ],
+  "climate": {
+    "minTempC": 10,
+    "idealTempC": [20, 27],
+    "maxTempC": 30,
+    "humidity": "average",
+    "outdoors": "never",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Warm, evenly moist and out of the sun: an easy plant for dim rooms.",
   "sources": [
     {

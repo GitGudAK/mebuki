@@ -53,6 +53,14 @@
       "tip": "Potted plants run low on nutrients. Use balanced liquid fertilizer, not tomato fertilizer: it pushes flowers."
     }
   ],
+  "climate": {
+    "minTempC": 10,
+    "idealTempC": [18, 30],
+    "maxTempC": 35,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [1, 2]
+  },
   "outro": "Sun, warmth and regular pinching keep tulasi leafy all season.",
   "sources": [
     {

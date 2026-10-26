@@ -57,6 +57,14 @@
       "sourceRefs": [0, 1]
     }
   ],
+  "climate": {
+    "minTempC": 10,
+    "idealTempC": [16, 24],
+    "maxTempC": 35,
+    "humidity": "high",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1, 2]
+  },
   "outro": "Moist soil, humid air and soft light keep the leaves lush.",
   "sources": [
     {

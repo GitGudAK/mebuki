@@ -60,6 +60,14 @@
       "sourceRefs": [0, 3]
     }
   ],
+  "climate": {
+    "minTempC": 13,
+    "idealTempC": [18, 32],
+    "maxTempC": 32,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Soak it, dry it upside down, give it light: no soil required.",
   "sources": [
     {

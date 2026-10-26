@@ -48,6 +48,14 @@
       "stat": "Every 3–5 yrs"
     }
   ],
+  "climate": {
+    "minTempC": 10,
+    "idealTempC": [15, 24],
+    "maxTempC": 32,
+    "humidity": "low",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Neglect is the secret. Forget it for weeks and it thrives.",
   "sources": [
     {

@@ -57,6 +57,14 @@
       "sourceRefs": [0, 1]
     }
   ],
+  "climate": {
+    "minTempC": 16,
+    "idealTempC": [18, 27],
+    "maxTempC": 30,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Bright light and dry soil between drinks keep it plump for years.",
   "sources": [
     {

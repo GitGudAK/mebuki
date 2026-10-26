@@ -61,6 +61,14 @@
       "sourceRefs": [1]
     }
   ],
+  "climate": {
+    "minTempC": 15,
+    "idealTempC": [16, 24],
+    "maxTempC": 27,
+    "humidity": "high",
+    "outdoors": "never",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Bright light, dry leaves and a snug pot keep violets in bloom.",
   "sources": [
     {

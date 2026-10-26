@@ -1,6 +1,8 @@
 # Mebuki
 
-**Open Source Plant Care.** Free plant guides, written in the open, that become an iPhone app.
+**See exactly how to care for your plants.** Mebuki is a free iPhone app of short animated plant care guides for small homes, windowsills and balconies, with advice for your local weather. Instead of reading about "indirect light" or "well-draining soil", you watch exactly how to water, repot and fix each plant.
+
+The guides are written in the open, so any grower can suggest a tip or add a plant.
 
 *Mebuki* is Japanese for "sprouting", a plant coming into leaf.
 

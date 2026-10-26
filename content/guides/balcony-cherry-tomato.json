@@ -54,6 +54,14 @@
       "tip": "Blast aphids off with a strong spray of water, or use insecticidal soap under the leaves."
     }
   ],
+  "climate": {
+    "minTempC": 10,
+    "idealTempC": [16, 27],
+    "maxTempC": 32,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Sun, a big pot and steady water: handfuls of sweet tomatoes.",
   "sources": [
     {

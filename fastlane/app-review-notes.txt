@@ -2,20 +2,24 @@
 Attached to our reply in App Store Connect: a recording on a physical iPhone running the latest iOS, starting from launch. Mebuki has no account registration, login, user-generated content or paid content.
 
 2. Purpose and audience
-Mebuki is a free, open-source plant care guide for beginners and people growing plants in small homes, on windowsills and on balconies. Care advice online is scattered, often contradictory and rarely sourced. Mebuki gives each of 42 common houseplants, herbs and balcony plants a short animated guide with chapters for light, water, soil, feeding, pruning and more. Every tip links to the published horticultural source it comes from (for example the RHS, university extension services and the ASPCA for pet safety). There are no ads, no accounts and no in-app purchases.
+Mebuki is a free plant care app for people growing plants in small homes, on windowsills and on balconies, especially visual learners and beginners. Plant advice is usually walls of text ("bright, indirect light", "well-draining soil"), often contradictory, and rarely shows the actual technique. Mebuki shows it instead: each of 42 common houseplants, herbs and balcony plants has short animations of exactly what to do (how to water it, repot it, prune it, feed it), written for apartment living. Optional weather advice checks today's local forecast against what the chosen plant tolerates and says what to do (bring it in tonight, shade it from heat, raise humidity, skip watering after rain). Every tip links to its published source (for example the Royal Horticultural Society, university extension services and the ASPCA for pet safety). There are no ads, accounts or in-app purchases.
 
 3. How to use it
 No setup, login, credentials or sample files are needed.
 - Open the app: the home screen lists every plant. Search by name or tag, or filter with All, Saved and Pet safe.
 - Tap a plant: its animated guide plays. Tap a chapter to jump to it; open "Sources" under a chapter to see and open the references.
+- Under "Your weather", tap "Get advice". iOS asks for location permission; the app uses approximate location only, fetches today's forecast and shows advice for that plant. This is optional and never asked for until the user taps it.
 - Tap the heart to save a plant; it appears under Saved. Saved plants sync through the user's own iCloud key-value storage, with no account.
 - Tap the share button to share a link to the plant's guide with the iOS share sheet.
 
 4. External services
-None are needed for the core functionality. All guide content and animations are bundled in the app and work offline. The app uses Apple's iCloud key-value storage (NSUbiquitousKeyValueStore) to sync saved plants, and the iOS share sheet. Source links open in Safari. Shared links point to our public website on GitHub Pages. There are no analytics, advertising, authentication, payment or AI services.
+- Open-Meteo (open-meteo.com), a free weather API, for the optional weather advice. The app sends only an approximate location, rounded to about 10 km, when the user asks for advice. Nothing is linked to the user or stored by us.
+- Apple iCloud key-value storage (NSUbiquitousKeyValueStore) to sync saved plants, and the iOS share sheet.
+- All guide content and animations are bundled in the app and work offline. Source links open in Safari; shared links point to our public website on GitHub Pages.
+There are no analytics, advertising, authentication, payment or AI services.
 
 5. Regional differences
-None. The app works the same in every region. Content is in English and gives metric units.
+None. The app works the same in every region. Content is in English and gives metric units; weather advice uses the local forecast wherever the user is.
 
 6. Regulated industry or protected material
-Not applicable. Mebuki is not in a regulated industry. All illustrations, animations and text are original work made for the app, and the project is open source (github.com/GitGudAK/mebuki). Care tips cite public sources by linking to them.
+Not applicable. Mebuki is not in a regulated industry. All illustrations, animations and text are original work made for the app. Care tips cite public sources by linking to them. Growers can suggest tips through the project's public repository (github.com/GitGudAK/mebuki).

@@ -53,6 +53,14 @@
       "tip": "Check leaf undersides for aphids, spider mites and whitefly. Rinse often; use insecticidal soap if needed."
     }
   ],
+  "climate": {
+    "minTempC": 12,
+    "idealTempC": [18, 24],
+    "maxTempC": 32,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Steady sun, steady water and no moving it: blooms all summer.",
   "sources": [
     {

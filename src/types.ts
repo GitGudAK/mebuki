@@ -68,4 +68,20 @@ export type PlantGuide = {
   origin?: string;
   /** Optional questions from growers, shown as an FAQ under the guide. */
   faqs?: GuideFaq[];
+  /** Weather the plant tolerates, for advice based on the user's local forecast. */
+  climate?: GuideClimate;
+};
+
+export type GuideClimate = {
+  /** Lowest temperature it survives without damage, °C. */
+  minTempC: number;
+  /** Comfortable range [low, high], °C. */
+  idealTempC: [number, number];
+  /** Heat stress starts above this, °C. */
+  maxTempC: number;
+  humidity: "low" | "average" | "high";
+  /** Whether a small-space grower can keep it outside. */
+  outdoors: "never" | "summer" | "year-round";
+  /** Indexes into sources that back these numbers. */
+  sourceRefs: number[];
 };

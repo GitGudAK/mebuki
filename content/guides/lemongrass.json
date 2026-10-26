@@ -62,6 +62,14 @@
       "sourceRefs": [0, 2]
     }
   ],
+  "climate": {
+    "minTempC": 7,
+    "idealTempC": [15, 30],
+    "maxTempC": 35,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [0, 2]
+  },
   "outro": "Sun, steady water and a warm winter indoors: lemongrass for years.",
   "sources": [
     {

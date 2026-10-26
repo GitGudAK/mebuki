@@ -58,6 +58,14 @@
       "sourceRefs": [0, 1]
     }
   ],
+  "climate": {
+    "minTempC": 5,
+    "idealTempC": [10, 20],
+    "maxTempC": 30,
+    "humidity": "average",
+    "outdoors": "summer",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Shade, a little water and no fuss: it just keeps going.",
   "sources": [
     {

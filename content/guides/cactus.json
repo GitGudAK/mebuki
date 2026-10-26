@@ -56,6 +56,14 @@
       "tip": "In spring, move up one pot size only. Wrap it in newspaper to handle it, and wait a few days to water."
     }
   ],
+  "climate": {
+    "minTempC": 7,
+    "idealTempC": [18, 29],
+    "maxTempC": 38,
+    "humidity": "low",
+    "outdoors": "summer",
+    "sourceRefs": [0, 2]
+  },
   "outro": "Lots of sun, little water, a cool winter: then come the flowers.",
   "sources": [
     {

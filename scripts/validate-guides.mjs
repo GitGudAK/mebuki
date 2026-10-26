@@ -111,6 +111,16 @@ export const checkRules = (guide, fileName) => {
       if (ref >= sourceCount) errors.push(`steps[${i}].sourceRefs points to sources[${ref}], which does not exist`);
     }
   });
+  const climate = guide.climate;
+  if (climate) {
+    for (const ref of climate.sourceRefs ?? []) {
+      if (ref >= sourceCount) errors.push(`climate.sourceRefs points to sources[${ref}], which does not exist`);
+    }
+    const [lo, hi] = climate.idealTempC ?? [];
+    if (!(climate.minTempC <= lo && lo < hi && hi <= climate.maxTempC)) {
+      errors.push("climate temperatures must run minTempC <= idealTempC[0] < idealTempC[1] <= maxTempC");
+    }
+  }
   (Array.isArray(guide.faqs) ? guide.faqs : []).forEach((faq, i) => {
     const hosts = (faq?.sources ?? []).map((s) => hostOf(s?.url));
     if (hosts.length && !hosts.some((h) => h && isAuthoritative(h))) {

@@ -58,6 +58,14 @@
       "sourceRefs": [0, 1]
     }
   ],
+  "climate": {
+    "minTempC": 10,
+    "idealTempC": [18, 27],
+    "maxTempC": 30,
+    "humidity": "average",
+    "outdoors": "never",
+    "sourceRefs": [0, 1]
+  },
   "outro": "Soft water, indirect light and a snug pot: a palm that lasts years.",
   "sources": [
     {

@@ -58,6 +58,14 @@
       "sourceRefs": [0, 1]
     }
   ],
+  "climate": {
+    "minTempC": 10,
+    "idealTempC": [20, 32],
+    "maxTempC": 35,
+    "humidity": "high",
+    "outdoors": "never",
+    "sourceRefs": [2, 4]
+  },
   "outro": "Plenty of water, soft light and warmth keep the leaves coming.",
   "sources": [
     {
@@ -75,6 +83,10 @@
     {
       "title": "USDA ARS: Viruses in pandan (Pandanus amaryllifolius) from South Florida",
       "url": "https://www.ars.usda.gov/research/publications/publication/?seqNo115=392081"
+    },
+    {
+      "title": "UF/IFAS: Cold Protection of Foliage Plants in Shadehouses and Greenhouses (EP429)",
+      "url": "https://ask.ifas.ufl.edu/publication/EP429"
     }
   ]
 }

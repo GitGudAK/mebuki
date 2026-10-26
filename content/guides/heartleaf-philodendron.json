@@ -58,6 +58,14 @@
       "sourceRefs": [0, 1, 2]
     }
   ],
+  "climate": {
+    "minTempC": 15,
+    "idealTempC": [18, 29],
+    "maxTempC": 32,
+    "humidity": "average",
+    "outdoors": "never",
+    "sourceRefs": [0, 2]
+  },
   "outro": "Go easy on the water and it will keep growing long vines.",
   "sources": [
     {
